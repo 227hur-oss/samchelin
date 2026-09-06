@@ -1,0 +1,9 @@
+/* Root reset SEED applies on the docs surface (docs/src/styles/global.css.ts). */
+html,body{margin:0;padding:0}
+body{background-color:var(--seed-semantic-color-paper-default);color:var(--seed-semantic-color-ink-text);font-family:var(--seed-font-family);line-height:1.3;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+*,*::before,*::after{box-sizing:border-box}
+ol,ul{list-style:none}
+a{text-decoration:none;color:var(--seed-semantic-color-accent)}
+a:hover{color:var(--seed-scale-color-blue-400)}
+::selection{background:var(--seed-semantic-color-text-selection)}
+button{font-family:inherit}

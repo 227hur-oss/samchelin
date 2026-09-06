@@ -1,0 +1,1167 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/buttons/**",
+              "components/core/**",
+              "components/display/**",
+              "components/feedback/**",
+              "components/forms/**",
+              "components/overlay/**",
+              "ui_kits/karrot-app/**",
+              "ui_kits/seed-docs/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Pretendard))/i]",
+        "message": "Font not provided by the design system. Available: Pretendard."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ActionableCallout'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|children|variant|onClick|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<ActionableCallout> doesn't accept that prop. Declared props: title, children, variant, onClick, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ActionableCallout'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:outline|normal|info|warning|danger)$/]",
+        "message": "<ActionableCallout> variant must be one of 'outline' | 'normal' | 'info' | 'warning' | 'danger'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ActionableInlineAlert'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|children|variant|weight|icon|actionLabel|onAction|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<ActionableInlineAlert> doesn't accept that prop. Declared props: title, children, variant, weight, icon, actionLabel, onAction, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ActionableInlineAlert'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:normal|info|success|danger)$/]",
+        "message": "<ActionableInlineAlert> variant must be one of 'normal' | 'info' | 'success' | 'danger'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ActionableInlineAlert'] > JSXAttribute[name.name='weight'] > Literal[value!=/^(?:standard|strong)$/]",
+        "message": "<ActionableInlineAlert> weight must be one of 'standard' | 'strong'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ActionSheetAction'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|variant|isDisabled|onClick|key|ref|className|style|children)$/]",
+        "message": "<ActionSheetAction> doesn't accept that prop. Declared props: label, variant, isDisabled, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ActionSheetAction'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:default|destructive)$/]",
+        "message": "<ActionSheetAction> variant must be one of 'default' | 'destructive'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AlertDialog'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|description|primaryActionLabel|onPrimaryAction|secondaryActionLabel|onSecondaryAction|secondaryActionIntent|isOpen|onClose|style|key|ref|className|style|children)$/]",
+        "message": "<AlertDialog> doesn't accept that prop. Declared props: title, description, primaryActionLabel, onPrimaryAction, secondaryActionLabel, onSecondaryAction, secondaryActionIntent, isOpen, onClose, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AlertDialog'] > JSXAttribute[name.name='secondaryActionIntent'] > Literal[value!=/^(?:alternative|neutral|nonpreferred)$/]",
+        "message": "<AlertDialog> secondaryActionIntent must be one of 'alternative' | 'neutral' | 'nonpreferred'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Avatar'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|alt|size|fallbackIcon|badgeIcon|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<Avatar> doesn't accept that prop. Declared props: src, alt, size, fallbackIcon, badgeIcon, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Avatar'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:xxsmall|xsmall|small|medium|large|xlarge|xxlarge)$/]",
+        "message": "<Avatar> size must be one of 'xxsmall' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'xxlarge'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AvatarGroupItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|alt|key|ref|className|style|children)$/]",
+        "message": "<AvatarGroupItem> doesn't accept that prop. Declared props: src, alt."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BottomSheet'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|description|children|headerAlign|showCloseButton|actionSlot|isOpen|onClose|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<BottomSheet> doesn't accept that prop. Declared props: title, description, children, headerAlign, showCloseButton, actionSlot, isOpen, onClose, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BottomSheet'] > JSXAttribute[name.name='headerAlign'] > Literal[value!=/^(?:start|center)$/]",
+        "message": "<BottomSheet> headerAlign must be one of 'start' | 'center'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BoxButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|size|variant|isDisabled|prefixIcon|suffixIcon|fullWidth|iconBase|style|onClick|key|ref|className|style|children)$/]",
+        "message": "<BoxButton> doesn't accept that prop. Declared props: children, size, variant, isDisabled, prefixIcon, suffixIcon, fullWidth, iconBase, style, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BoxButton'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:xsmall|small|medium|large|xlarge)$/]",
+        "message": "<BoxButton> size must be one of 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BoxButton'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|primary-low|secondary|danger)$/]",
+        "message": "<BoxButton> variant must be one of 'primary' | 'primary-low' | 'secondary' | 'danger'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BoxToggleButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|size|variant|isSelected|isDisabled|prefixIcon|suffixIcon|onToggle|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<BoxToggleButton> doesn't accept that prop. Declared props: children, size, variant, isSelected, isDisabled, prefixIcon, suffixIcon, onToggle, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BoxToggleButton'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:xsmall|small|medium|large)$/]",
+        "message": "<BoxToggleButton> size must be one of 'xsmall' | 'small' | 'medium' | 'large'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BoxToggleButton'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|primary-low|secondary)$/]",
+        "message": "<BoxToggleButton> variant must be one of 'primary' | 'primary-low' | 'secondary'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Callout'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|children|variant|icon|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<Callout> doesn't accept that prop. Declared props: title, children, variant, icon, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Callout'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:outline|normal|info|warning|danger)$/]",
+        "message": "<Callout> variant must be one of 'outline' | 'normal' | 'info' | 'warning' | 'danger'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CapsuleToggleButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|size|isSelected|isDisabled|icon|onToggle|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<CapsuleToggleButton> doesn't accept that prop. Declared props: children, size, isSelected, isDisabled, icon, onToggle, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CapsuleToggleButton'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:xsmall|small)$/]",
+        "message": "<CapsuleToggleButton> size must be one of 'xsmall' | 'small'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Checkbox'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|size|shape|isSelected|isIndeterminate|isDisabled|onChange|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<Checkbox> doesn't accept that prop. Declared props: children, size, shape, isSelected, isIndeterminate, isDisabled, onChange, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Checkbox'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:small|medium|large)$/]",
+        "message": "<Checkbox> size must be one of 'small' | 'medium' | 'large'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Checkbox'] > JSXAttribute[name.name='shape'] > Literal[value!=/^(?:square|circle|ghost)$/]",
+        "message": "<Checkbox> shape must be one of 'square' | 'circle' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChipButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|size|count|isDisabled|prefixIcon|suffixIcon|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<ChipButton> doesn't accept that prop. Declared props: children, size, count, isDisabled, prefixIcon, suffixIcon, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChipButton'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:small|medium)$/]",
+        "message": "<ChipButton> size must be one of 'small' | 'medium'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChipFilter'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|isSelected|isDisabled|prefixIcon|suffixIcon|onToggle|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<ChipFilter> doesn't accept that prop. Declared props: children, isSelected, isDisabled, prefixIcon, suffixIcon, onToggle, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChipRadioOption'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|prefixIcon|suffixIcon|isDisabled|key|ref|className|style|children)$/]",
+        "message": "<ChipRadioOption> doesn't accept that prop. Declared props: value, label, prefixIcon, suffixIcon, isDisabled."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChipToggleButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|size|isSelected|isDisabled|prefixIcon|suffixIcon|onToggle|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<ChipToggleButton> doesn't accept that prop. Declared props: children, size, isSelected, isDisabled, prefixIcon, suffixIcon, onToggle, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChipToggleButton'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:small|medium)$/]",
+        "message": "<ChipToggleButton> size must be one of 'small' | 'medium'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DismissableCallout'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|children|variant|onDismiss|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<DismissableCallout> doesn't accept that prop. Declared props: title, children, variant, onDismiss, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DismissableCallout'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:outline|normal|info|warning|danger)$/]",
+        "message": "<DismissableCallout> variant must be one of 'outline' | 'normal' | 'info' | 'warning' | 'danger'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DismissableInlineAlert'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|children|variant|weight|icon|onDismiss|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<DismissableInlineAlert> doesn't accept that prop. Declared props: title, children, variant, weight, icon, onDismiss, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DismissableInlineAlert'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:normal|info|success|danger)$/]",
+        "message": "<DismissableInlineAlert> variant must be one of 'normal' | 'info' | 'success' | 'danger'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DismissableInlineAlert'] > JSXAttribute[name.name='weight'] > Literal[value!=/^(?:standard|strong)$/]",
+        "message": "<DismissableInlineAlert> weight must be one of 'standard' | 'strong'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ExtendedFloatingActionButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|icon|size|variant|iconBase|style|onClick|key|ref|className|style|children)$/]",
+        "message": "<ExtendedFloatingActionButton> doesn't accept that prop. Declared props: children, icon, size, variant, iconBase, style, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ExtendedFloatingActionButton'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:medium|small)$/]",
+        "message": "<ExtendedFloatingActionButton> size must be one of 'medium' | 'small'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ExtendedFloatingActionButton'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:over-paper|over-image)$/]",
+        "message": "<ExtendedFloatingActionButton> variant must be one of 'over-paper' | 'over-image'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FloatingActionButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:icon|size|label|iconBase|style|onClick|key|ref|className|style|children)$/]",
+        "message": "<FloatingActionButton> doesn't accept that prop. Declared props: icon, size, label, iconBase, style, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FloatingActionButton'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:medium|small)$/]",
+        "message": "<FloatingActionButton> size must be one of 'medium' | 'small'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HelpBubble'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|message|isModal|showCloseTrigger|placement|defaultOpen|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<HelpBubble> doesn't accept that prop. Declared props: children, message, isModal, showCloseTrigger, placement, defaultOpen, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HelpBubble'] > JSXAttribute[name.name='placement'] > Literal[value!=/^(?:top|bottom)$/]",
+        "message": "<HelpBubble> placement must be one of 'top' | 'bottom'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Icon'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|weight|size|color|base|style|key|ref|className|style|children)$/]",
+        "message": "<Icon> doesn't accept that prop. Declared props: name, weight, size, color, base, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Icon'] > JSXAttribute[name.name='weight'] > Literal[value!=/^(?:fill|regular|thin)$/]",
+        "message": "<Icon> weight must be one of 'fill' | 'regular' | 'thin'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='InlineAlert'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|children|variant|weight|icon|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<InlineAlert> doesn't accept that prop. Declared props: title, children, variant, weight, icon, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='InlineAlert'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:normal|info|success|danger)$/]",
+        "message": "<InlineAlert> variant must be one of 'normal' | 'info' | 'success' | 'danger'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='InlineAlert'] > JSXAttribute[name.name='weight'] > Literal[value!=/^(?:standard|strong)$/]",
+        "message": "<InlineAlert> weight must be one of 'standard' | 'strong'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MenuFabItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|icon|onClick|key|ref|className|style|children)$/]",
+        "message": "<MenuFabItem> doesn't accept that prop. Declared props: label, icon, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MultilineTextField'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|requiredIndicator|optionalIndicator|value|onChange|placeholder|rows|description|errorMessage|maxLength|isInvalid|isDisabled|isReadOnly|style|key|ref|className|style|children)$/]",
+        "message": "<MultilineTextField> doesn't accept that prop. Declared props: label, requiredIndicator, optionalIndicator, value, onChange, placeholder, rows, description, errorMessage, maxLength, isInvalid, isDisabled, isReadOnly, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RadioOption'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|isDisabled|key|ref|className|style|children)$/]",
+        "message": "<RadioOption> doesn't accept that prop. Declared props: value, label, isDisabled."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='RangeSlider'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|min|max|step|onChange|label|output|markers|isDisabled|style|key|ref|className|style|children)$/]",
+        "message": "<RangeSlider> doesn't accept that prop. Declared props: value, min, max, step, onChange, label, output, markers, isDisabled, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SelectBox'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|description|control|isSelected|isDisabled|onChange|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<SelectBox> doesn't accept that prop. Declared props: label, description, control, isSelected, isDisabled, onChange, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SelectBox'] > JSXAttribute[name.name='control'] > Literal[value!=/^(?:checkbox|radio)$/]",
+        "message": "<SelectBox> control must be one of 'checkbox' | 'radio'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Slider'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|min|max|step|onChange|label|output|markers|isDisabled|style|key|ref|className|style|children)$/]",
+        "message": "<Slider> doesn't accept that prop. Declared props: value, min, max, step, onChange, label, output, markers, isDisabled, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Snackbar'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|type|actionLabel|onAction|visible|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<Snackbar> doesn't accept that prop. Declared props: children, type, actionLabel, onAction, visible, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Snackbar'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:default|success|warning)$/]",
+        "message": "<Snackbar> type must be one of 'default' | 'success' | 'warning'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Spinner'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|variant|label|style|key|ref|className|style|children)$/]",
+        "message": "<Spinner> doesn't accept that prop. Declared props: size, variant, label, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Spinner'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:medium|small)$/]",
+        "message": "<Spinner> size must be one of 'medium' | 'small'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Spinner'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:gray|white|primary)$/]",
+        "message": "<Spinner> variant must be one of 'gray' | 'white' | 'primary'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Switch'] > JSXAttribute > JSXIdentifier[name!=/^(?:isSelected|isDisabled|onChange|label|style|key|ref|className|style|children)$/]",
+        "message": "<Switch> doesn't accept that prop. Declared props: isSelected, isDisabled, onChange, label, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TabItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|dot|isDisabled|key|ref|className|style|children)$/]",
+        "message": "<TabItem> doesn't accept that prop. Declared props: value, label, dot, isDisabled."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|size|variant|textStyle|bold|isDisabled|prefixIcon|suffixIcon|iconBase|style|key|ref|className|style|children)$/]",
+        "message": "<TextButton> doesn't accept that prop. Declared props: children, size, variant, textStyle, bold, isDisabled, prefixIcon, suffixIcon, iconBase, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextButton'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:small|medium|large)$/]",
+        "message": "<TextButton> size must be one of 'small' | 'medium' | 'large'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextButton'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary|secondary-low|accent|danger)$/]",
+        "message": "<TextButton> variant must be one of 'primary' | 'secondary' | 'secondary-low' | 'accent' | 'danger'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextButton'] > JSXAttribute[name.name='textStyle'] > Literal[value!=/^(?:basic|underlined)$/]",
+        "message": "<TextButton> textStyle must be one of 'basic' | 'underlined'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextField'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|requiredIndicator|optionalIndicator|value|onChange|placeholder|size|variant|prefix|suffix|description|errorMessage|maxLength|isInvalid|isDisabled|isReadOnly|style|key|ref|className|style|children)$/]",
+        "message": "<TextField> doesn't accept that prop. Declared props: label, requiredIndicator, optionalIndicator, value, onChange, placeholder, size, variant, prefix, suffix, description, errorMessage, maxLength, isInvalid, isDisabled, isReadOnly, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextField'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:small|medium|large)$/]",
+        "message": "<TextField> size must be one of 'small' | 'medium' | 'large'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextField'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:outlined|underlined)$/]",
+        "message": "<TextField> variant must be one of 'outlined' | 'underlined'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "ActionableCallout": {
+        "replaces": []
+      },
+      "ActionableInlineAlert": {
+        "replaces": []
+      },
+      "ActionSheetAction": {
+        "replaces": []
+      },
+      "AlertDialog": {
+        "replaces": []
+      },
+      "Avatar": {
+        "replaces": []
+      },
+      "AvatarGroupItem": {
+        "replaces": []
+      },
+      "BottomSheet": {
+        "replaces": []
+      },
+      "BoxButton": {
+        "replaces": []
+      },
+      "BoxToggleButton": {
+        "replaces": []
+      },
+      "Callout": {
+        "replaces": []
+      },
+      "CapsuleToggleButton": {
+        "replaces": []
+      },
+      "Checkbox": {
+        "replaces": []
+      },
+      "ChipButton": {
+        "replaces": []
+      },
+      "ChipFilter": {
+        "replaces": []
+      },
+      "ChipRadioOption": {
+        "replaces": []
+      },
+      "ChipToggleButton": {
+        "replaces": []
+      },
+      "DismissableCallout": {
+        "replaces": []
+      },
+      "DismissableInlineAlert": {
+        "replaces": []
+      },
+      "ExtendedFloatingActionButton": {
+        "replaces": []
+      },
+      "FloatingActionButton": {
+        "replaces": []
+      },
+      "HelpBubble": {
+        "replaces": []
+      },
+      "Icon": {
+        "replaces": []
+      },
+      "InlineAlert": {
+        "replaces": []
+      },
+      "MenuFabItem": {
+        "replaces": []
+      },
+      "MultilineTextField": {
+        "replaces": []
+      },
+      "RadioOption": {
+        "replaces": []
+      },
+      "RangeSlider": {
+        "replaces": []
+      },
+      "SelectBox": {
+        "replaces": []
+      },
+      "Slider": {
+        "replaces": []
+      },
+      "Snackbar": {
+        "replaces": []
+      },
+      "Spinner": {
+        "replaces": []
+      },
+      "Switch": {
+        "replaces": []
+      },
+      "TabItem": {
+        "replaces": []
+      },
+      "TextButton": {
+        "replaces": []
+      },
+      "TextField": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--seed-duration-color",
+      "--seed-duration-handle",
+      "--seed-duration-menu-transform",
+      "--seed-duration-press",
+      "--seed-duration-snackbar-in",
+      "--seed-duration-snackbar-out",
+      "--seed-font-family",
+      "--seed-scale-color-blue-100",
+      "--seed-scale-color-blue-200",
+      "--seed-scale-color-blue-300",
+      "--seed-scale-color-blue-400",
+      "--seed-scale-color-blue-50",
+      "--seed-scale-color-blue-500",
+      "--seed-scale-color-blue-600",
+      "--seed-scale-color-blue-700",
+      "--seed-scale-color-blue-800",
+      "--seed-scale-color-blue-900",
+      "--seed-scale-color-blue-950",
+      "--seed-scale-color-blue-alpha-100",
+      "--seed-scale-color-blue-alpha-200",
+      "--seed-scale-color-blue-alpha-50",
+      "--seed-scale-color-carrot-100",
+      "--seed-scale-color-carrot-200",
+      "--seed-scale-color-carrot-300",
+      "--seed-scale-color-carrot-400",
+      "--seed-scale-color-carrot-50",
+      "--seed-scale-color-carrot-500",
+      "--seed-scale-color-carrot-600",
+      "--seed-scale-color-carrot-700",
+      "--seed-scale-color-carrot-800",
+      "--seed-scale-color-carrot-900",
+      "--seed-scale-color-carrot-950",
+      "--seed-scale-color-carrot-alpha-100",
+      "--seed-scale-color-carrot-alpha-200",
+      "--seed-scale-color-carrot-alpha-50",
+      "--seed-scale-color-gray-00",
+      "--seed-scale-color-gray-100",
+      "--seed-scale-color-gray-200",
+      "--seed-scale-color-gray-300",
+      "--seed-scale-color-gray-400",
+      "--seed-scale-color-gray-50",
+      "--seed-scale-color-gray-500",
+      "--seed-scale-color-gray-600",
+      "--seed-scale-color-gray-700",
+      "--seed-scale-color-gray-800",
+      "--seed-scale-color-gray-900",
+      "--seed-scale-color-gray-alpha-100",
+      "--seed-scale-color-gray-alpha-200",
+      "--seed-scale-color-gray-alpha-50",
+      "--seed-scale-color-gray-alpha-500",
+      "--seed-scale-color-green-100",
+      "--seed-scale-color-green-200",
+      "--seed-scale-color-green-300",
+      "--seed-scale-color-green-400",
+      "--seed-scale-color-green-50",
+      "--seed-scale-color-green-500",
+      "--seed-scale-color-green-600",
+      "--seed-scale-color-green-700",
+      "--seed-scale-color-green-800",
+      "--seed-scale-color-green-900",
+      "--seed-scale-color-green-950",
+      "--seed-scale-color-green-alpha-100",
+      "--seed-scale-color-green-alpha-200",
+      "--seed-scale-color-green-alpha-50",
+      "--seed-scale-color-pink-100",
+      "--seed-scale-color-pink-200",
+      "--seed-scale-color-pink-300",
+      "--seed-scale-color-pink-400",
+      "--seed-scale-color-pink-50",
+      "--seed-scale-color-pink-500",
+      "--seed-scale-color-pink-600",
+      "--seed-scale-color-pink-700",
+      "--seed-scale-color-pink-800",
+      "--seed-scale-color-pink-900",
+      "--seed-scale-color-pink-950",
+      "--seed-scale-color-purple-100",
+      "--seed-scale-color-purple-200",
+      "--seed-scale-color-purple-300",
+      "--seed-scale-color-purple-400",
+      "--seed-scale-color-purple-50",
+      "--seed-scale-color-purple-500",
+      "--seed-scale-color-purple-600",
+      "--seed-scale-color-purple-700",
+      "--seed-scale-color-purple-800",
+      "--seed-scale-color-purple-900",
+      "--seed-scale-color-purple-950",
+      "--seed-scale-color-red-100",
+      "--seed-scale-color-red-200",
+      "--seed-scale-color-red-300",
+      "--seed-scale-color-red-400",
+      "--seed-scale-color-red-50",
+      "--seed-scale-color-red-500",
+      "--seed-scale-color-red-600",
+      "--seed-scale-color-red-700",
+      "--seed-scale-color-red-800",
+      "--seed-scale-color-red-900",
+      "--seed-scale-color-red-950",
+      "--seed-scale-color-red-alpha-100",
+      "--seed-scale-color-red-alpha-200",
+      "--seed-scale-color-red-alpha-50",
+      "--seed-scale-color-yellow-100",
+      "--seed-scale-color-yellow-200",
+      "--seed-scale-color-yellow-300",
+      "--seed-scale-color-yellow-400",
+      "--seed-scale-color-yellow-50",
+      "--seed-scale-color-yellow-500",
+      "--seed-scale-color-yellow-600",
+      "--seed-scale-color-yellow-700",
+      "--seed-scale-color-yellow-800",
+      "--seed-scale-color-yellow-900",
+      "--seed-scale-color-yellow-950",
+      "--seed-scale-color-yellow-alpha-100",
+      "--seed-scale-color-yellow-alpha-200",
+      "--seed-scale-color-yellow-alpha-50",
+      "--seed-scale-dimension-font-size-10",
+      "--seed-scale-dimension-font-size-100",
+      "--seed-scale-dimension-font-size-1000",
+      "--seed-scale-dimension-font-size-1100",
+      "--seed-scale-dimension-font-size-1200",
+      "--seed-scale-dimension-font-size-1300",
+      "--seed-scale-dimension-font-size-150",
+      "--seed-scale-dimension-font-size-200",
+      "--seed-scale-dimension-font-size-25",
+      "--seed-scale-dimension-font-size-300",
+      "--seed-scale-dimension-font-size-400",
+      "--seed-scale-dimension-font-size-50",
+      "--seed-scale-dimension-font-size-500",
+      "--seed-scale-dimension-font-size-600",
+      "--seed-scale-dimension-font-size-700",
+      "--seed-scale-dimension-font-size-75",
+      "--seed-scale-dimension-font-size-800",
+      "--seed-scale-dimension-font-size-900",
+      "--seed-scale-letter-spacing-narrow-200",
+      "--seed-scale-letter-spacing-narrow-300",
+      "--seed-scale-letter-spacing-narrow-400",
+      "--seed-scale-letter-spacing-none",
+      "--seed-scale-timing-function-spring-entrance",
+      "--seed-scale-timing-function-standard-easing",
+      "--seed-scale-timing-function-standard-entrance",
+      "--seed-scale-timing-function-standard-exit",
+      "--seed-semantic-color-accent",
+      "--seed-semantic-color-danger",
+      "--seed-semantic-color-danger-low",
+      "--seed-semantic-color-divider-1",
+      "--seed-semantic-color-divider-2",
+      "--seed-semantic-color-divider-3",
+      "--seed-semantic-color-gray-active",
+      "--seed-semantic-color-gray-hover",
+      "--seed-semantic-color-gray-pressed",
+      "--seed-semantic-color-ink-text",
+      "--seed-semantic-color-ink-text-low",
+      "--seed-semantic-color-on-gray-overlay-100",
+      "--seed-semantic-color-on-gray-overlay-50",
+      "--seed-semantic-color-on-primary",
+      "--seed-semantic-color-on-primary-low-overlay-100",
+      "--seed-semantic-color-on-primary-low-overlay-200",
+      "--seed-semantic-color-on-primary-low-overlay-50",
+      "--seed-semantic-color-on-primary-overlay-200",
+      "--seed-semantic-color-on-primary-overlay-50",
+      "--seed-semantic-color-overlay-dim",
+      "--seed-semantic-color-overlay-low",
+      "--seed-semantic-color-paper-accent",
+      "--seed-semantic-color-paper-background",
+      "--seed-semantic-color-paper-contents",
+      "--seed-semantic-color-paper-default",
+      "--seed-semantic-color-paper-dialog",
+      "--seed-semantic-color-paper-floating",
+      "--seed-semantic-color-paper-sheet",
+      "--seed-semantic-color-primary",
+      "--seed-semantic-color-primary-hover",
+      "--seed-semantic-color-primary-low",
+      "--seed-semantic-color-primary-low-active",
+      "--seed-semantic-color-primary-low-hover",
+      "--seed-semantic-color-primary-low-pressed",
+      "--seed-semantic-color-primary-pressed",
+      "--seed-semantic-color-secondary",
+      "--seed-semantic-color-secondary-low",
+      "--seed-semantic-color-success",
+      "--seed-semantic-color-success-low",
+      "--seed-semantic-color-text-selection",
+      "--seed-semantic-color-warning",
+      "--seed-semantic-color-warning-low",
+      "--seed-semantic-typography-body-l1-bold-font-size",
+      "--seed-semantic-typography-body-l1-bold-font-weight",
+      "--seed-semantic-typography-body-l1-bold-letter-spacing",
+      "--seed-semantic-typography-body-l1-bold-line-height",
+      "--seed-semantic-typography-body-l1-regular-font-size",
+      "--seed-semantic-typography-body-l1-regular-font-weight",
+      "--seed-semantic-typography-body-l1-regular-letter-spacing",
+      "--seed-semantic-typography-body-l1-regular-line-height",
+      "--seed-semantic-typography-body-l2-bold-font-size",
+      "--seed-semantic-typography-body-l2-bold-font-weight",
+      "--seed-semantic-typography-body-l2-bold-letter-spacing",
+      "--seed-semantic-typography-body-l2-bold-line-height",
+      "--seed-semantic-typography-body-l2-regular-font-size",
+      "--seed-semantic-typography-body-l2-regular-font-weight",
+      "--seed-semantic-typography-body-l2-regular-letter-spacing",
+      "--seed-semantic-typography-body-l2-regular-line-height",
+      "--seed-semantic-typography-body-m1-bold-font-size",
+      "--seed-semantic-typography-body-m1-bold-font-weight",
+      "--seed-semantic-typography-body-m1-bold-letter-spacing",
+      "--seed-semantic-typography-body-m1-bold-line-height",
+      "--seed-semantic-typography-body-m1-regular-font-size",
+      "--seed-semantic-typography-body-m1-regular-font-weight",
+      "--seed-semantic-typography-body-m1-regular-letter-spacing",
+      "--seed-semantic-typography-body-m1-regular-line-height",
+      "--seed-semantic-typography-body-m2-bold-font-size",
+      "--seed-semantic-typography-body-m2-bold-font-weight",
+      "--seed-semantic-typography-body-m2-bold-letter-spacing",
+      "--seed-semantic-typography-body-m2-bold-line-height",
+      "--seed-semantic-typography-body-m2-regular-font-size",
+      "--seed-semantic-typography-body-m2-regular-font-weight",
+      "--seed-semantic-typography-body-m2-regular-letter-spacing",
+      "--seed-semantic-typography-body-m2-regular-line-height",
+      "--seed-semantic-typography-caption1-bold-font-size",
+      "--seed-semantic-typography-caption1-bold-font-weight",
+      "--seed-semantic-typography-caption1-bold-letter-spacing",
+      "--seed-semantic-typography-caption1-bold-line-height",
+      "--seed-semantic-typography-caption1-regular-font-size",
+      "--seed-semantic-typography-caption1-regular-font-weight",
+      "--seed-semantic-typography-caption1-regular-letter-spacing",
+      "--seed-semantic-typography-caption1-regular-line-height",
+      "--seed-semantic-typography-caption2-bold-font-size",
+      "--seed-semantic-typography-caption2-bold-font-weight",
+      "--seed-semantic-typography-caption2-bold-letter-spacing",
+      "--seed-semantic-typography-caption2-bold-line-height",
+      "--seed-semantic-typography-caption2-regular-font-size",
+      "--seed-semantic-typography-caption2-regular-font-weight",
+      "--seed-semantic-typography-caption2-regular-letter-spacing",
+      "--seed-semantic-typography-caption2-regular-line-height",
+      "--seed-semantic-typography-h1-font-size",
+      "--seed-semantic-typography-h1-font-weight",
+      "--seed-semantic-typography-h1-letter-spacing",
+      "--seed-semantic-typography-h1-line-height",
+      "--seed-semantic-typography-h2-font-size",
+      "--seed-semantic-typography-h2-font-weight",
+      "--seed-semantic-typography-h2-letter-spacing",
+      "--seed-semantic-typography-h2-line-height",
+      "--seed-semantic-typography-h3-font-size",
+      "--seed-semantic-typography-h3-font-weight",
+      "--seed-semantic-typography-h3-letter-spacing",
+      "--seed-semantic-typography-h3-line-height",
+      "--seed-semantic-typography-h4-font-size",
+      "--seed-semantic-typography-h4-font-weight",
+      "--seed-semantic-typography-h4-letter-spacing",
+      "--seed-semantic-typography-h4-line-height",
+      "--seed-semantic-typography-label1-bold-font-size",
+      "--seed-semantic-typography-label1-bold-font-weight",
+      "--seed-semantic-typography-label1-bold-letter-spacing",
+      "--seed-semantic-typography-label1-bold-line-height",
+      "--seed-semantic-typography-label1-regular-font-size",
+      "--seed-semantic-typography-label1-regular-font-weight",
+      "--seed-semantic-typography-label1-regular-letter-spacing",
+      "--seed-semantic-typography-label1-regular-line-height",
+      "--seed-semantic-typography-label2-bold-font-size",
+      "--seed-semantic-typography-label2-bold-font-weight",
+      "--seed-semantic-typography-label2-bold-letter-spacing",
+      "--seed-semantic-typography-label2-bold-line-height",
+      "--seed-semantic-typography-label2-regular-font-size",
+      "--seed-semantic-typography-label2-regular-font-weight",
+      "--seed-semantic-typography-label2-regular-letter-spacing",
+      "--seed-semantic-typography-label2-regular-line-height",
+      "--seed-semantic-typography-label3-bold-font-size",
+      "--seed-semantic-typography-label3-bold-font-weight",
+      "--seed-semantic-typography-label3-bold-letter-spacing",
+      "--seed-semantic-typography-label3-bold-line-height",
+      "--seed-semantic-typography-label3-regular-font-size",
+      "--seed-semantic-typography-label3-regular-font-weight",
+      "--seed-semantic-typography-label3-regular-letter-spacing",
+      "--seed-semantic-typography-label3-regular-line-height",
+      "--seed-semantic-typography-label4-bold-font-size",
+      "--seed-semantic-typography-label4-bold-font-weight",
+      "--seed-semantic-typography-label4-bold-letter-spacing",
+      "--seed-semantic-typography-label4-bold-line-height",
+      "--seed-semantic-typography-label4-regular-font-size",
+      "--seed-semantic-typography-label4-regular-font-weight",
+      "--seed-semantic-typography-label4-regular-letter-spacing",
+      "--seed-semantic-typography-label4-regular-line-height",
+      "--seed-semantic-typography-label5-bold-font-size",
+      "--seed-semantic-typography-label5-bold-font-weight",
+      "--seed-semantic-typography-label5-bold-letter-spacing",
+      "--seed-semantic-typography-label5-bold-line-height",
+      "--seed-semantic-typography-label5-regular-font-size",
+      "--seed-semantic-typography-label5-regular-font-weight",
+      "--seed-semantic-typography-label5-regular-letter-spacing",
+      "--seed-semantic-typography-label5-regular-line-height",
+      "--seed-semantic-typography-label6-bold-font-size",
+      "--seed-semantic-typography-label6-bold-font-weight",
+      "--seed-semantic-typography-label6-bold-letter-spacing",
+      "--seed-semantic-typography-label6-bold-line-height",
+      "--seed-semantic-typography-label6-regular-font-size",
+      "--seed-semantic-typography-label6-regular-font-weight",
+      "--seed-semantic-typography-label6-regular-letter-spacing",
+      "--seed-semantic-typography-label6-regular-line-height",
+      "--seed-semantic-typography-subtitle1-bold-font-size",
+      "--seed-semantic-typography-subtitle1-bold-font-weight",
+      "--seed-semantic-typography-subtitle1-bold-letter-spacing",
+      "--seed-semantic-typography-subtitle1-bold-line-height",
+      "--seed-semantic-typography-subtitle1-regular-font-size",
+      "--seed-semantic-typography-subtitle1-regular-font-weight",
+      "--seed-semantic-typography-subtitle1-regular-letter-spacing",
+      "--seed-semantic-typography-subtitle1-regular-line-height",
+      "--seed-semantic-typography-subtitle2-bold-font-size",
+      "--seed-semantic-typography-subtitle2-bold-font-weight",
+      "--seed-semantic-typography-subtitle2-bold-letter-spacing",
+      "--seed-semantic-typography-subtitle2-bold-line-height",
+      "--seed-semantic-typography-subtitle2-regular-font-size",
+      "--seed-semantic-typography-subtitle2-regular-font-weight",
+      "--seed-semantic-typography-subtitle2-regular-letter-spacing",
+      "--seed-semantic-typography-subtitle2-regular-line-height",
+      "--seed-semantic-typography-title1-bold-font-size",
+      "--seed-semantic-typography-title1-bold-font-weight",
+      "--seed-semantic-typography-title1-bold-letter-spacing",
+      "--seed-semantic-typography-title1-bold-line-height",
+      "--seed-semantic-typography-title1-regular-font-size",
+      "--seed-semantic-typography-title1-regular-font-weight",
+      "--seed-semantic-typography-title1-regular-letter-spacing",
+      "--seed-semantic-typography-title1-regular-line-height",
+      "--seed-semantic-typography-title2-bold-font-size",
+      "--seed-semantic-typography-title2-bold-font-weight",
+      "--seed-semantic-typography-title2-bold-letter-spacing",
+      "--seed-semantic-typography-title2-bold-line-height",
+      "--seed-semantic-typography-title2-regular-font-size",
+      "--seed-semantic-typography-title2-regular-font-weight",
+      "--seed-semantic-typography-title2-regular-letter-spacing",
+      "--seed-semantic-typography-title2-regular-line-height",
+      "--seed-semantic-typography-title3-bold-font-size",
+      "--seed-semantic-typography-title3-bold-font-weight",
+      "--seed-semantic-typography-title3-bold-letter-spacing",
+      "--seed-semantic-typography-title3-bold-line-height",
+      "--seed-semantic-typography-title3-regular-font-size",
+      "--seed-semantic-typography-title3-regular-font-weight",
+      "--seed-semantic-typography-title3-regular-letter-spacing",
+      "--seed-semantic-typography-title3-regular-line-height",
+      "--seed-static-color-static-black",
+      "--seed-static-color-static-black-alpha-200",
+      "--seed-static-color-static-black-alpha-500",
+      "--seed-static-color-static-blue-50",
+      "--seed-static-color-static-blue-800",
+      "--seed-static-color-static-carrot-50",
+      "--seed-static-color-static-carrot-800",
+      "--seed-static-color-static-gray-900",
+      "--seed-static-color-static-green-50",
+      "--seed-static-color-static-green-800",
+      "--seed-static-color-static-red-50",
+      "--seed-static-color-static-red-800",
+      "--seed-static-color-static-white",
+      "--seed-static-color-static-white-alpha-200",
+      "--seed-static-color-static-white-alpha-50",
+      "--seed-static-color-static-yellow-50",
+      "--seed-static-color-static-yellow-800",
+      "--seed-static-font-weight-bold",
+      "--seed-static-font-weight-regular",
+      "--seed-static-line-height-static-large",
+      "--seed-static-line-height-static-medium",
+      "--seed-static-line-height-static-small"
+    ],
+    "tokenKinds": {
+      "--seed-font-family": "font",
+      "--seed-static-color-static-black": "color",
+      "--seed-static-color-static-white": "color",
+      "--seed-static-color-static-gray-900": "color",
+      "--seed-static-color-static-carrot-50": "color",
+      "--seed-static-color-static-carrot-800": "color",
+      "--seed-static-color-static-green-50": "color",
+      "--seed-static-color-static-green-800": "color",
+      "--seed-static-color-static-yellow-50": "color",
+      "--seed-static-color-static-yellow-800": "color",
+      "--seed-static-color-static-red-50": "color",
+      "--seed-static-color-static-red-800": "color",
+      "--seed-static-color-static-blue-50": "color",
+      "--seed-static-color-static-blue-800": "color",
+      "--seed-static-color-static-black-alpha-200": "color",
+      "--seed-static-color-static-black-alpha-500": "color",
+      "--seed-static-color-static-white-alpha-50": "color",
+      "--seed-static-color-static-white-alpha-200": "color",
+      "--seed-semantic-color-on-primary": "color",
+      "--seed-semantic-color-overlay-low": "color",
+      "--seed-semantic-color-overlay-dim": "color",
+      "--seed-semantic-color-on-primary-overlay-50": "color",
+      "--seed-semantic-color-on-primary-overlay-200": "color",
+      "--seed-scale-color-gray-00": "color",
+      "--seed-scale-color-gray-50": "color",
+      "--seed-scale-color-gray-100": "color",
+      "--seed-scale-color-gray-200": "color",
+      "--seed-scale-color-gray-300": "color",
+      "--seed-scale-color-gray-400": "color",
+      "--seed-scale-color-gray-500": "color",
+      "--seed-scale-color-gray-600": "color",
+      "--seed-scale-color-gray-700": "color",
+      "--seed-scale-color-gray-800": "color",
+      "--seed-scale-color-gray-900": "color",
+      "--seed-scale-color-carrot-50": "color",
+      "--seed-scale-color-carrot-100": "color",
+      "--seed-scale-color-carrot-200": "color",
+      "--seed-scale-color-carrot-300": "color",
+      "--seed-scale-color-carrot-400": "color",
+      "--seed-scale-color-carrot-500": "color",
+      "--seed-scale-color-carrot-600": "color",
+      "--seed-scale-color-carrot-700": "color",
+      "--seed-scale-color-carrot-800": "color",
+      "--seed-scale-color-carrot-900": "color",
+      "--seed-scale-color-carrot-950": "color",
+      "--seed-scale-color-blue-50": "color",
+      "--seed-scale-color-blue-100": "color",
+      "--seed-scale-color-blue-200": "color",
+      "--seed-scale-color-blue-300": "color",
+      "--seed-scale-color-blue-400": "color",
+      "--seed-scale-color-blue-500": "color",
+      "--seed-scale-color-blue-600": "color",
+      "--seed-scale-color-blue-700": "color",
+      "--seed-scale-color-blue-800": "color",
+      "--seed-scale-color-blue-900": "color",
+      "--seed-scale-color-blue-950": "color",
+      "--seed-scale-color-red-50": "color",
+      "--seed-scale-color-red-100": "color",
+      "--seed-scale-color-red-200": "color",
+      "--seed-scale-color-red-300": "color",
+      "--seed-scale-color-red-400": "color",
+      "--seed-scale-color-red-500": "color",
+      "--seed-scale-color-red-600": "color",
+      "--seed-scale-color-red-700": "color",
+      "--seed-scale-color-red-800": "color",
+      "--seed-scale-color-red-900": "color",
+      "--seed-scale-color-red-950": "color",
+      "--seed-scale-color-green-50": "color",
+      "--seed-scale-color-green-100": "color",
+      "--seed-scale-color-green-200": "color",
+      "--seed-scale-color-green-300": "color",
+      "--seed-scale-color-green-400": "color",
+      "--seed-scale-color-green-500": "color",
+      "--seed-scale-color-green-600": "color",
+      "--seed-scale-color-green-700": "color",
+      "--seed-scale-color-green-800": "color",
+      "--seed-scale-color-green-900": "color",
+      "--seed-scale-color-green-950": "color",
+      "--seed-scale-color-yellow-50": "color",
+      "--seed-scale-color-yellow-100": "color",
+      "--seed-scale-color-yellow-200": "color",
+      "--seed-scale-color-yellow-300": "color",
+      "--seed-scale-color-yellow-400": "color",
+      "--seed-scale-color-yellow-500": "color",
+      "--seed-scale-color-yellow-600": "color",
+      "--seed-scale-color-yellow-700": "color",
+      "--seed-scale-color-yellow-800": "color",
+      "--seed-scale-color-yellow-900": "color",
+      "--seed-scale-color-yellow-950": "color",
+      "--seed-scale-color-pink-50": "color",
+      "--seed-scale-color-pink-100": "color",
+      "--seed-scale-color-pink-200": "color",
+      "--seed-scale-color-pink-300": "color",
+      "--seed-scale-color-pink-400": "color",
+      "--seed-scale-color-pink-500": "color",
+      "--seed-scale-color-pink-600": "color",
+      "--seed-scale-color-pink-700": "color",
+      "--seed-scale-color-pink-800": "color",
+      "--seed-scale-color-pink-900": "color",
+      "--seed-scale-color-pink-950": "color",
+      "--seed-scale-color-purple-50": "color",
+      "--seed-scale-color-purple-100": "color",
+      "--seed-scale-color-purple-200": "color",
+      "--seed-scale-color-purple-300": "color",
+      "--seed-scale-color-purple-400": "color",
+      "--seed-scale-color-purple-500": "color",
+      "--seed-scale-color-purple-600": "color",
+      "--seed-scale-color-purple-700": "color",
+      "--seed-scale-color-purple-800": "color",
+      "--seed-scale-color-purple-900": "color",
+      "--seed-scale-color-purple-950": "color",
+      "--seed-scale-color-gray-alpha-50": "color",
+      "--seed-scale-color-gray-alpha-100": "color",
+      "--seed-scale-color-gray-alpha-200": "color",
+      "--seed-scale-color-gray-alpha-500": "color",
+      "--seed-scale-color-carrot-alpha-50": "color",
+      "--seed-scale-color-carrot-alpha-100": "color",
+      "--seed-scale-color-carrot-alpha-200": "color",
+      "--seed-scale-color-blue-alpha-50": "color",
+      "--seed-scale-color-blue-alpha-100": "color",
+      "--seed-scale-color-blue-alpha-200": "color",
+      "--seed-scale-color-red-alpha-50": "color",
+      "--seed-scale-color-red-alpha-100": "color",
+      "--seed-scale-color-red-alpha-200": "color",
+      "--seed-scale-color-yellow-alpha-50": "color",
+      "--seed-scale-color-yellow-alpha-100": "color",
+      "--seed-scale-color-yellow-alpha-200": "color",
+      "--seed-scale-color-green-alpha-50": "color",
+      "--seed-scale-color-green-alpha-100": "color",
+      "--seed-scale-color-green-alpha-200": "color",
+      "--seed-semantic-color-primary": "color",
+      "--seed-semantic-color-primary-low": "color",
+      "--seed-semantic-color-secondary": "color",
+      "--seed-semantic-color-secondary-low": "color",
+      "--seed-semantic-color-success": "color",
+      "--seed-semantic-color-success-low": "color",
+      "--seed-semantic-color-warning": "color",
+      "--seed-semantic-color-warning-low": "color",
+      "--seed-semantic-color-danger": "color",
+      "--seed-semantic-color-danger-low": "color",
+      "--seed-semantic-color-paper-sheet": "color",
+      "--seed-semantic-color-paper-dialog": "color",
+      "--seed-semantic-color-paper-floating": "color",
+      "--seed-semantic-color-paper-contents": "color",
+      "--seed-semantic-color-paper-default": "color",
+      "--seed-semantic-color-paper-background": "color",
+      "--seed-semantic-color-paper-accent": "color",
+      "--seed-semantic-color-primary-hover": "color",
+      "--seed-semantic-color-primary-pressed": "color",
+      "--seed-semantic-color-primary-low-hover": "color",
+      "--seed-semantic-color-primary-low-active": "color",
+      "--seed-semantic-color-primary-low-pressed": "color",
+      "--seed-semantic-color-gray-hover": "color",
+      "--seed-semantic-color-gray-pressed": "color",
+      "--seed-semantic-color-on-primary-low-overlay-50": "color",
+      "--seed-semantic-color-on-primary-low-overlay-100": "color",
+      "--seed-semantic-color-on-primary-low-overlay-200": "color",
+      "--seed-semantic-color-on-gray-overlay-50": "color",
+      "--seed-semantic-color-on-gray-overlay-100": "color",
+      "--seed-semantic-color-text-selection": "font",
+      "--seed-semantic-color-divider-1": "color",
+      "--seed-semantic-color-divider-2": "color",
+      "--seed-semantic-color-divider-3": "color",
+      "--seed-semantic-color-accent": "color",
+      "--seed-semantic-color-ink-text": "font",
+      "--seed-semantic-color-ink-text-low": "font",
+      "--seed-semantic-color-gray-active": "color",
+      "--seed-scale-dimension-font-size-10": "font",
+      "--seed-scale-dimension-font-size-25": "font",
+      "--seed-scale-dimension-font-size-50": "font",
+      "--seed-scale-dimension-font-size-75": "font",
+      "--seed-scale-dimension-font-size-100": "font",
+      "--seed-scale-dimension-font-size-150": "font",
+      "--seed-scale-dimension-font-size-200": "font",
+      "--seed-scale-dimension-font-size-300": "font",
+      "--seed-scale-dimension-font-size-400": "font",
+      "--seed-scale-dimension-font-size-500": "font",
+      "--seed-scale-dimension-font-size-600": "font",
+      "--seed-scale-dimension-font-size-700": "font",
+      "--seed-scale-dimension-font-size-800": "font",
+      "--seed-scale-dimension-font-size-900": "font",
+      "--seed-scale-dimension-font-size-1000": "font",
+      "--seed-scale-dimension-font-size-1100": "font",
+      "--seed-scale-dimension-font-size-1200": "font",
+      "--seed-scale-dimension-font-size-1300": "font",
+      "--seed-static-font-weight-regular": "font",
+      "--seed-static-font-weight-bold": "font",
+      "--seed-static-line-height-static-small": "font",
+      "--seed-static-line-height-static-medium": "font",
+      "--seed-static-line-height-static-large": "font",
+      "--seed-scale-letter-spacing-none": "font",
+      "--seed-scale-letter-spacing-narrow-200": "font",
+      "--seed-scale-letter-spacing-narrow-300": "font",
+      "--seed-scale-letter-spacing-narrow-400": "font",
+      "--seed-semantic-typography-h1-font-size": "font",
+      "--seed-semantic-typography-h1-font-weight": "font",
+      "--seed-semantic-typography-h1-line-height": "font",
+      "--seed-semantic-typography-h1-letter-spacing": "font",
+      "--seed-semantic-typography-h2-font-size": "font",
+      "--seed-semantic-typography-h2-font-weight": "font",
+      "--seed-semantic-typography-h2-line-height": "font",
+      "--seed-semantic-typography-h2-letter-spacing": "font",
+      "--seed-semantic-typography-h3-font-size": "font",
+      "--seed-semantic-typography-h3-font-weight": "font",
+      "--seed-semantic-typography-h3-line-height": "font",
+      "--seed-semantic-typography-h3-letter-spacing": "font",
+      "--seed-semantic-typography-h4-font-size": "font",
+      "--seed-semantic-typography-h4-font-weight": "font",
+      "--seed-semantic-typography-h4-line-height": "font",
+      "--seed-semantic-typography-h4-letter-spacing": "font",
+      "--seed-semantic-typography-title1-bold-font-size": "font",
+      "--seed-semantic-typography-title1-bold-font-weight": "font",
+      "--seed-semantic-typography-title1-bold-line-height": "font",
+      "--seed-semantic-typography-title1-bold-letter-spacing": "font",
+      "--seed-semantic-typography-title1-regular-font-size": "font",
+      "--seed-semantic-typography-title1-regular-font-weight": "font",
+      "--seed-semantic-typography-title1-regular-line-height": "font",
+      "--seed-semantic-typography-title1-regular-letter-spacing": "font",
+      "--seed-semantic-typography-title2-bold-font-size": "font",
+      "--seed-semantic-typography-title2-bold-font-weight": "font",
+      "--seed-semantic-typography-title2-bold-line-height": "font",
+      "--seed-semantic-typography-title2-bold-letter-spacing": "font",
+      "--seed-semantic-typography-title2-regular-font-size": "font",
+      "--seed-semantic-typography-title2-regular-font-weight": "font",
+      "--seed-semantic-typography-title2-regular-line-height": "font",
+      "--seed-semantic-typography-title2-regular-letter-spacing": "font",
+      "--seed-semantic-typography-title3-bold-font-size": "font",
+      "--seed-semantic-typography-title3-bold-font-weight": "font",
+      "--seed-semantic-typography-title3-bold-line-height": "font",
+      "--seed-semantic-typography-title3-bold-letter-spacing": "font",
+      "--seed-semantic-typography-title3-regular-font-size": "font",
+      "--seed-semantic-typography-title3-regular-font-weight": "font",
+      "--seed-semantic-typography-title3-regular-line-height": "font",
+      "--seed-semantic-typography-title3-regular-letter-spacing": "font",
+      "--seed-semantic-typography-subtitle1-bold-font-size": "font",
+      "--seed-semantic-typography-subtitle1-bold-font-weight": "font",
+      "--seed-semantic-typography-subtitle1-bold-line-height": "font",
+      "--seed-semantic-typography-subtitle1-bold-letter-spacing": "font",
+      "--seed-semantic-typography-subtitle1-regular-font-size": "font",
+      "--seed-semantic-typography-subtitle1-regular-font-weight": "font",
+      "--seed-semantic-typography-subtitle1-regular-line-height": "font",
+      "--seed-semantic-typography-subtitle1-regular-letter-spacing": "font",
+      "--seed-semantic-typography-subtitle2-bold-font-size": "font",
+      "--seed-semantic-typography-subtitle2-bold-font-weight": "font",
+      "--seed-semantic-typography-subtitle2-bold-line-height": "font",
+      "--seed-semantic-typography-subtitle2-bold-letter-spacing": "font",
+      "--seed-semantic-typography-subtitle2-regular-font-size": "font",
+      "--seed-semantic-typography-subtitle2-regular-font-weight": "font",
+      "--seed-semantic-typography-subtitle2-regular-line-height": "font",
+      "--seed-semantic-typography-subtitle2-regular-letter-spacing": "font",
+      "--seed-semantic-typography-body-l1-bold-font-size": "font",
+      "--seed-semantic-typography-body-l1-bold-font-weight": "font",
+      "--seed-semantic-typography-body-l1-bold-line-height": "font",
+      "--seed-semantic-typography-body-l1-bold-letter-spacing": "font",
+      "--seed-semantic-typography-body-l1-regular-font-size": "font",
+      "--seed-semantic-typography-body-l1-regular-font-weight": "font",
+      "--seed-semantic-typography-body-l1-regular-line-height": "font",
+      "--seed-semantic-typography-body-l1-regular-letter-spacing": "font",
+      "--seed-semantic-typography-body-l2-bold-font-size": "font",
+      "--seed-semantic-typography-body-l2-bold-font-weight": "font",
+      "--seed-semantic-typography-body-l2-bold-line-height": "font",
+      "--seed-semantic-typography-body-l2-bold-letter-spacing": "font",
+      "--seed-semantic-typography-body-l2-regular-font-size": "font",
+      "--seed-semantic-typography-body-l2-regular-font-weight": "font",
+      "--seed-semantic-typography-body-l2-regular-line-height": "font",
+      "--seed-semantic-typography-body-l2-regular-letter-spacing": "font",
+      "--seed-semantic-typography-body-m1-bold-font-size": "font",
+      "--seed-semantic-typography-body-m1-bold-font-weight": "font",
+      "--seed-semantic-typography-body-m1-bold-line-height": "font",
+      "--seed-semantic-typography-body-m1-bold-letter-spacing": "font",
+      "--seed-semantic-typography-body-m1-regular-font-size": "font",
+      "--seed-semantic-typography-body-m1-regular-font-weight": "font",
+      "--seed-semantic-typography-body-m1-regular-line-height": "font",
+      "--seed-semantic-typography-body-m1-regular-letter-spacing": "font",
+      "--seed-semantic-typography-body-m2-bold-font-size": "font",
+      "--seed-semantic-typography-body-m2-bold-font-weight": "font",
+      "--seed-semantic-typography-body-m2-bold-line-height": "font",
+      "--seed-semantic-typography-body-m2-bold-letter-spacing": "font",
+      "--seed-semantic-typography-body-m2-regular-font-size": "font",
+      "--seed-semantic-typography-body-m2-regular-font-weight": "font",
+      "--seed-semantic-typography-body-m2-regular-line-height": "font",
+      "--seed-semantic-typography-body-m2-regular-letter-spacing": "font",
+      "--seed-semantic-typography-caption1-bold-font-size": "font",
+      "--seed-semantic-typography-caption1-bold-font-weight": "font",
+      "--seed-semantic-typography-caption1-bold-line-height": "font",
+      "--seed-semantic-typography-caption1-bold-letter-spacing": "font",
+      "--seed-semantic-typography-caption1-regular-font-size": "font",
+      "--seed-semantic-typography-caption1-regular-font-weight": "font",
+      "--seed-semantic-typography-caption1-regular-line-height": "font",
+      "--seed-semantic-typography-caption1-regular-letter-spacing": "font",
+      "--seed-semantic-typography-caption2-bold-font-size": "font",
+      "--seed-semantic-typography-caption2-bold-font-weight": "font",
+      "--seed-semantic-typography-caption2-bold-line-height": "font",
+      "--seed-semantic-typography-caption2-bold-letter-spacing": "font",
+      "--seed-semantic-typography-caption2-regular-font-size": "font",
+      "--seed-semantic-typography-caption2-regular-font-weight": "font",
+      "--seed-semantic-typography-caption2-regular-line-height": "font",
+      "--seed-semantic-typography-caption2-regular-letter-spacing": "font",
+      "--seed-semantic-typography-label1-bold-font-size": "font",
+      "--seed-semantic-typography-label1-bold-font-weight": "font",
+      "--seed-semantic-typography-label1-bold-line-height": "font",
+      "--seed-semantic-typography-label1-bold-letter-spacing": "font",
+      "--seed-semantic-typography-label1-regular-font-size": "font",
+      "--seed-semantic-typography-label1-regular-font-weight": "font",
+      "--seed-semantic-typography-label1-regular-line-height": "font",
+      "--seed-semantic-typography-label1-regular-letter-spacing": "font",
+      "--seed-semantic-typography-label2-bold-font-size": "font",
+      "--seed-semantic-typography-label2-bold-font-weight": "font",
+      "--seed-semantic-typography-label2-bold-line-height": "font",
+      "--seed-semantic-typography-label2-bold-letter-spacing": "font",
+      "--seed-semantic-typography-label2-regular-font-size": "font",
+      "--seed-semantic-typography-label2-regular-font-weight": "font",
+      "--seed-semantic-typography-label2-regular-line-height": "font",
+      "--seed-semantic-typography-label2-regular-letter-spacing": "font",
+      "--seed-semantic-typography-label3-bold-font-size": "font",
+      "--seed-semantic-typography-label3-bold-font-weight": "font",
+      "--seed-semantic-typography-label3-bold-line-height": "font",
+      "--seed-semantic-typography-label3-bold-letter-spacing": "font",
+      "--seed-semantic-typography-label3-regular-font-size": "font",
+      "--seed-semantic-typography-label3-regular-font-weight": "font",
+      "--seed-semantic-typography-label3-regular-line-height": "font",
+      "--seed-semantic-typography-label3-regular-letter-spacing": "font",
+      "--seed-semantic-typography-label4-bold-font-size": "font",
+      "--seed-semantic-typography-label4-bold-font-weight": "font",
+      "--seed-semantic-typography-label4-bold-line-height": "font",
+      "--seed-semantic-typography-label4-bold-letter-spacing": "font",
+      "--seed-semantic-typography-label4-regular-font-size": "font",
+      "--seed-semantic-typography-label4-regular-font-weight": "font",
+      "--seed-semantic-typography-label4-regular-line-height": "font",
+      "--seed-semantic-typography-label4-regular-letter-spacing": "font",
+      "--seed-semantic-typography-label5-bold-font-size": "font",
+      "--seed-semantic-typography-label5-bold-font-weight": "font",
+      "--seed-semantic-typography-label5-bold-line-height": "font",
+      "--seed-semantic-typography-label5-bold-letter-spacing": "font",
+      "--seed-semantic-typography-label5-regular-font-size": "font",
+      "--seed-semantic-typography-label5-regular-font-weight": "font",
+      "--seed-semantic-typography-label5-regular-line-height": "font",
+      "--seed-semantic-typography-label5-regular-letter-spacing": "font",
+      "--seed-semantic-typography-label6-bold-font-size": "font",
+      "--seed-semantic-typography-label6-bold-font-weight": "font",
+      "--seed-semantic-typography-label6-bold-line-height": "font",
+      "--seed-semantic-typography-label6-bold-letter-spacing": "font",
+      "--seed-semantic-typography-label6-regular-font-size": "font",
+      "--seed-semantic-typography-label6-regular-font-weight": "font",
+      "--seed-semantic-typography-label6-regular-line-height": "font",
+      "--seed-semantic-typography-label6-regular-letter-spacing": "font",
+      "--seed-scale-timing-function-standard-easing": "other",
+      "--seed-scale-timing-function-standard-entrance": "other",
+      "--seed-scale-timing-function-standard-exit": "other",
+      "--seed-scale-timing-function-spring-entrance": "other",
+      "--seed-duration-press": "other",
+      "--seed-duration-color": "other",
+      "--seed-duration-handle": "other",
+      "--seed-duration-snackbar-in": "other",
+      "--seed-duration-snackbar-out": "other",
+      "--seed-duration-menu-transform": "other"
+    },
+    "fontFamilies": [
+      "Pretendard"
+    ]
+  }
+}

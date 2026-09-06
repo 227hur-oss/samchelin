@@ -1,0 +1,16 @@
+/* SEED's component specs reference $scale.timing-function.* tokens (standard-easing, standard-entrance,
+   standard-exit, spring-entrance). Those values are NOT published in daangn/seed-design or the
+   stylesheet package, so the curves below are approximations chosen to match the documented durations.
+   Replace them if you have the real KDT motion values. Durations ARE from the specs. */
+:root{
+--seed-scale-timing-function-standard-easing:cubic-bezier(0.4,0,0.2,1); /* @kind other */
+--seed-scale-timing-function-standard-entrance:cubic-bezier(0,0,0.2,1); /* @kind other */
+--seed-scale-timing-function-standard-exit:cubic-bezier(0.4,0,1,1); /* @kind other */
+--seed-scale-timing-function-spring-entrance:cubic-bezier(0.2,0.8,0.2,1); /* @kind other */
+--seed-duration-press:100ms; /* @kind other */
+--seed-duration-color:50ms; /* @kind other */
+--seed-duration-handle:150ms; /* @kind other */
+--seed-duration-snackbar-in:300ms; /* @kind other */
+--seed-duration-snackbar-out:100ms; /* @kind other */
+--seed-duration-menu-transform:200ms; /* @kind other */
+}

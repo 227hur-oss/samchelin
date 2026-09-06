@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>삼슐랭 지도</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  :root{--f:Pretendard,-apple-system,BlinkMacSystemFont,system-ui,"Malgun Gothic",sans-serif}
+  html,body{margin:0;height:100%;font-family:var(--f)}
+  #map{position:absolute;inset:0}
+  .leaflet-container{background:#eef0f2;font-family:var(--f)}
+  .leaflet-control-attribution{font-size:9px;background:rgba(255,255,255,.78)}
+
+  .mk{position:relative;width:132px;height:56px}
+  .mk .pin{position:absolute;left:50%;bottom:20px;width:26px;height:26px;margin-left:-13px;
+    border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+    background:#5BC2E7;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.3)}
+  .mk .pin i{position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#fff}
+  .mk .lbl{position:absolute;left:0;right:0;bottom:0;text-align:center;
+    font:700 12px/1.2 var(--f);color:#1f2937;
+    text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 3px #fff,0 0 3px #fff}
+  .mk .lbl em{font-style:normal;color:#1B8AA8;margin-left:3px}
+
+  .mk.office .pin{background:#06364A;width:30px;height:30px;margin-left:-15px}
+  .mk.office .lbl{color:#06364A}
+
+  .me{width:18px;height:18px;border-radius:50%;background:#5BC2E7;border:3px solid #fff;box-shadow:0 0 0 4px rgba(91,194,231,.28),0 1px 4px rgba(0,0,0,.3)}
+
+  .ui{position:absolute;z-index:500;display:flex;font:700 11px/1 var(--f)}
+  .ui.type{top:10px;left:10px;border-radius:4px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.28)}
+  .ui.type button{border:none;padding:8px 12px;background:#fff;color:#4b5563;cursor:pointer;font:inherit}
+  .ui.type button.on{background:#06364A;color:#fff}
+  .ui.zoom{top:10px;right:10px;flex-direction:column;border-radius:4px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.28)}
+  .ui.zoom button{border:none;width:30px;height:30px;background:#fff;color:#374151;font-size:15px;cursor:pointer}
+  .ui.zoom button + button{border-top:1px solid #e5e7eb}
+  .radius-chip{position:absolute;z-index:500;bottom:14px;left:10px;padding:7px 11px;border-radius:9999px;
+    background:rgba(255,255,255,.94);box-shadow:0 1px 4px rgba(0,0,0,.22);
+    font:700 11px/1 var(--f);color:#06364A}
+
+  .locate{position:absolute;z-index:500;right:10px;bottom:14px;width:38px;height:38px;border:none;border-radius:9999px;
+    background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.26);cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .locate span{width:20px;height:20px;background:#06364A;
+    -webkit-mask:url(assets/svg/icon_location_fill.svg) center/contain no-repeat;mask:url(assets/svg/icon_location_fill.svg) center/contain no-repeat}
+  .locate.on span{background:#1B8AA8}
+  .locate.busy{opacity:.55}
+  .toast{position:absolute;z-index:600;left:50%;bottom:62px;transform:translateX(-50%);
+    max-width:80%;padding:9px 13px;border-radius:9999px;background:rgba(17,24,39,.9);color:#fff;
+    font:700 11px/1.4 var(--f);text-align:center;opacity:0;transition:opacity .2s}
+  .toast.show{opacity:1}
+  .me.live{background:#1B8AA8}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div class="ui type">
+  <button type="button" class="on">지도</button>
+  <button type="button">위성</button>
+</div>
+<div class="ui zoom">
+  <button type="button" id="zin" aria-label="확대">+</button>
+  <button type="button" id="zout" aria-label="축소">−</button>
+</div>
+<div class="radius-chip">서초사옥 도보 5분 · 반경 400m</div>
+<button type="button" class="locate" id="locate" aria-label="현재 위치"><span></span></button>
+<div class="toast" id="toast"></div>
+<script>
+  var OFFICE = [37.4938, 127.0270];
+  var PLACES = [
+    { name: "서초 손칼국수", menu: "면", rating: "4.8", at: [37.4948, 127.0258] },
+    { name: "정육식당 서초점", menu: "고기", rating: "4.6", at: [37.4922, 127.0295] },
+    { name: "한상 백반", menu: "한식", rating: "4.7", at: [37.4945, 127.0281] },
+    { name: "혼밥 우동집", menu: "일식", rating: "4.4", at: [37.4930, 127.0245] },
+    { name: "미소 초밥", menu: "일식", rating: "4.5", at: [37.4917, 127.0262] },
+    { name: "청담 마라탕", menu: "중식", rating: "4.2", at: [37.4959, 127.0299] },
+    { name: "그린볼 샐러드", menu: "건강식", rating: "4.3", at: [37.4941, 127.0266] },
+    { name: "역전 국밥", menu: "한식", rating: "4.6", at: [37.4926, 127.0281] },
+    { name: "파스타 오네", menu: "양식", rating: "4.5", at: [37.4952, 127.0272] },
+    { name: "브레드 앤 스프", menu: "양식", rating: "4.3", at: [37.4934, 127.0301] },
+    { name: "스테이크 하우스 서초", menu: "양식", rating: "4.7", at: [37.4913, 127.0288] },
+    { name: "스시 하나", menu: "일식", rating: "4.9", at: [37.4955, 127.0246] },
+    { name: "사시미 모리", menu: "일식", rating: "4.6", at: [37.4919, 127.0308] },
+    { name: "이자카야 소라", menu: "일식", rating: "4.4", at: [37.4962, 127.0284] },
+    { name: "돈부리 마루", menu: "일식", rating: "4.5", at: [37.4943, 127.0252] },
+    { name: "라멘 코이", menu: "일식", rating: "4.3", at: [37.4929, 127.0269] },
+    { name: "우동 소바 야마", menu: "일식", rating: "4.2", at: [37.4924, 127.0257] },
+    { name: "야키토리 하치", menu: "일식", rating: "4.5", at: [37.4957, 127.0262] },
+    { name: "카츠 정식 텐", menu: "일식", rating: "4.4", at: [37.4936, 127.0290] },
+    { name: "채식 테이블", menu: "건강식", rating: "4.6", at: [37.4950, 127.0292] },
+    { name: "포케 보울", menu: "건강식", rating: "4.4", at: [37.4932, 127.0277] },
+    { name: "슬로우 키친", menu: "건강식", rating: "4.5", at: [37.4915, 127.0275] },
+    { name: "트러플 파스타 면가", menu: "면", rating: "4.7", at: [37.4946, 127.0296] },
+    { name: "메밀 소반", menu: "면", rating: "4.5", at: [37.4921, 127.0248] },
+    { name: "쌀국수 하노이", menu: "면", rating: "4.4", at: [37.4940, 127.0240] },
+    { name: "냉면 본가", menu: "면", rating: "4.6", at: [37.4961, 127.0253] }
+  ];
+
+  var map = L.map('map', { zoomControl: false, attributionControl: true }).setView(OFFICE, 16);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  document.getElementById('zin').onclick = function () { map.zoomIn(); };
+  document.getElementById('zout').onclick = function () { map.zoomOut(); };
+
+  L.circle(OFFICE, { radius: 400, color: '#5BC2E7', weight: 1.5, dashArray: '4 4', fillColor: '#5BC2E7', fillOpacity: 0.1 }).addTo(map);
+
+  L.marker(OFFICE, {
+    icon: L.divIcon({ className: '', html: '<div class="me"></div>', iconSize: [18, 18], iconAnchor: [9, 9] })
+  }).addTo(map);
+
+  L.marker(OFFICE, {
+    icon: L.divIcon({
+      className: '',
+      html: '<div class="mk office"><div class="pin"><i></i></div><div class="lbl">삼성 서초사옥</div></div>',
+      iconSize: [132, 56],
+      iconAnchor: [66, 46]
+    })
+  }).addTo(map);
+
+  var placeMarkers = [];
+  var activeMenu = "전체";
+
+  function renderPlaces() {
+    placeMarkers.forEach(function (m) { map.removeLayer(m); });
+    placeMarkers = [];
+    PLACES.filter(function (p) { return activeMenu === "전체" || p.menu === activeMenu; })
+      .forEach(function (p) {
+        var mk = L.marker(p.at, {
+          icon: L.divIcon({
+            className: '',
+            html: '<div class="mk"><div class="pin"><i></i></div><div class="lbl">' + p.name + '<em>★' + p.rating + '</em></div></div>',
+            iconSize: [132, 56],
+            iconAnchor: [66, 46]
+          })
+        }).addTo(map).bindPopup('<strong>' + p.name + '</strong><br>' + p.menu + ' · 임직원 평점 ★' + p.rating);
+        placeMarkers.push(mk);
+      });
+  }
+  renderPlaces();
+
+  window.addEventListener('message', function (e) {
+    var d = e.data;
+    if (!d || d.type !== 'sam-menu') return;
+    activeMenu = d.menu || "전체";
+    renderPlaces();
+    toast(activeMenu === "전체" ? '전체 ' + PLACES.length + '곳' : activeMenu + ' ' + placeMarkers.length + '곳');
+  });
+
+  /* 현재 위치 */
+  var btn = document.getElementById('locate');
+  var toastEl = document.getElementById('toast');
+  var liveMarker = null, liveRing = null, toastTimer = null;
+
+  function toast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, 2600);
+  }
+
+  function metersTo(a, b) {
+    return map.distance(L.latLng(a), L.latLng(b));
+  }
+
+  btn.onclick = function () {
+    if (!navigator.geolocation) { toast('이 브라우저는 위치 기능을 지원하지 않아요.'); return; }
+    btn.classList.add('busy');
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      btn.classList.remove('busy');
+      btn.classList.add('on');
+      var here = [pos.coords.latitude, pos.coords.longitude];
+      var acc = Math.max(30, Math.round(pos.coords.accuracy || 60));
+
+      if (liveMarker) { map.removeLayer(liveMarker); map.removeLayer(liveRing); }
+      liveRing = L.circle(here, { radius: acc, color: '#1B8AA8', weight: 1, fillColor: '#5BC2E7', fillOpacity: 0.15 }).addTo(map);
+      liveMarker = L.marker(here, {
+        icon: L.divIcon({ className: '', html: '<div class="me live"></div>', iconSize: [18, 18], iconAnchor: [9, 9] })
+      }).addTo(map);
+
+      var d = Math.round(metersTo(here, OFFICE));
+      var near = PLACES.map(function (p) { return { n: p.name, d: Math.round(metersTo(here, p.at)) }; })
+                       .sort(function (a, b) { return a.d - b.d; })[0];
+      liveMarker.bindPopup('<strong>현재 위치</strong><br>사옥까지 ' + d + 'm · 가장 가까운 맛집 ' + near.n + ' ' + near.d + 'm').openPopup();
+
+      map.setView(here, 17);
+      toast('현재 위치 기준 · 가장 가까운 맛집은 ' + near.n + ' (' + near.d + 'm)');
+    }, function (err) {
+      btn.classList.remove('busy');
+      toast(err.code === 1 ? '위치 권한이 거부됐어요. 브라우저 설정에서 허용해주세요.' : '위치를 가져오지 못했어요. 사옥 기준으로 보여드릴게요.');
+      map.setView(OFFICE, 16);
+    }, { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 });
+  };
+</script>
+</body>
+</html>

@@ -1,1 +1,2064 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/seed-design-system-karrot-269f419a-2a69-4344-a9fb-7d1db4809249/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/seed-design-system-karrot-269f419a-2a69-4344-a9fb-7d1db4809249/tokens/colors.css">
+<link rel="stylesheet" href="_ds/seed-design-system-karrot-269f419a-2a69-4344-a9fb-7d1db4809249/tokens/typography.css">
+<link rel="stylesheet" href="_ds/seed-design-system-karrot-269f419a-2a69-4344-a9fb-7d1db4809249/tokens/motion.css">
+<link rel="stylesheet" href="_ds/seed-design-system-karrot-269f419a-2a69-4344-a9fb-7d1db4809249/tokens/base.css">
+<link rel="stylesheet" href="_ds/seed-design-system-karrot-269f419a-2a69-4344-a9fb-7d1db4809249/styles.css">
+<script src="_ds/seed-design-system-karrot-269f419a-2a69-4344-a9fb-7d1db4809249/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<meta name="ext-resource-dependency" content="assets/food-1.jpg">
+<meta name="ext-resource-dependency" content="assets/food-2.jpg">
+<meta name="ext-resource-dependency" content="assets/food-3.jpg">
+<meta name="ext-resource-dependency" content="assets/food-4.jpg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_heart_fill.svg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_heart_regular.svg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_home_fill.svg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_home_regular.svg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_location_fill.svg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_location_regular.svg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_map_regular.svg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_chatting_fill.svg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_chatting_regular.svg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_profile_fill.svg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_profile_regular.svg">
+<meta name="ext-resource-dependency" content="assets/svg/icon_list_regular.svg">
+<style>
+:root{--seed-semantic-color-primary:#5BC2E7;--seed-semantic-color-primary-hover:#4EB5DB;--seed-semantic-color-primary-pressed:#43A8CE;--seed-semantic-color-primary-low:#5BC2E724;--seed-semantic-color-primary-low-hover:#5BC2E733;--seed-semantic-color-primary-low-pressed:#5BC2E740;--seed-semantic-color-on-primary:#06364A;--brand-ink:#1B8AA8}
+body{margin:0;background:#e8e9ec;font-family:var(--seed-font-family)}
+a{color:var(--brand-ink);text-decoration:none}
+a:hover{color:var(--seed-scale-color-carrot-600)}
+.sam-scroll::-webkit-scrollbar{width:0;height:0}
+.sam-xbar{overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--seed-scale-color-gray-400) transparent}
+.sam-xbar::-webkit-scrollbar{height:6px}
+.sam-xbar::-webkit-scrollbar-track{background:var(--seed-scale-color-gray-100);border-radius:3px}
+.sam-xbar::-webkit-scrollbar-thumb{background:var(--seed-scale-color-gray-400);border-radius:3px}
+.sam-xbar::-webkit-scrollbar-thumb:hover{background:var(--seed-scale-color-gray-500)}
+.sam-dark-xbar{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.45) transparent}
+.sam-dark-xbar::-webkit-scrollbar{height:6px}
+.sam-dark-xbar::-webkit-scrollbar-track{background:rgba(255,255,255,.1);border-radius:3px}
+.sam-dark-xbar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.42);border-radius:3px}
+.sam-dark-xbar::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.6)}
+</style>
+</helmet>
 
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#06364A"/><circle cx="100" cy="100" r="46" fill="#5BC2E7"/><text x="100" y="116" font-family="Pretendard, sans-serif" font-size="42" font-weight="700" fill="#06364A" text-anchor="middle">삼</text></svg></template>
+
+<div ref="{{ assetBox }}" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none">
+  <img data-a="food-1" src="assets/food-1.jpg" alt="">
+  <img data-a="food-2" src="assets/food-2.jpg" alt="">
+  <img data-a="food-3" src="assets/food-3.jpg" alt="">
+  <img data-a="food-4" src="assets/food-4.jpg" alt="">
+  <img data-a="pasta-2" src="assets/pasta-2.jpg" alt="">
+  <img data-a="pasta-3" src="assets/pasta-3.jpg" alt="">
+  <img data-a="pasta-4" src="assets/pasta-4.jpg" alt="">
+  <img data-a="steak-1" src="assets/steak-1.jpg" alt="">
+  <img data-a="steak-2" src="assets/steak-2.jpg" alt="">
+  <img data-a="steak-3" src="assets/steak-3.jpg" alt="">
+  <img data-a="steak-4" src="assets/steak-4.jpg" alt="">
+  <img data-a="jp-1" src="assets/jp-1.jpg" alt="">
+  <img data-a="jp-2" src="assets/jp-2.jpg" alt="">
+  <img data-a="jp-3" src="assets/jp-3.jpg" alt="">
+  <img data-a="jp-4" src="assets/jp-4.jpg" alt="">
+  <img data-a="jp-5" src="assets/jp-5.jpg" alt="">
+  <img data-a="jp-6" src="assets/jp-6.jpg" alt="">
+  <img data-a="jp-7" src="assets/jp-7.jpg" alt="">
+  <img data-a="veg-1" src="assets/veg-1.jpg" alt="">
+  <img data-a="veg-2" src="assets/veg-2.jpg" alt="">
+  <img data-a="veg-3" src="assets/veg-3.jpg" alt="">
+  <img data-a="veg-4" src="assets/veg-4.jpg" alt="">
+  <img data-a="p-1" src="assets/p-1.jpg" alt="">
+  <img data-a="p-2" src="assets/p-2.jpg" alt="">
+  <img data-a="p-3" src="assets/p-3.jpg" alt="">
+  <img data-a="p-4" src="assets/p-4.jpg" alt="">
+  <img data-a="p-5" src="assets/p-5.jpg" alt="">
+  <img data-a="p-6" src="assets/p-6.jpg" alt="">
+  <img data-a="p-7" src="assets/p-7.jpg" alt="">
+  <img data-a="p-8" src="assets/p-8.jpg" alt="">
+  <img data-a="p-9" src="assets/p-9.jpg" alt="">
+  <img data-a="p-10" src="assets/p-10.jpg" alt="">
+  <img data-a="noodle-1" src="assets/noodle-1.jpg" alt="">
+  <img data-a="noodle-2" src="assets/noodle-2.jpg" alt="">
+  <img data-a="noodle-3" src="assets/noodle-3.jpg" alt="">
+  <img data-a="noodle-4" src="assets/noodle-4.jpg" alt="">
+  <img data-a="pho-1" src="assets/pho-1.jpg" alt="">
+  <img data-a="naeng-1" src="assets/naeng-1.jpg" alt="">
+  <img data-a="kal-1" src="assets/kal-1.jpg" alt="">
+  <img data-a="noodle-5" src="assets/noodle-5.jpg" alt="">
+  <img data-a="noodle-6" src="assets/noodle-6.jpg" alt="">
+  <img data-a="chevron_left" src="assets/svg/icon_chevron_left_regular.svg" alt="">
+  <img data-a="heart_fill" src="assets/svg/icon_heart_fill.svg" alt="">
+  <img data-a="heart_regular" src="assets/svg/icon_heart_regular.svg" alt="">
+  <img data-a="home_fill" src="assets/svg/icon_home_fill.svg" alt="">
+  <img data-a="home_regular" src="assets/svg/icon_home_regular.svg" alt="">
+  <img data-a="location_fill" src="assets/svg/icon_location_fill.svg" alt="">
+  <img data-a="location_regular" src="assets/svg/icon_location_regular.svg" alt="">
+  <img data-a="map_regular" src="assets/svg/icon_map_regular.svg" alt="">
+  <img data-a="chatting_fill" src="assets/svg/icon_chatting_fill.svg" alt="">
+  <img data-a="chatting_regular" src="assets/svg/icon_chatting_regular.svg" alt="">
+  <img data-a="profile_fill" src="assets/svg/icon_profile_fill.svg" alt="">
+  <img data-a="profile_regular" src="assets/svg/icon_profile_regular.svg" alt="">
+  <img data-a="list_regular" src="assets/svg/icon_list_regular.svg" alt="">
+  <img data-a="info_regular" src="assets/svg/icon_info_regular.svg" alt="">
+</div>
+
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 16px;font-family:var(--seed-font-family)">
+<div style="width:412px;height:866px;border-radius:44px;background:#0b1d3a;padding:11px;box-shadow:0 18px 44px rgba(11,29,58,.3);flex:none">
+<div data-screen-label="삼슐랭 앱" style="position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:var(--seed-semantic-color-paper-default);display:flex;flex-direction:column">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;height:44px;padding:0 22px 0 26px;flex:none;color:var(--seed-scale-color-gray-900)">
+    <span class="seed-semantic-typography-label5-bold">12:04</span>
+    <span style="display:flex;align-items:center;gap:5px">
+      <span style="display:flex;align-items:flex-end;gap:2px">
+        <span style="width:3px;height:5px;border-radius:1px;background:currentColor"></span>
+        <span style="width:3px;height:7px;border-radius:1px;background:currentColor"></span>
+        <span style="width:3px;height:9px;border-radius:1px;background:currentColor"></span>
+        <span style="width:3px;height:11px;border-radius:1px;background:currentColor"></span>
+      </span>
+      <span style="width:22px;height:11px;border-radius:3px;border:1px solid currentColor;padding:1.5px;display:flex"><span style="flex:1;border-radius:1.5px;background:currentColor"></span></span>
+    </span>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:8px;height:52px;padding:0 10px 0 16px;flex:none">
+    <img src="assets/logo-sm.png" alt="삼슐랭" style="height:38px;width:74px;object-fit:contain;flex:none">
+    <button type="button" onClick="{{ toggleOffice }}" style="flex:1;display:flex;align-items:center;gap:3px;min-width:0;border:none;background:none;padding:4px 0;cursor:pointer">
+      <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-scale-color-gray-900);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ office }}</span>
+      <span style="width:18px;height:18px;flex:none;background:var(--seed-scale-color-gray-700);transform: {{ officeArrow }};-webkit-mask:url(assets/svg/icon_arrow_drop_down_fill.svg) center/contain no-repeat;mask:url(assets/svg/icon_arrow_drop_down_fill.svg) center/contain no-repeat"></span>
+    </button>
+    <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.TextButton" size="small" icon-base="assets/svg" onClick="{{ goOnboarding }}" hint-size="56px,28px">처음으로</x-import>
+    <button type="button" aria-label="검색" style="display:inline-flex;padding:6px;border:none;background:none;cursor:pointer">
+      <span style="width:22px;height:22px;display:block;background:var(--seed-scale-color-gray-900);-webkit-mask:url(assets/svg/icon_search_regular.svg) center/contain no-repeat;mask:url(assets/svg/icon_search_regular.svg) center/contain no-repeat"></span>
+    </button>
+    <button type="button" aria-label="알림" style="display:inline-flex;padding:6px;border:none;background:none;cursor:pointer">
+      <span style="width:22px;height:22px;display:block;background:var(--seed-scale-color-gray-900);-webkit-mask:url(assets/svg/icon_notification_regular.svg) center/contain no-repeat;mask:url(assets/svg/icon_notification_regular.svg) center/contain no-repeat"></span>
+    </button>
+  </div>
+
+  <div class="sam-scroll" style="flex:1;overflow-y:auto;background:var(--seed-semantic-color-paper-default)">
+
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+      <div>
+        <div style="padding:8px 16px 20px">
+          <span class="seed-semantic-typography-title2-bold" style="display:block;color:var(--seed-scale-color-gray-900)">오늘 누구와 뭐 먹지?</span>
+          <span class="seed-semantic-typography-label4-regular" style="display:block;margin-top:6px;color:var(--seed-scale-color-gray-600)">상황과 조건을 고르면 3~5곳으로 좁혀드려요.</span>
+        </div>
+
+        <button type="button" onClick="{{ goAI }}" style="display:flex;align-items:center;gap:12px;width:calc(100% - 32px);margin:0 16px 18px;padding:16px;border:none;border-radius:12px;background:var(--seed-scale-color-gray-900);cursor:pointer;text-align:left">
+          <span style="width:34px;height:34px;flex:none;border-radius:9999px;background:var(--seed-semantic-color-primary);display:flex;align-items:center;justify-content:center">
+            <span style="width:20px;height:20px;background:var(--seed-semantic-color-on-primary);-webkit-mask:url(assets/svg/icon_check_flower_fill.svg) center/contain no-repeat;mask:url(assets/svg/icon_check_flower_fill.svg) center/contain no-repeat"></span>
+          </span>
+          <span style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0">
+            <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-static-color-static-white)">AI 점심 큐레이터</span>
+            <span class="seed-semantic-typography-label6-regular" style="color:rgba(255,255,255,.68)">{{ aiTeaser }}</span>
+          </span>
+          <span style="width:16px;height:16px;flex:none;background:rgba(255,255,255,.6);-webkit-mask:url(assets/svg/icon_chevron_right_regular.svg) center/contain no-repeat;mask:url(assets/svg/icon_chevron_right_regular.svg) center/contain no-repeat"></span>
+        </button>
+
+        <div style="padding:0 16px 4px">
+          <span class="seed-semantic-typography-label5-bold" style="display:block;color:var(--seed-scale-color-gray-600);padding-bottom:10px">오늘의 상황</span>
+          <div class="sam-xbar" style="display:flex;gap:8px;padding-bottom:8px">
+            <sc-for list="{{ moodChips }}" as="c" hint-placeholder-count="4">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="medium" is-selected="{{ c.selected }}" onToggle="{{ c.select }}" icon-base="assets/svg" hint-size="72px,38px">{{ c.label }}</x-import>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="padding:18px 16px 4px">
+          <span class="seed-semantic-typography-label5-bold" style="display:block;color:var(--seed-scale-color-gray-600);padding-bottom:10px">메뉴</span>
+          <div class="sam-xbar" style="display:flex;gap:8px;padding-bottom:8px">
+            <sc-for list="{{ menuChips }}" as="c" hint-placeholder-count="6">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ c.selected }}" onToggle="{{ c.select }}" icon-base="assets/svg" hint-size="60px,32px">{{ c.label }}</x-import>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="padding:18px 16px 4px">
+          <span class="seed-semantic-typography-label5-bold" style="display:block;color:var(--seed-scale-color-gray-600);padding-bottom:10px">조건</span>
+          <div class="sam-xbar" style="display:flex;gap:8px;padding-bottom:8px">
+            <sc-for list="{{ condChips }}" as="c" hint-placeholder-count="3">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ c.selected }}" onToggle="{{ c.select }}" icon-base="assets/svg" hint-size="96px,32px">{{ c.label }}</x-import>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="padding:22px 16px 0">
+          <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="xlarge" full-width="{{ true }}" prefix-icon="search" icon-base="assets/svg" onClick="{{ recommend }}" hint-size="100%,52px">{{ recommendLabel }}</x-import>
+        </div>
+
+        <sc-if value="{{ hasResult }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:28px 16px 12px">
+              <span class="seed-semantic-typography-label2-bold" style="color:var(--seed-scale-color-gray-900)">{{ resultTitle }}</span>
+              <button type="button" onClick="{{ recommend }}" style="border:none;background:none;padding:2px;cursor:pointer;color:var(--brand-ink)">
+                <span class="seed-semantic-typography-label5-bold">다시 추천</span>
+              </button>
+            </div>
+            <sc-for list="{{ results }}" as="r" hint-placeholder-count="3">
+              <div onClick="{{ r.open }}" style="display:flex;gap:12px;padding:14px 16px;border-top:1px solid var(--seed-semantic-color-divider-2);cursor:pointer">
+                <div style="position:relative;width:96px;height:96px;border-radius:6px;background:var(--seed-scale-color-gray-100) url({{ r.photo }}) center/cover no-repeat;flex:none"></div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:4px;min-width:0">
+                  <div style="display:flex;align-items:flex-start;gap:6px">
+                    <span class="seed-semantic-typography-body-m2-bold" style="flex:1;color:var(--seed-scale-color-gray-900)">{{ r.name }}</span>
+                    <button type="button" aria-label="저장" onClick="{{ r.toggle }}" style="display:inline-flex;padding:2px;margin:-2px -2px 0 0;border:none;background:none;cursor:pointer">
+                      <span style="width:20px;height:20px;display:block;background: {{ r.heartColor }};-webkit-mask:url({{ r.heartIcon }}) center/contain no-repeat;mask:url({{ r.heartIcon }}) center/contain no-repeat"></span>
+                    </button>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:5px">
+                    <span class="seed-semantic-typography-label5-bold" style="color:var(--brand-ink)">★ {{ r.rating }}</span>
+                    <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">후기 {{ r.reviews }}</span>
+                    <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-700)">{{ r.waitText }}</span>
+                  </div>
+                  <span class="seed-semantic-typography-caption2-regular" style="color:var(--seed-scale-color-gray-600)">{{ r.meta }}</span>
+                  <span class="seed-semantic-typography-label6-regular" style="margin-top:auto;color:var(--seed-scale-color-gray-600);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.note }}</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <div style="padding:28px 16px 0">
+          <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.Callout" variant="normal" icon="info" icon-base="assets/svg" hint-size="100%,52px">임직원 인증을 마친 동료의 후기만 반영해요.</x-import>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}">
+      <div>
+        <div style="padding:8px 16px 14px">
+          <span class="seed-semantic-typography-title2-bold" style="display:block;color:var(--seed-scale-color-gray-900)">임직원 맛집 큐레이션</span>
+          <span class="seed-semantic-typography-label4-regular" style="display:block;margin-top:6px;color:var(--seed-scale-color-gray-600)">{{ office }} 주변 · 임직원 평점 기준</span>
+        </div>
+        <div class="sam-xbar" style="display:flex;gap:8px;padding:0 16px 12px">
+          <sc-for list="{{ menuChips }}" as="c" hint-placeholder-count="6">
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ c.selected }}" onToggle="{{ c.select }}" icon-base="assets/svg" hint-size="60px,32px">{{ c.label }}</x-import>
+          </sc-for>
+          <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipButton" size="small" prefix-icon="{{ mapChipIcon }}" icon-base="assets/svg" onClick="{{ toggleMap }}" hint-size="76px,32px">{{ mapChipLabel }}</x-import>
+        </div>
+        <sc-if value="{{ showMap }}" hint-placeholder-val="{{ false }}">
+          <div style="margin:0 16px;height:440px;border-radius:10px;overflow:hidden;border:1px solid var(--seed-semantic-color-divider-2)">
+            <iframe src="map.html" data-sam-map="list" onLoad="{{ mapReady }}" title="사옥 주변 맛집 지도" allow="geolocation" style="width:100%;height:100%;border:none;display:block"></iframe>
+          </div>
+        </sc-if>
+        <sc-if value="{{ showGrid }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 12px;padding:2px 16px 0">
+          <sc-for list="{{ list }}" as="r" hint-placeholder-count="6">
+            <div onClick="{{ r.open }}" style="display:flex;flex-direction:column;gap:7px;cursor:pointer;min-width:0">
+              <div style="position:relative;width:100%;aspect-ratio:1/1;border-radius:8px;background:var(--seed-scale-color-gray-100);overflow:hidden">
+                <image-slot id="{{ r.slot }}" src="{{ r.photo }}" shape="rect" fit="cover" placeholder="사진 넣기" style="width:100%;height:100%"></image-slot>
+                <button type="button" aria-label="저장" onClick="{{ r.toggle }}" style="position:absolute;bottom:6px;right:6px;display:inline-flex;padding:6px;border:none;border-radius:9999px;background:var(--seed-semantic-color-overlay-low);cursor:pointer">
+                  <span style="width:18px;height:18px;display:block;background: {{ r.heartColorOnPhoto }};-webkit-mask:url({{ r.heartIcon }}) center/contain no-repeat;mask:url({{ r.heartIcon }}) center/contain no-repeat"></span>
+                </button>
+              </div>
+              <span class="seed-semantic-typography-label4-bold" style="color:var(--seed-scale-color-gray-900);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.name }}</span>
+              <div style="display:flex;align-items:center;gap:4px">
+                <span class="seed-semantic-typography-label5-bold" style="color:var(--brand-ink)">★ {{ r.rating }}</span>
+                <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">({{ r.reviews }})</span>
+              </div>
+              <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.gridMeta }}</span>
+            </div>
+          </sc-for>
+        </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isMapTab }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;height:100%">
+        <div style="padding:8px 16px 12px">
+          <span class="seed-semantic-typography-title2-bold" style="display:block;color:var(--seed-scale-color-gray-900)">지도 검색</span>
+          <span class="seed-semantic-typography-label4-regular" style="display:block;margin-top:6px;color:var(--seed-scale-color-gray-600)">{{ office }} 주변 도보 거리 기준으로 보여워요.</span>
+        </div>
+        <div class="sam-xbar" style="display:flex;gap:8px;padding:0 16px 12px">
+          <sc-for list="{{ menuChips }}" as="c" hint-placeholder-count="6">
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ c.selected }}" onToggle="{{ c.select }}" icon-base="assets/svg" hint-size="60px,32px">{{ c.label }}</x-import>
+          </sc-for>
+        </div>
+        <div style="flex:1;min-height:420px;margin:0 0 0;border-top:1px solid var(--seed-semantic-color-divider-2)">
+          <iframe src="map.html" data-sam-map="search" onLoad="{{ mapReady }}" title="사옥 주변 맛집 지도 검색" allow="geolocation" style="width:100%;height:100%;border:none;display:block"></iframe>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isMeet }}" hint-placeholder-val="{{ false }}">
+      <div>
+        <div style="padding:8px 16px 14px">
+          <span class="seed-semantic-typography-title2-bold" style="display:block;color:var(--seed-scale-color-gray-900)">같이 먹어요</span>
+          <span class="seed-semantic-typography-label4-regular" style="display:block;margin-top:6px;color:var(--seed-scale-color-gray-600)">오늘 한 끼만 함께하는 일회성 점심 모임</span>
+        </div>
+        <sc-if value="{{ hasMeetPlace }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:12px;margin:0 16px 8px;padding:16px;border-radius:10px;background:var(--seed-semantic-color-primary-low)">
+            <div style="display:flex;align-items:baseline;gap:8px">
+              <span class="seed-semantic-typography-label5-bold" style="flex:1;color:var(--brand-ink)">이 가게에서 같이 먹기</span>
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.TextButton" size="small" icon-base="assets/svg" onClick="{{ clearMeetPlace }}" hint-size="66px,28px">전체 보기</x-import>
+            </div>
+            <span class="seed-semantic-typography-label2-bold" style="color:var(--seed-scale-color-gray-900)">{{ meetPlaceName }}</span>
+            <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-700);line-height:1.5">{{ meetPlaceMeta }}</span>
+            <sc-if value="{{ meetPlaceEmpty }}" hint-placeholder-val="{{ false }}">
+              <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600);line-height:1.5">아직 이 가게로 모인 자리가 없어요. 번개를 열면 이웃 부서 동료에게 먼저 보여드려요.</span>
+            </sc-if>
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="medium" full-width="{{ true }}" prefix-icon="add" icon-base="assets/svg" onClick="{{ openCreate }}" hint-size="100%,44px">{{ meetPlaceCta }}</x-import>
+          </div>
+        </sc-if>
+
+        <div style="display:flex;flex-direction:column;gap:14px;margin:0 16px 8px;padding:18px 16px;border-radius:12px;background:var(--seed-scale-color-gray-900)">
+          <div style="display:flex;align-items:baseline;gap:8px">
+            <span class="seed-semantic-typography-label2-bold" style="flex:1;color:var(--seed-static-color-static-white)">점심 사다리타기</span>
+            <span class="seed-semantic-typography-label6-regular" style="color:rgba(255,255,255,.6)">{{ ladderHint }}</span>
+          </div>
+          <span class="seed-semantic-typography-label5-regular" style="color:rgba(255,255,255,.72);line-height:1.5">인원수를 정하고 출발점을 고르면 식당과 동료가 한 짝으로 정해져요.</span>
+          <button type="button" onClick="{{ toggleFilter }}" style="display:flex;align-items:center;gap:8px;padding:11px 13px;border:none;border-radius:8px;background:rgba(255,255,255,.1);cursor:pointer;text-align:left">
+            <span class="seed-semantic-typography-label5-bold" style="flex:none;color:var(--seed-static-color-static-white)">매칭 조건</span>
+            <span class="seed-semantic-typography-label6-regular" style="flex:1;min-width:0;color:rgba(255,255,255,.68);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ filterSummary }}</span>
+            <span style="width:16px;height:16px;flex:none;background:rgba(255,255,255,.6);transform: {{ filterArrow }};-webkit-mask:url(assets/svg/icon_arrow_drop_down_fill.svg) center/contain no-repeat;mask:url(assets/svg/icon_arrow_drop_down_fill.svg) center/contain no-repeat"></span>
+          </button>
+
+          <sc-if value="{{ filterOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:2px;padding:6px 12px 12px;border-radius:8px;background:rgba(255,255,255,.06)">
+              <div style="display:flex;align-items:center;gap:10px;padding:11px 2px 12px;border-bottom:1px solid rgba(255,255,255,.1)">
+                <span style="width:26px;height:26px;flex:none;border-radius:9999px;background:var(--seed-semantic-color-primary);display:flex;align-items:center;justify-content:center">
+                  <span style="width:15px;height:15px;background:var(--seed-semantic-color-on-primary);-webkit-mask:url(assets/svg/icon_check_flower_fill.svg) center/contain no-repeat;mask:url(assets/svg/icon_check_flower_fill.svg) center/contain no-repeat"></span>
+                </span>
+                <span style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
+                  <span class="seed-semantic-typography-label5-bold" style="color:var(--seed-static-color-static-white)">AI 자동추천</span>
+                  <span class="seed-semantic-typography-label6-regular" style="color:rgba(255,255,255,.62);line-height:1.4">{{ aiPickNote }}</span>
+                </span>
+                <button type="button" onClick="{{ applyAiPick }}" style="flex:none;border:none;border-radius:9999px;padding:7px 14px;background:rgba(255,255,255,.16);cursor:pointer">
+                  <span class="seed-semantic-typography-label6-bold" style="white-space:nowrap;color:var(--seed-static-color-static-white)">{{ aiPickCta }}</span>
+                </button>
+              </div>
+              <sc-for list="{{ filterGroups }}" as="g" hint-placeholder-count="7">
+                <button type="button" onClick="{{ g.open }}" style="display:flex;align-items:center;gap:8px;padding:12px 2px;border:none;border-bottom:1px solid rgba(255,255,255,.1);background:none;cursor:pointer;text-align:left">
+                  <span class="seed-semantic-typography-label5-regular" style="flex:none;color:rgba(255,255,255,.6)">{{ g.label }}</span>
+                  <span class="seed-semantic-typography-label4-bold" style="flex:1;min-width:0;text-align:right;color: {{ g.valueColor }};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ g.value }}</span>
+                  <span style="width:16px;height:16px;flex:none;background:rgba(255,255,255,.55);-webkit-mask:url(assets/svg/icon_chevron_right_regular.svg) center/contain no-repeat;mask:url(assets/svg/icon_chevron_right_regular.svg) center/contain no-repeat"></span>
+                </button>
+              </sc-for>
+              <div style="display:flex;align-items:center;gap:8px;padding-top:4px">
+                <span class="seed-semantic-typography-label6-regular" style="flex:1;color: {{ poolColor }}">{{ poolText }}</span>
+                <button type="button" onClick="{{ resetFilter }}" style="border:none;background:none;padding:4px 6px;cursor:pointer">
+                  <span class="seed-semantic-typography-label6-bold" style="color:rgba(255,255,255,.7)">초기화</span>
+                </button>
+                <button type="button" onClick="{{ saveFilter }}" style="border:none;background:none;padding:4px 6px;cursor:pointer">
+                  <span class="seed-semantic-typography-label6-bold" style="color:rgba(255,255,255,.7)">저장</span>
+                </button>
+              </div>
+            </div>
+          </sc-if>
+
+          <div class="sam-dark-xbar" style="display:flex;align-items:center;gap:6px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px">
+            <span class="seed-semantic-typography-label6-regular" style="flex:none;white-space:nowrap;color:rgba(255,255,255,.6)">인원수</span>
+            <sc-for list="{{ sizeChips }}" as="s" hint-placeholder-count="4">
+              <button type="button" onClick="{{ s.select }}" style="flex:none;border:none;border-radius:9999px;padding:6px 11px;background: {{ s.bg }};cursor:pointer">
+                <span class="seed-semantic-typography-label5-bold" style="white-space:nowrap;color: {{ s.fg }}">{{ s.label }}</span>
+              </button>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ poolWarn }}" hint-placeholder-val="{{ false }}">
+            <span class="seed-semantic-typography-label6-bold" style="color:var(--seed-semantic-color-primary)">매칭 조건에 맞는 임직원이 없어요. 조건을 완화해주세요.</span>
+          </sc-if>
+
+          <div style="position:relative;height:200px;margin-top:4px">
+            <div style="display:flex;gap:0">
+              <sc-for list="{{ ladderTops }}" as="t" hint-placeholder-count="4">
+                <button type="button" onClick="{{ t.pick }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;border:none;background:none;cursor:pointer;padding:0;opacity: {{ t.opacity }}">
+                  <span style="display:block;width:16px;height:16px;border-radius:9999px;background: {{ t.bg }}"></span>
+                </button>
+              </sc-for>
+            </div>
+            <div style="position:absolute;left:0;right:0;top:44px;height:112px">
+              <sc-for list="{{ ladderRails }}" as="r" hint-placeholder-count="4">
+                <span style="position:absolute;top:0;bottom:0;width:2px;left: {{ r.left }};background: {{ r.color }}"></span>
+              </sc-for>
+              <sc-for list="{{ ladderRungs }}" as="g" hint-placeholder-count="6">
+                <span style="position:absolute;height:2px;top: {{ g.top }};left: {{ g.left }};width: {{ g.width }};background: {{ g.color }}"></span>
+              </sc-for>
+            </div>
+            <div style="position:absolute;left:0;right:0;bottom:0;display:flex;gap:0">
+              <sc-for list="{{ ladderBottoms }}" as="b" hint-placeholder-count="4">
+                <button type="button" onClick="{{ b.open }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0;padding:0 2px;border:none;background:none;cursor: {{ b.cursor }}">
+                  <span style="width:26px;height:26px;border-radius:9999px;border:1px dashed rgba(255,255,255,.28);background:rgba(255,255,255,.16) url({{ b.face }}) center/cover no-repeat;opacity: {{ b.opacity }};box-shadow: {{ b.ring }}"></span>
+                  <span class="seed-semantic-typography-label6-bold" style="color: {{ b.color }};opacity: {{ b.opacity }};overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%">{{ b.name }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+
+          <sc-if value="{{ hasLadderResult }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:10px;padding:14px;border-radius:10px;background:rgba(255,255,255,.1)">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:40px;height:40px;flex:none;border-radius:9999px;background:rgba(255,255,255,.2) url({{ lFace }}) center/cover no-repeat"></div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0">
+                  <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-static-color-static-white)">{{ lName }}</span>
+                  <span class="seed-semantic-typography-label6-regular" style="color:rgba(255,255,255,.7)">{{ lOrg }}</span>
+                </div>
+                <span class="seed-semantic-typography-label5-bold" style="color:var(--seed-semantic-color-primary)">궁합 {{ lFit }}%</span>
+              </div>
+              <sc-if value="{{ lHasGroup }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.AvatarGroup" items="{{ lGroupFaces }}" size="xsmall" limit="{{ 4 }}" icon-base="assets/svg" hint-size="66px,22px"></x-import>
+                  <span class="seed-semantic-typography-label6-regular" style="flex:1;color:rgba(255,255,255,.7);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ lGroupText }}</span>
+                </div>
+              </sc-if>
+              <div style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:8px;background:rgba(255,255,255,.08)">
+                <div style="width:44px;height:44px;flex:none;border-radius:6px;background:rgba(255,255,255,.14) url({{ lPlacePhoto }}) center/cover no-repeat"></div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0">
+                  <span class="seed-semantic-typography-label4-bold" style="color:var(--seed-static-color-static-white)">{{ lPlaceName }}</span>
+                  <span class="seed-semantic-typography-label6-regular" style="color:rgba(255,255,255,.68)">{{ lPlaceMeta }}</span>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px">
+                <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="secondary" size="medium" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ ladderReset }}" style="flex:1" hint-size="42%,44px">다시</x-import>
+                <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="{{ lVariant }}" size="medium" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ ladderInvite }}" style="flex:1.4" hint-size="58%,44px">{{ lCta }}</x-import>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="padding:0 16px 6px">
+          <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.Callout" variant="info" icon="info" icon-base="assets/svg" hint-size="100%,52px">부서·직무·그룹사에 상관없이 참여할 수 있어요.</x-import>
+        </div>
+        <sc-for list="{{ meetups }}" as="m" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:10px;padding:16px;margin:14px 16px 0;border:1px solid var(--seed-semantic-color-divider-2);border-radius:10px">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span class="seed-semantic-typography-label4-bold" style="padding:4px 9px;border-radius:9999px;background:var(--seed-semantic-color-primary-low);color:var(--brand-ink)">{{ m.time }}</span>
+              <span class="seed-semantic-typography-label4-regular" style="color:var(--seed-scale-color-gray-600)">{{ m.menu }}</span>
+              <span class="seed-semantic-typography-label5-regular" style="margin-left:auto;color: {{ m.stateColor }}">{{ m.stateText }}</span>
+            </div>
+            <span class="seed-semantic-typography-body-m2-bold" style="color:var(--seed-scale-color-gray-900);text-wrap:pretty">{{ m.title }}</span>
+            <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">{{ m.meta }}</span>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.AvatarGroup" items="{{ m.faces }}" size="xsmall" limit="{{ 3 }}" icon-base="assets/svg" hint-size="56px,22px"></x-import>
+              <span class="seed-semantic-typography-label6-regular" style="flex:1;color:var(--seed-scale-color-gray-600);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ m.hosts }}</span>
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="{{ m.variant }}" size="small" icon-base="assets/svg" onClick="{{ m.join }}" hint-size="88px,36px">{{ m.btnLabel }}</x-import>
+            </div>
+          </div>
+        </sc-for>
+        <div style="padding:20px 16px 0">
+          <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="secondary" size="large" full-width="{{ true }}" prefix-icon="add" icon-base="assets/svg" onClick="{{ openCreate }}" hint-size="100%,48px">점심 번개 만들기</x-import>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;margin:28px 16px 0;padding:16px;border:1px solid var(--seed-semantic-color-divider-2);border-radius:12px">
+          <div style="display:flex;align-items:baseline;gap:8px">
+            <span class="seed-semantic-typography-label2-bold" style="flex:1;color:var(--seed-scale-color-gray-900)">모임 후기 게시판</span>
+            <span class="seed-semantic-typography-label6-bold" style="color:var(--brand-ink)">{{ supportLabel }}</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:10px;background:var(--seed-semantic-color-primary-low)">
+            <span style="width:18px;height:18px;flex:none;margin-top:1px;background:var(--brand-ink);-webkit-mask:url(assets/svg/icon_money_won_regular.svg) center/contain no-repeat;mask:url(assets/svg/icon_money_won_regular.svg) center/contain no-repeat"></span>
+            <span class="seed-semantic-typography-label5-regular" style="flex:1;color:var(--seed-scale-color-gray-900);line-height:1.5">모임 후기를 올리면 1건당 점심식사비 <strong>5,000원</strong>을 지원해요. 월 최대 4건까지 지원됩니다.</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="flex:1;height:6px;border-radius:3px;background:var(--seed-scale-color-gray-200);overflow:hidden">
+              <div style="height:100%;width: {{ supportBar }};background:var(--seed-semantic-color-primary)"></div>
+            </div>
+            <span class="seed-semantic-typography-label6-regular" style="flex:none;color:var(--seed-scale-color-gray-600)">{{ supportCount }}</span>
+          </div>
+          <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="medium" full-width="{{ true }}" prefix-icon="write" icon-base="assets/svg" onClick="{{ openReview }}" hint-size="100%,44px">{{ reviewCta }}</x-import>
+
+          <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:6px;padding:13px 0 0;border-top:1px solid var(--seed-semantic-color-divider-2)">
+              <div style="display:flex;align-items:center;gap:8px">
+                <div style="width:26px;height:26px;flex:none;border-radius:9999px;background:var(--seed-scale-color-gray-100) url({{ p.face }}) center/cover no-repeat"></div>
+                <span class="seed-semantic-typography-label5-bold" style="color:var(--seed-scale-color-gray-900)">{{ p.who }}</span>
+                <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600)">{{ p.when }}</span>
+                <span class="seed-semantic-typography-label6-bold" style="margin-left:auto;padding:3px 8px;border-radius:9999px;background: {{ p.badgeBg }};color: {{ p.badgeFg }}">{{ p.badge }}</span>
+              </div>
+              <span class="seed-semantic-typography-label4-regular" style="color:var(--seed-scale-color-gray-900);line-height:1.5;text-wrap:pretty">{{ p.text }}</span>
+              <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600)">{{ p.meta }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isAI }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:8px 16px 0">
+        <button type="button" onClick="{{ goHome }}" style="display:inline-flex;align-items:center;gap:4px;margin-bottom:10px;padding:4px 0;border:none;background:none;cursor:pointer">
+          <span style="width:18px;height:18px;background:var(--seed-scale-color-gray-700);-webkit-mask:url(assets/svg/icon_chevron_left_regular.svg) center/contain no-repeat;mask:url(assets/svg/icon_chevron_left_regular.svg) center/contain no-repeat"></span>
+          <span class="seed-semantic-typography-label4-bold" style="color:var(--seed-scale-color-gray-700)">홈</span>
+        </button>
+        <span class="seed-semantic-typography-title2-bold" style="display:block;color:var(--seed-scale-color-gray-900)">AI 점심 큐레이터</span>
+        <span class="seed-semantic-typography-label4-regular" style="display:block;margin-top:6px;color:var(--seed-scale-color-gray-600)">위치·시간·선호·동행 상황을 함께 봐요.</span>
+
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:22px;padding:16px;border:1px solid var(--seed-semantic-color-divider-2);border-radius:10px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="seed-semantic-typography-label4-bold" style="color:var(--seed-scale-color-gray-600)">내 MBTI</span>
+            <span class="seed-semantic-typography-label2-bold" style="flex:1;color:var(--seed-scale-color-gray-900)">{{ mbtiLabel }}</span>
+            <sc-if value="{{ hasMbti }}" hint-placeholder-val="{{ false }}">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.TextButton" size="small" icon-base="assets/svg" onClick="{{ editMbti }}" hint-size="56px,28px">변경</x-import>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{ mbtiSetup }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <span class="seed-semantic-typography-label4-regular" style="color:var(--seed-scale-color-gray-600);line-height:1.5">MBTI를 등록하면 오늘의 운세·메뉴 추천과 점심 메이트 추천을 함께 받을 수 있어요.</span>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+                <sc-for list="{{ mbtiOptions }}" as="t" hint-placeholder-count="16">
+                  <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ t.selected }}" onToggle="{{ t.select }}" icon-base="assets/svg" hint-size="100%,32px">{{ t.name }}</x-import>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ hasMbti }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <span class="seed-semantic-typography-label2-bold" style="color:var(--seed-scale-color-gray-900)">오늘의 운세와 메뉴 추천</span>
+              <div style="display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:10px;background:var(--seed-scale-color-gray-900)">
+                <div style="display:flex;align-items:baseline;gap:8px">
+                  <span class="seed-semantic-typography-label5-bold" style="color:rgba(255,255,255,.62)">{{ fortuneDate }} · {{ myMbti }}</span>
+                  <span class="seed-semantic-typography-label5-bold" style="margin-left:auto;color:var(--seed-semantic-color-primary)">점심 운세 {{ luckScore }}점</span>
+                </div>
+                <span class="seed-semantic-typography-label2-bold" style="color:var(--seed-static-color-static-white);line-height:1.45;text-wrap:pretty">{{ fortuneHeadline }}</span>
+                <span class="seed-semantic-typography-label4-regular" style="color:rgba(255,255,255,.78);line-height:1.55;text-wrap:pretty">{{ fortuneBody }}</span>
+                <div style="height:4px;border-radius:2px;background:rgba(255,255,255,.18);overflow:hidden">
+                  <div style="height:100%;width: {{ luckBar }};background:var(--seed-semantic-color-primary)"></div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:2px">
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <span class="seed-semantic-typography-label6-regular" style="color:rgba(255,255,255,.55)">행운의 메뉴</span>
+                    <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-static-color-static-white)">{{ luckyMenus }}</span>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <span class="seed-semantic-typography-label6-regular" style="color:rgba(255,255,255,.55)">오늘은 피하면 좋아요</span>
+                    <span class="seed-semantic-typography-label3-bold" style="color:rgba(255,255,255,.82)">{{ avoidMenu }}</span>
+                  </div>
+                </div>
+                <span class="seed-semantic-typography-label5-regular" style="color:rgba(255,255,255,.7);line-height:1.5">{{ menuReason }}</span>
+                <div style="display:flex;gap:8px;margin-top:4px">
+                  <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="medium" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ goLuckyMenu }}" style="flex:1" hint-size="50%,44px">{{ luckyCta }}</x-import>
+                  <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="secondary" size="medium" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ rerollFortune }}" style="flex:1" hint-size="50%,44px">다시 보기</x-import>
+                </div>
+              </div>
+
+              <span class="seed-semantic-typography-label2-bold" style="margin-top:12px;padding-top:18px;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-900)">오늘의 MBTI 점심 메이트</span>
+
+              <div style="padding:12px 14px;border-radius:10px;background:var(--seed-semantic-color-primary-low)">
+                <span class="seed-semantic-typography-label4-regular" style="color:var(--seed-scale-color-gray-900);line-height:1.5">{{ mbtiPitch }}</span>
+              </div>
+
+              <div class="sam-xbar" style="display:flex;gap:8px;padding-bottom:8px">
+                <sc-for list="{{ styleChips }}" as="c" hint-placeholder-count="3">
+                  <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ c.selected }}" onToggle="{{ c.select }}" icon-base="assets/svg" hint-size="96px,32px">{{ c.label }}</x-import>
+                </sc-for>
+              </div>
+
+              <sc-for list="{{ mates }}" as="m" hint-placeholder-count="3">
+                <div style="display:flex;flex-direction:column;gap:10px;padding:14px;border:1px solid var(--seed-semantic-color-divider-2);border-radius:10px">
+                  <div style="display:flex;align-items:baseline;gap:8px">
+                    <span class="seed-semantic-typography-label5-bold" style="color:var(--seed-scale-color-gray-600)">오늘의 점심 궁합</span>
+                    <span class="seed-semantic-typography-title3-bold" style="color:var(--brand-ink)">{{ m.score }}%</span>
+                    <span class="seed-semantic-typography-label5-bold" style="margin-left:auto;color:var(--seed-scale-color-gray-900)">{{ m.pair }}</span>
+                  </div>
+                  <div style="height:4px;border-radius:2px;background:var(--seed-scale-color-gray-200);overflow:hidden">
+                    <div style="height:100%;width: {{ m.bar }};background:var(--seed-semantic-color-primary)"></div>
+                  </div>
+                  <span class="seed-semantic-typography-label3-regular" style="color:var(--seed-scale-color-gray-900);line-height:1.5;text-wrap:pretty">{{ m.reason }}</span>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 10px">
+                    <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">{{ m.whoLine }}</span>
+                    <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">{{ m.foodLine }}</span>
+                    <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">{{ m.talkLine }}</span>
+                    <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">{{ m.placeLine }}</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
+                    <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.AvatarGroup" items="{{ m.faces }}" size="xsmall" limit="{{ 2 }}" icon-base="assets/svg" hint-size="38px,22px"></x-import>
+                    <span class="seed-semantic-typography-label6-regular" style="flex:1;color:var(--seed-scale-color-gray-600);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ m.statusLine }}</span>
+                    <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="{{ m.variant }}" size="small" icon-base="assets/svg" onClick="{{ m.invite }}" hint-size="112px,36px">{{ m.btnLabel }}</x-import>
+                  </div>
+                </div>
+              </sc-for>
+
+              <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600);line-height:1.5">MBTI는 참고 지표예요. 부서·사번은 공개되지 않고, 서로 수락한 경우에만 약속이 확정돼요.</span>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:22px">
+          <div style="align-self:flex-end;max-width:78%;padding:12px 14px;border-radius:14px 14px 4px 14px;background:var(--seed-scale-color-gray-100)">
+            <span class="seed-semantic-typography-label3-regular" style="color:var(--seed-scale-color-gray-900)">점심시간 40분밖에 없어요.</span>
+          </div>
+          <div style="align-self:flex-start;max-width:88%;padding:14px 16px;border-radius:14px 14px 14px 4px;background:var(--seed-semantic-color-primary)">
+            <span class="seed-semantic-typography-label3-regular" style="color:var(--seed-semantic-color-on-primary)">오늘 점심시간이 40분밖에 없네요. 회사에서 5분 거리의 식당과 비슷한 메뉴를 선호하는 임직원이 참여 중인 점심 모임을 함께 추천해드릴게요.</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0;margin-top:6px;border:1px solid var(--seed-semantic-color-divider-2);border-radius:10px;overflow:hidden">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--seed-scale-color-gray-100)">
+              <span class="seed-semantic-typography-label4-bold" style="color:var(--seed-scale-color-gray-900)">추천 이유</span>
+              <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600)">도보 5분 이내 · 웨이팅 낮음</span>
+            </div>
+            <sc-for list="{{ aiPicks }}" as="p" hint-placeholder-count="3">
+              <div onClick="{{ p.open }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-top:1px solid var(--seed-semantic-color-divider-2);cursor:pointer">
+                <div style="width:52px;height:52px;border-radius:6px;background:var(--seed-scale-color-gray-100) url({{ p.photo }}) center/cover no-repeat;flex:none"></div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0">
+                  <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-scale-color-gray-900)">{{ p.name }}</span>
+                  <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">★ {{ p.rating }} · {{ p.gridMeta }} · {{ p.waitText }}</span>
+                </div>
+                <span style="width:16px;height:16px;background:var(--seed-scale-color-gray-500);-webkit-mask:url(assets/svg/icon_chevron_right_regular.svg) center/contain no-repeat;mask:url(assets/svg/icon_chevron_right_regular.svg) center/contain no-repeat"></span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipButton" size="small" icon-base="assets/svg" hint-size="140px,32px">혼밥 가능한 곳만</x-import>
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipButton" size="small" icon-base="assets/svg" hint-size="150px,32px">모임도 함께 추천</x-import>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isMy }}" hint-placeholder-val="{{ false }}">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;padding:12px 16px 20px">
+          <div style="width:64px;height:64px;flex:none;border-radius:9999px;background:var(--seed-scale-color-gray-100) url({{ myFace }}) center/cover no-repeat"></div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:4px;min-width:0">
+            <div style="display:flex;align-items:center;gap:6px">
+              <span class="seed-semantic-typography-title3-bold" style="color:var(--seed-scale-color-gray-900)">{{ myName }}</span>
+              <span style="width:16px;height:16px;flex:none;background:var(--seed-semantic-color-primary);-webkit-mask:url(assets/svg/icon_check_flower_fill.svg) center/contain no-repeat;mask:url(assets/svg/icon_check_flower_fill.svg) center/contain no-repeat"></span>
+            </div>
+            <span class="seed-semantic-typography-label4-regular" style="color:var(--seed-scale-color-gray-600)">{{ myOrg }}</span>
+            <div style="display:flex;align-items:center;gap:6px;min-width:0">
+              <span class="seed-semantic-typography-label5-bold" style="flex:none;white-space:nowrap;padding:3px 9px;border-radius:9999px;background:var(--seed-scale-color-gray-100);color:var(--seed-scale-color-gray-700)">{{ myAge }}</span>
+              <span class="seed-semantic-typography-label5-regular" style="flex:1;min-width:0;color:var(--seed-scale-color-gray-600);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ myOffice }}</span>
+            </div>
+          </div>
+          <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipButton" size="small" icon-base="assets/svg" onClick="{{ goOnboarding }}" hint-size="76px,32px">프로필 수정</x-import>
+        </div>
+
+        <div style="display:flex;margin:0 16px;border:1px solid var(--seed-semantic-color-divider-2);border-radius:10px">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 0">
+            <span class="seed-semantic-typography-title3-bold" style="color:var(--seed-scale-color-gray-900)">{{ mySavedCount }}</span>
+            <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600)">저장한 맛집</span>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 0;border-left:1px solid var(--seed-semantic-color-divider-2)">
+            <span class="seed-semantic-typography-title3-bold" style="color:var(--seed-scale-color-gray-900)">{{ myJoinedCount }}</span>
+            <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600)">참여한 모임</span>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 0;border-left:1px solid var(--seed-semantic-color-divider-2)">
+            <span class="seed-semantic-typography-title3-bold" style="color:var(--seed-scale-color-gray-900)">{{ myReviewCount }}</span>
+            <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600)">작성한 후기</span>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:10px;margin:14px 16px 0;padding:14px 16px;border-radius:10px;background:var(--seed-semantic-color-primary-low)">
+          <span class="seed-semantic-typography-label5-bold" style="color:var(--brand-ink)">내 MBTI</span>
+          <span class="seed-semantic-typography-label2-bold" style="flex:1;color:var(--seed-scale-color-gray-900)">{{ mbtiLabel }}</span>
+          <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.TextButton" size="small" icon-base="assets/svg" onClick="{{ goAI }}" hint-size="80px,28px">운세 보기</x-import>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:28px 16px 10px">
+          <span class="seed-semantic-typography-label2-bold" style="color:var(--seed-scale-color-gray-900)">사다리 매칭 신청</span>
+          <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">{{ myReqCount }}</span>
+        </div>
+        <sc-if value="{{ myReqEmpty }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:28px 32px">
+            <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-scale-color-gray-900)">아직 신청한 매칭이 없어요</span>
+            <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600);text-align:center">같이 먹어요에서 사다리를 타고 점심을 제안해보세요.</span>
+          </div>
+        </sc-if>
+        <sc-for list="{{ myReqs }}" as="r" hint-placeholder-count="1">
+          <div style="display:flex;flex-direction:column;gap:10px;padding:14px 16px;border-top:1px solid var(--seed-semantic-color-divider-2)">
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:38px;height:38px;flex:none;border-radius:9999px;background:var(--seed-scale-color-gray-100) url({{ r.face }}) center/cover no-repeat"></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0">
+                <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-scale-color-gray-900)">{{ r.who }}</span>
+                <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.org }}</span>
+              </div>
+              <span class="seed-semantic-typography-label6-bold" style="flex:none;padding:4px 8px;border-radius:9999px;background: {{ r.badgeBg }};color: {{ r.badgeFg }}">{{ r.badge }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:8px;background:var(--seed-scale-color-gray-100)">
+              <span class="seed-semantic-typography-label4-bold" style="color:var(--seed-scale-color-gray-900)">{{ r.placeName }}</span>
+              <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600)">{{ r.meta }}</span>
+            </div>
+            <sc-if value="{{ r.accepted }}" hint-placeholder-val="{{ false }}">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="{{ r.bookVariant }}" size="medium" full-width="{{ true }}" prefix-icon="clock" icon-base="assets/svg" onClick="{{ r.book }}" hint-size="100%,44px">{{ r.bookLabel }}</x-import>
+            </sc-if>
+          </div>
+        </sc-for>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:28px 16px 10px">
+          <span class="seed-semantic-typography-label2-bold" style="color:var(--seed-scale-color-gray-900)">받은 점심 초대</span>
+          <span class="seed-semantic-typography-label5-bold" style="color:var(--brand-ink)">{{ inviteBadge }}</span>
+        </div>
+        <sc-for list="{{ invites }}" as="v" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:10px;padding:14px 16px;border-top:1px solid var(--seed-semantic-color-divider-2)">
+            <div style="display:flex;align-items:flex-start;gap:10px">
+              <div style="width:38px;height:38px;flex:none;border-radius:9999px;background:var(--seed-scale-color-gray-100) url({{ v.face }}) center/cover no-repeat"></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-scale-color-gray-900)">{{ v.who }}</span>
+                  <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600)">{{ v.when }}</span>
+                </div>
+                <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">{{ v.line }}</span>
+              </div>
+              <span class="seed-semantic-typography-label6-bold" style="padding:4px 8px;border-radius:9999px;background: {{ v.stateBg }};color: {{ v.stateFg }}">{{ v.stateText }}</span>
+            </div>
+            <span class="seed-semantic-typography-label3-regular" style="color:var(--seed-scale-color-gray-900);line-height:1.5;text-wrap:pretty">{{ v.msg }}</span>
+            <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">{{ v.meta }}</span>
+            <sc-if value="{{ v.pending }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;gap:8px;margin-top:2px">
+                <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="secondary" size="medium" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ v.decline }}" style="flex:1" hint-size="46%,44px">다음에요</x-import>
+                <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="medium" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ v.accept }}" style="flex:1.2" hint-size="54%,44px">수락하기</x-import>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:28px 16px 10px">
+          <span class="seed-semantic-typography-label2-bold" style="color:var(--seed-scale-color-gray-900)">저장한 맛집</span>
+          <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">{{ mySavedCount }}곳</span>
+        </div>
+        <sc-if value="{{ mySavedEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:36px 32px">
+            <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-scale-color-gray-900)">아직 저장한 맛집이 없어요</span>
+            <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600);text-align:center">마음에 드는 곳의 하트를 눌러 모아보세요.</span>
+          </div>
+        </sc-if>
+        <sc-for list="{{ mySaved }}" as="r" hint-placeholder-count="2">
+          <div onClick="{{ r.open }}" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid var(--seed-semantic-color-divider-2);cursor:pointer">
+            <div style="width:60px;height:60px;flex:none;border-radius:6px;background:var(--seed-scale-color-gray-100) url({{ r.photo }}) center/cover no-repeat"></div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0">
+              <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-scale-color-gray-900)">{{ r.name }}</span>
+              <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">★ {{ r.rating }} · {{ r.gridMeta }}</span>
+            </div>
+            <button type="button" aria-label="저장 해제" onClick="{{ r.toggle }}" style="display:inline-flex;padding:4px;border:none;background:none;cursor:pointer">
+              <span style="width:20px;height:20px;display:block;background:var(--seed-semantic-color-primary);-webkit-mask:url({{ r.heartIcon }}) center/contain no-repeat;mask:url({{ r.heartIcon }}) center/contain no-repeat"></span>
+            </button>
+          </div>
+        </sc-for>
+
+        <div style="display:flex;flex-direction:column;margin-top:28px;border-top:1px solid var(--seed-semantic-color-divider-2)">
+          <sc-for list="{{ myMenuRows }}" as="m" hint-placeholder-count="5">
+            <button type="button" style="display:flex;align-items:center;gap:10px;padding:16px;border:none;border-bottom:1px solid var(--seed-semantic-color-divider-2);background:none;cursor:pointer;text-align:left">
+              <span class="seed-semantic-typography-label3-regular" style="flex:1;color:var(--seed-scale-color-gray-900)">{{ m.label }}</span>
+              <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">{{ m.value }}</span>
+              <span style="width:16px;height:16px;flex:none;background:var(--seed-scale-color-gray-500);-webkit-mask:url(assets/svg/icon_chevron_right_regular.svg) center/contain no-repeat;mask:url(assets/svg/icon_chevron_right_regular.svg) center/contain no-repeat"></span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <div style="height:40px"></div>
+  </div>
+
+  <div style="display:flex;flex:none;border-top:1px solid var(--seed-semantic-color-divider-2);background:var(--seed-semantic-color-paper-default);padding-bottom:14px">
+    <sc-for list="{{ nav }}" as="n" hint-placeholder-count="4">
+      <button type="button" onClick="{{ n.go }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 0 9px;border:none;background:none;cursor:pointer;color: {{ n.color }}">
+        <span style="width:24px;height:24px;background:currentColor;-webkit-mask:url({{ n.icon }}) center/contain no-repeat;mask:url({{ n.icon }}) center/contain no-repeat"></span>
+        <span class="seed-semantic-typography-label6-bold">{{ n.label }}</span>
+      </button>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ detailOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;z-index:16;display:flex;flex-direction:column;background:var(--seed-semantic-color-paper-default)">
+
+      <div class="sam-scroll" style="flex:1;overflow-y:auto">
+        <div style="position:relative;width:100%;height:260px;background:var(--seed-scale-color-gray-100) url({{ dPhoto }}) center/cover no-repeat">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.34) 0%,rgba(0,0,0,0) 42%)"></div>
+          <div style="position:absolute;top:14px;left:12px;right:12px;display:flex;align-items:center;gap:8px">
+            <button type="button" aria-label="뒤로" onClick="{{ closeDetail }}" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:none;border-radius:9999px;background:rgba(0,0,0,.3);cursor:pointer">
+              <span style="display:block;width:22px;height:22px;background:var(--seed-static-color-static-white);-webkit-mask:url(assets/svg/icon_chevron_left_regular.svg) center/contain no-repeat;mask:url(assets/svg/icon_chevron_left_regular.svg) center/contain no-repeat"></span>
+            </button>
+            <span style="flex:1"></span>
+            <button type="button" aria-label="저장" onClick="{{ dToggle }}" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:none;border-radius:9999px;background:rgba(0,0,0,.3);cursor:pointer">
+              <span style="width:24px;height:24px;display:block;background: {{ dHeartColor }};-webkit-mask:url({{ dHeartIcon }}) center/contain no-repeat;mask:url({{ dHeartIcon }}) center/contain no-repeat"></span>
+            </button>
+          </div>
+          <span class="seed-semantic-typography-label6-bold" style="position:absolute;bottom:12px;right:12px;padding:5px 10px;border-radius:9999px;background:var(--seed-semantic-color-overlay-low);color:var(--seed-static-color-static-white)">{{ dPhotoCount }}</span>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;padding:18px 16px 16px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="seed-semantic-typography-label5-bold" style="padding:3px 8px;border-radius:4px;background:var(--seed-semantic-color-primary-low);color:var(--brand-ink)">{{ dMenu }}</span>
+            <span class="seed-semantic-typography-label5-regular" style="color: {{ dOpenColor }}">{{ dOpenText }}</span>
+          </div>
+          <span class="seed-semantic-typography-title2-bold" style="color:var(--seed-scale-color-gray-900)">{{ dName }}</span>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="seed-semantic-typography-label2-bold" style="color:var(--brand-ink)">★ {{ dRating }}</span>
+            <span class="seed-semantic-typography-label4-regular" style="color:var(--seed-scale-color-gray-600)">임직원 후기 {{ dReviews }}개</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.AvatarGroup" items="{{ dFaces }}" size="xsmall" limit="{{ 3 }}" icon-base="assets/svg" hint-size="56px,22px"></x-import>
+            <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-700)">{{ dNote }}</span>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:88px 1fr;gap:0;padding:0 16px">
+          <span class="seed-semantic-typography-label4-regular" style="padding:12px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-600)">거리</span>
+          <span class="seed-semantic-typography-label4-regular" style="padding:12px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-900)">{{ dWalkLine }}</span>
+          <span class="seed-semantic-typography-label4-regular" style="padding:12px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-600)">가격대</span>
+          <span class="seed-semantic-typography-label4-regular" style="padding:12px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-900)">{{ dPrice }}</span>
+          <span class="seed-semantic-typography-label4-regular" style="padding:12px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-600)">웨이팅</span>
+          <span class="seed-semantic-typography-label4-regular" style="padding:12px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-900)">{{ dWait }}</span>
+          <span class="seed-semantic-typography-label4-regular" style="padding:12px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-600)">혼밥</span>
+          <span class="seed-semantic-typography-label4-regular" style="padding:12px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-900)">{{ dSolo }}</span>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;padding:24px 16px 0">
+          <span class="seed-semantic-typography-label2-bold" style="color:var(--seed-scale-color-gray-900)">대표 메뉴</span>
+          <sc-for list="{{ dDishes }}" as="m" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--seed-semantic-color-divider-2)">
+              <div style="width:56px;height:56px;flex:none;border-radius:6px;background:var(--seed-scale-color-gray-100) url({{ m.photo }}) center/cover no-repeat"></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:3px;min-width:0">
+                <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-scale-color-gray-900)">{{ m.name }}</span>
+                <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600)">{{ m.desc }}</span>
+              </div>
+              <span class="seed-semantic-typography-label3-bold" style="color:var(--seed-scale-color-gray-900)">{{ m.price }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;padding:24px 16px 0">
+          <span class="seed-semantic-typography-label2-bold" style="color:var(--seed-scale-color-gray-900)">사진</span>
+          <div style="display:flex;gap:8px">
+            <div style="flex:1;aspect-ratio:1/1;border-radius:8px;background:var(--seed-scale-color-gray-100) url({{ sheetPhoto1 }}) center/cover no-repeat"></div>
+            <div style="flex:1;aspect-ratio:1/1;border-radius:8px;background:var(--seed-scale-color-gray-100) url({{ sheetPhoto2 }}) center/cover no-repeat"></div>
+            <div style="flex:1;aspect-ratio:1/1;border-radius:8px;background:var(--seed-scale-color-gray-100) url({{ sheetPhoto3 }}) center/cover no-repeat"></div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;padding:24px 16px 0">
+          <span class="seed-semantic-typography-label2-bold" style="color:var(--seed-scale-color-gray-900)">임직원 후기</span>
+          <sc-for list="{{ dReviewList }}" as="v" hint-placeholder-count="3">
+            <div style="display:flex;gap:10px;padding:14px 0;border-top:1px solid var(--seed-semantic-color-divider-2)">
+              <div style="width:34px;height:34px;flex:none;border-radius:9999px;background:var(--seed-scale-color-gray-100) url({{ v.face }}) center/cover no-repeat"></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:4px;min-width:0">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <span class="seed-semantic-typography-label4-bold" style="color:var(--seed-scale-color-gray-900)">{{ v.who }}</span>
+                  <span class="seed-semantic-typography-label6-regular" style="color:var(--seed-scale-color-gray-600)">{{ v.when }}</span>
+                  <span class="seed-semantic-typography-label6-bold" style="margin-left:auto;color:var(--brand-ink)">★ {{ v.score }}</span>
+                </div>
+                <span class="seed-semantic-typography-label4-regular" style="color:var(--seed-scale-color-gray-700);line-height:1.5;text-wrap:pretty">{{ v.text }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="height:24px"></div>
+      </div>
+
+      <div style="display:flex;gap:8px;flex:none;padding:10px 16px 20px;border-top:1px solid var(--seed-semantic-color-divider-2);background:var(--seed-semantic-color-paper-default)">
+        <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="secondary" size="xlarge" full-width="{{ true }}" prefix-icon="map" icon-base="assets/svg" style="flex:1" hint-size="46%,52px">길찾기</x-import>
+        <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="xlarge" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ findMates }}" style="flex:1.3" hint-size="54%,52px">같이 먹을 사람 찾기</x-import>
+      </div>
+
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ createOpen }}" hint-placeholder-val="{{ false }}">
+    <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BottomSheet" title="점심 번개 만들기" description="시간 · 음식 · 장소 · 인원 · 예산만 정하면 끝이에요." onClose="{{ closeCreate }}" icon-base="assets/svg" hint-size="100%,320px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span class="seed-semantic-typography-label5-bold" style="color:var(--seed-scale-color-gray-600)">시간</span>
+          <div style="display:flex;gap:8px">
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ true }}" icon-base="assets/svg" hint-size="70px,32px">12:00</x-import>
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" icon-base="assets/svg" hint-size="70px,32px">12:30</x-import>
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" icon-base="assets/svg" hint-size="70px,32px">13:00</x-import>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span class="seed-semantic-typography-label5-bold" style="color:var(--seed-scale-color-gray-600)">인원 · 예산</span>
+          <div style="display:flex;gap:8px">
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ true }}" icon-base="assets/svg" hint-size="70px,32px">2명</x-import>
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" icon-base="assets/svg" hint-size="70px,32px">4명</x-import>
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ true }}" icon-base="assets/svg" hint-size="106px,32px">1만원 이하</x-import>
+          </div>
+        </div>
+        <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="xlarge" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ closeCreate }}" hint-size="100%,52px">모임 만들기</x-import>
+      </div>
+    </x-import>
+  </sc-if>
+
+  <sc-if value="{{ reviewOpen }}" hint-placeholder-val="{{ false }}">
+    <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BottomSheet" title="모임 후기 올리기" description="후기를 등록하면 점심식사비 5,000원이 지원돼요." onClose="{{ closeReview }}" icon-base="assets/svg" hint-size="100%,340px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span class="seed-semantic-typography-label5-bold" style="color:var(--seed-scale-color-gray-600)">다녀온 모임</span>
+          <div class="sam-xbar" style="display:flex;gap:8px;padding-bottom:6px">
+            <sc-for list="{{ reviewMeetups }}" as="m" hint-placeholder-count="3">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ m.selected }}" onToggle="{{ m.select }}" icon-base="assets/svg" hint-size="120px,32px">{{ m.label }}</x-import>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span class="seed-semantic-typography-label5-bold" style="color:var(--seed-scale-color-gray-600)">평점</span>
+          <div style="display:flex;gap:6px">
+            <sc-for list="{{ reviewStars }}" as="s" hint-placeholder-count="5">
+              <button type="button" onClick="{{ s.select }}" style="border:none;background:none;padding:2px;cursor:pointer">
+                <span class="seed-semantic-typography-title3-bold" style="color: {{ s.color }}">★</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span class="seed-semantic-typography-label5-bold" style="color:var(--seed-scale-color-gray-600)">한 줄 후기</span>
+          <div class="sam-xbar" style="display:flex;gap:8px;padding-bottom:6px">
+            <sc-for list="{{ reviewTexts }}" as="t" hint-placeholder-count="3">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ t.selected }}" onToggle="{{ t.select }}" icon-base="assets/svg" hint-size="150px,32px">{{ t.label }}</x-import>
+            </sc-for>
+          </div>
+        </div>
+        <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="xlarge" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ submitReview }}" hint-size="100%,52px">{{ submitLabel }}</x-import>
+      </div>
+    </x-import>
+  </sc-if>
+
+  <sc-if value="{{ lfListOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;z-index:17">
+      <div onClick="{{ closeLfList }}" style="position:absolute;inset:0;background:transparent"></div>
+      <div style="position:absolute;left:28px;right:28px;top: {{ lfTop }};max-height:250px;display:flex;flex-direction:column;border-radius:10px;background:var(--seed-semantic-color-paper-floating);box-shadow:0 2px 8px rgba(0,0,0,.24);overflow:hidden">
+        <span class="seed-semantic-typography-label6-bold" style="flex:none;padding:11px 14px 7px;color:var(--seed-scale-color-gray-600)">{{ lfListTitle }}</span>
+        <div class="sam-scroll" style="flex:1;overflow-y:auto">
+          <sc-for list="{{ lfListOptions }}" as="o" hint-placeholder-count="6">
+            <button type="button" onClick="{{ o.select }}" style="display:flex;align-items:center;gap:10px;width:100%;padding:12px 14px;border:none;border-top:1px solid var(--seed-semantic-color-divider-2);background: {{ o.bg }};cursor:pointer;text-align:left">
+              <span class="seed-semantic-typography-label4-bold" style="flex:1;color: {{ o.fg }}">{{ o.label }}</span>
+              <sc-if value="{{ o.selected }}" hint-placeholder-val="{{ false }}">
+                <span style="width:18px;height:18px;flex:none;background:var(--brand-ink);-webkit-mask:url(assets/svg/icon_check_fill.svg) center/contain no-repeat;mask:url(assets/svg/icon_check_fill.svg) center/contain no-repeat"></span>
+              </sc-if>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ profileOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;z-index:18;display:flex;align-items:center;justify-content:center;padding:24px">
+      <div onClick="{{ closeProfile }}" style="position:absolute;inset:0;background:var(--seed-semantic-color-overlay-dim)"></div>
+      <div style="position:relative;width:100%;max-width:300px;display:flex;flex-direction:column;gap:14px;padding:22px;border-radius:14px;background:var(--seed-semantic-color-paper-dialog)">
+        <button type="button" aria-label="닫기" onClick="{{ closeProfile }}" style="position:absolute;top:12px;right:12px;display:inline-flex;padding:6px;border:none;background:none;cursor:pointer">
+          <span style="width:18px;height:18px;display:block;background:var(--seed-scale-color-gray-600);-webkit-mask:url(assets/svg/icon_close_regular.svg) center/contain no-repeat;mask:url(assets/svg/icon_close_regular.svg) center/contain no-repeat"></span>
+        </button>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+          <span class="seed-semantic-typography-label6-bold" style="padding:3px 9px;border-radius:9999px;background: {{ pMannerBg }};color: {{ pMannerFg }}">매너 칭찬 {{ pMannerVotes }}표</span>
+          <div style="width:76px;height:76px;border-radius:9999px;background:var(--seed-scale-color-gray-100) url({{ pFace }}) center/cover no-repeat"></div>
+          <span class="seed-semantic-typography-title3-bold" style="color:var(--seed-scale-color-gray-900)">{{ pName }}</span>
+          <span class="seed-semantic-typography-label5-regular" style="color:var(--seed-scale-color-gray-600);text-align:center">{{ pOrg }}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:76px 1fr;gap:0">
+          <span class="seed-semantic-typography-label5-regular" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-600)">매너 평가</span>
+          <span class="seed-semantic-typography-label5-regular" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-700);line-height:1.45">{{ pMannerNote }}</span>
+          <span class="seed-semantic-typography-label5-regular" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-600)">나이대</span>
+          <span class="seed-semantic-typography-label5-bold" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-900)">{{ pAge }}</span>
+          <span class="seed-semantic-typography-label5-regular" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-600)">선호 메뉴</span>
+          <span class="seed-semantic-typography-label5-bold" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-900)">{{ pMenu }}</span>
+          <span class="seed-semantic-typography-label5-regular" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-600)">취미/특기</span>
+          <span class="seed-semantic-typography-label5-bold" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-900)">{{ pHobbySkill }}</span>
+          <span class="seed-semantic-typography-label5-regular" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-600)">좌우명</span>
+          <span class="seed-semantic-typography-label5-bold" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-900);line-height:1.45;text-wrap:pretty">{{ pMotto }}</span>
+          <span class="seed-semantic-typography-label5-regular" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--seed-scale-color-gray-600)">궁합</span>
+          <span class="seed-semantic-typography-label5-bold" style="padding:10px 0;border-top:1px solid var(--seed-semantic-color-divider-2);color:var(--brand-ink)">{{ pFit }}%</span>
+        </div>
+        <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="medium" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ closeProfile }}" hint-size="100%,44px">점심 제안하기</x-import>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ officeOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;z-index:15">
+      <div onClick="{{ closeOffice }}" style="position:absolute;inset:0;background:var(--seed-semantic-color-overlay-dim)"></div>
+      <div style="position:absolute;top:96px;left:12px;width:236px;max-height:420px;overflow-y:auto;border-radius:10px;background:var(--seed-semantic-color-paper-floating);box-shadow:0 2px 6px rgba(0,0,0,.16)">
+        <span class="seed-semantic-typography-label5-bold" style="display:block;padding:14px 16px 8px;color:var(--seed-scale-color-gray-600)">근무 사옥 선택</span>
+        <sc-for list="{{ officeOptions }}" as="o" hint-placeholder-count="7">
+          <button type="button" onClick="{{ o.select }}" style="display:flex;align-items:center;gap:8px;width:100%;padding:13px 16px;border:none;border-top:1px solid var(--seed-semantic-color-divider-2);background: {{ o.bg }};cursor:pointer;text-align:left">
+            <span class="seed-semantic-typography-label3-bold" style="flex:1;color: {{ o.color }}">{{ o.name }}</span>
+            <sc-if value="{{ o.selected }}" hint-placeholder-val="{{ false }}">
+              <span style="width:18px;height:18px;flex:none;background:var(--brand-ink);-webkit-mask:url(assets/svg/icon_check_fill.svg) center/contain no-repeat;mask:url(assets/svg/icon_check_fill.svg) center/contain no-repeat"></span>
+            </sc-if>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ onbActive }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;inset:0;z-index:20;display:flex;flex-direction:column;background:var(--seed-semantic-color-paper-default)">
+
+      <sc-if value="{{ onbStep0 }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1;display:flex;flex-direction:column;padding:64px 24px 28px">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
+            <img src="assets/logo-sm.png" alt="삼슐랭 SAMCHELIN" style="width:300px;max-width:100%;object-fit:contain">
+            <span class="seed-semantic-typography-label3-regular" style="margin-top:10px;color:var(--seed-scale-color-gray-600)">맛집 · 연결 · 인맥, 삼성의 한 끼</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <span class="seed-semantic-typography-title3-bold" style="text-align:center;color:var(--seed-scale-color-gray-900)">오늘 누구와 뭐 먹지?</span>
+            <span class="seed-semantic-typography-label4-regular" style="text-align:center;color:var(--seed-scale-color-gray-600);line-height:1.5">회사 주변 맛집을 발견하고, 함께 먹을 동료까지<br>연결하는 삼성 임직원 전용 점심 서비스예요.</span>
+            <div style="margin-top:20px">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="xlarge" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ onbNext }}" hint-size="100%,52px">시작하기</x-import>
+            </div>
+            <div style="display:flex;justify-content:center;padding:8px 0 0">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.TextButton" size="medium" icon-base="assets/svg" onClick="{{ onbSkip }}" hint-size="190px,32px">이미 인증한 계정이 있어요</x-import>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ onbStep1 }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;display:flex;flex-direction:column;padding:52px 24px 28px">
+          <div style="display:flex;gap:6px">
+            <span style="flex:1;height:3px;border-radius:2px;background:var(--seed-semantic-color-primary)"></span>
+            <span style="flex:1;height:3px;border-radius:2px;background:var(--seed-scale-color-gray-300)"></span>
+          </div>
+          <span class="seed-semantic-typography-title2-bold" style="margin-top:36px;color:var(--seed-scale-color-gray-900)">임직원 인증</span>
+          <span class="seed-semantic-typography-label4-regular" style="margin-top:8px;color:var(--seed-scale-color-gray-600);line-height:1.5">그룹사를 고르고 사내 메일로 인증하면<br>임직원 후기와 점심 모임을 볼 수 있어요.</span>
+          <span class="seed-semantic-typography-label5-bold" style="margin-top:32px;color:var(--seed-scale-color-gray-600)">소속 그룹사</span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+            <sc-for list="{{ companyChips }}" as="c" hint-placeholder-count="6">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ c.selected }}" onToggle="{{ c.select }}" icon-base="assets/svg" hint-size="96px,32px">{{ c.label }}</x-import>
+            </sc-for>
+          </div>
+          <div style="margin-top:28px">
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.TextField" label="사내 메일" placeholder="name@samsung.com" size="medium" value="{{ email }}" onChange="{{ setEmail }}" description="인증 메일이 이 주소로 발송돼요." hint-size="100%,96px"></x-import>
+          </div>
+          <div style="margin-top:20px">
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.Callout" variant="normal" icon="info" icon-base="assets/svg" hint-size="100%,52px">사번과 부서는 다른 임직원에게 공개되지 않아요.</x-import>
+          </div>
+          <div style="margin-top:auto">
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="xlarge" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ onbNext }}" hint-size="100%,52px">인증 메일 받기</x-import>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ onbStep2 }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;display:flex;flex-direction:column;padding:52px 24px 28px">
+          <div style="display:flex;gap:6px">
+            <span style="flex:1;height:3px;border-radius:2px;background:var(--seed-semantic-color-primary)"></span>
+            <span style="flex:1;height:3px;border-radius:2px;background:var(--seed-semantic-color-primary)"></span>
+          </div>
+          <span class="seed-semantic-typography-title2-bold" style="margin-top:36px;color:var(--seed-scale-color-gray-900)">점심 취향 설정</span>
+          <span class="seed-semantic-typography-label4-regular" style="margin-top:8px;color:var(--seed-scale-color-gray-600);line-height:1.5">근무 사옥과 좋아하는 메뉴를 알려주면<br>첫 추천이 훨씬 정확해져요.</span>
+          <span class="seed-semantic-typography-label5-bold" style="margin-top:32px;color:var(--seed-scale-color-gray-600)">근무 사옥</span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+            <sc-for list="{{ officeChips }}" as="c" hint-placeholder-count="4">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ c.selected }}" onToggle="{{ c.select }}" icon-base="assets/svg" hint-size="96px,32px">{{ c.label }}</x-import>
+            </sc-for>
+          </div>
+          <span class="seed-semantic-typography-label5-bold" style="margin-top:28px;color:var(--seed-scale-color-gray-600)">좋아하는 메뉴</span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+            <sc-for list="{{ prefChips }}" as="c" hint-placeholder-count="6">
+              <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.ChipToggleButton" size="small" is-selected="{{ c.selected }}" onToggle="{{ c.select }}" icon-base="assets/svg" hint-size="72px,32px">{{ c.label }}</x-import>
+            </sc-for>
+          </div>
+          <div style="margin-top:auto">
+            <x-import component-from-global-scope="SEEDDesignSystemKarrot_269f41.BoxButton" variant="primary" size="xlarge" full-width="{{ true }}" icon-base="assets/svg" onClick="{{ onbSkip }}" hint-size="100%,52px">삼슐랭 시작하기</x-import>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </sc-if>
+
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:440,&quot;height&quot;:920},&quot;office&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;서초사옥&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showOnboarding&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const PLACES = [
+  { id: 1, name: "서초 손칼국수", menu: "면", rating: "4.8", reviews: 64, walk: 6, price: "1만원 이하", wait: "웨이팅 5분", solo: true, note: "김민지 님 외 8명이 추천했어요", faces: 9 },
+  { id: 2, name: "정육식당 서초점", menu: "고기", rating: "4.6", reviews: 41, walk: 11, price: "2~3만원", wait: "웨이팅 15분", solo: false, note: "회식 자리로 좋았어요", faces: 6 },
+  { id: 3, name: "한상 백반", menu: "한식", rating: "4.7", reviews: 52, walk: 4, price: "1만원 이하", wait: "웨이팅 없음", solo: true, note: "점심 회전이 빨라요", faces: 7 },
+  { id: 4, name: "혼밥 우동집", menu: "면", rating: "4.4", reviews: 22, walk: 8, price: "1만원 이하", wait: "웨이팅 없음", solo: true, note: "혼자 가도 편했어요", faces: 3 },
+  { id: 5, name: "미소 초밥", menu: "일식", rating: "4.5", reviews: 33, walk: 9, price: "1~2만원", wait: "웨이팅 10분", solo: false, note: "런치 세트가 빨라요", faces: 5 },
+  { id: 6, name: "청담 마라탕", menu: "중식", rating: "4.2", reviews: 18, walk: 13, price: "1~2만원", wait: "웨이팅 없음", solo: true, note: "매운맛 단계 선택 가능", faces: 2 },
+  { id: 7, name: "그린볼 샐러드", menu: "건강식", rating: "4.3", reviews: 27, walk: 3, price: "1만원 이하", wait: "웨이팅 없음", solo: true, note: "삼성SDS 동료들이 자주 가요", faces: 4 },
+  { id: 8, name: "역전 국밥", menu: "한식", rating: "4.6", reviews: 47, walk: 7, price: "1만원 이하", wait: "웨이팅 5분", solo: true, note: "12시 전에 가면 여유로워요", faces: 8 },
+  { id: 9, name: "파스타 오네", menu: "양식", rating: "4.5", reviews: 38, walk: 5, price: "1~2만원", wait: "웨이팅 10분", solo: true, note: "런치 파스타 세트가 빨라요", faces: 6 },
+  { id: 10, name: "브레드 앤 스프", menu: "양식", rating: "4.3", reviews: 21, walk: 8, price: "1만원 이하", wait: "웨이팅 없음", solo: true, note: "가볍게 먹고 싶은 날 좋아요", faces: 3 },
+  { id: 11, name: "스테이크 하우스 서초", menu: "양식", rating: "4.7", reviews: 44, walk: 12, price: "2~3만원", wait: "웨이팅 15분", solo: false, note: "회식·손님 접대로 자주 가요", faces: 7 },
+  { id: 23, name: "트러플 파스타 면가", menu: "면", rating: "4.7", reviews: 33, walk: 6, price: "1~2만원", wait: "웨이팅 10분", solo: true, note: "트러플 국수가 시그니처예요", faces: 6 },
+  { id: 24, name: "메밀 소반", menu: "면", rating: "4.5", reviews: 26, walk: 8, price: "1만원 이하", wait: "웨이팅 없음", solo: true, note: "여름에 줄이 길어요", faces: 4 },
+  { id: 25, name: "쌀국수 하노이", menu: "면", rating: "4.4", reviews: 39, walk: 5, price: "1만원 이하", wait: "웨이팅 5분", solo: true, note: "국물이 깔끔해요", faces: 7 },
+  { id: 26, name: "냉면 본가", menu: "면", rating: "4.6", reviews: 45, walk: 10, price: "1~2만원", wait: "웨이팅 15분", solo: false, note: "회식 뒤 해장으로 자주 가요", faces: 8 },
+  { id: 20, name: "채식 테이블", menu: "건강식", rating: "4.6", reviews: 31, walk: 6, price: "1~2만원", wait: "웨이팅 없음", solo: true, note: "비건 메뉴가 따로 있어요", faces: 5 },
+  { id: 21, name: "포케 보울", menu: "건강식", rating: "4.4", reviews: 24, walk: 5, price: "1만원 이하", wait: "웨이팅 5분", solo: true, note: "오후에 안 무거워요", faces: 4 },
+  { id: 22, name: "슬로우 키친", menu: "건강식", rating: "4.5", reviews: 29, walk: 9, price: "1~2만원", wait: "웨이팅 10분", solo: false, note: "제철 채소 코스가 좋아요", faces: 6 },
+  { id: 12, name: "스시 하나", menu: "일식", rating: "4.9", reviews: 58, walk: 6, price: "2~3만원", wait: "웨이팅 20분", solo: false, note: "오마카세 런치가 있어요", faces: 9 },
+  { id: 13, name: "사시미 모리", menu: "일식", rating: "4.6", reviews: 35, walk: 10, price: "1~2만원", wait: "웨이팅 10분", solo: false, note: "회 정식이 푸짐해요", faces: 6 },
+  { id: 14, name: "이자카야 소라", menu: "일식", rating: "4.4", reviews: 26, walk: 14, price: "2~3만원", wait: "웨이팅 없음", solo: false, note: "저녁 회식으로 좋아요", faces: 5 },
+  { id: 15, name: "돈부리 마루", menu: "일식", rating: "4.5", reviews: 43, walk: 4, price: "1만원 이하", wait: "웨이팅 5분", solo: true, note: "혼밥 좌석이 넉넉해요", faces: 7 },
+  { id: 16, name: "라멘 코이", menu: "일식", rating: "4.3", reviews: 31, walk: 7, price: "1만원 이하", wait: "웨이팅 10분", solo: true, note: "12시 전에 가면 바로 앉아요", faces: 4 },
+  { id: 17, name: "우동 소바 야마", menu: "일식", rating: "4.2", reviews: 19, walk: 9, price: "1만원 이하", wait: "웨이팅 없음", solo: true, note: "짧은 점심시간에 딱이에요", faces: 3 },
+  { id: 18, name: "야키토리 하치", menu: "일식", rating: "4.5", reviews: 28, walk: 11, price: "1~2만원", wait: "웨이팅 5분", solo: false, note: "이웃 부서와 자주 가요", faces: 6 },
+  { id: 19, name: "카츠 정식 텐", menu: "일식", rating: "4.4", reviews: 37, walk: 5, price: "1만원 이하", wait: "웨이팅 5분", solo: true, note: "돈카츠 정식이 빨라요", faces: 5 },
+];
+
+const MEETUPS = [
+  { id: 1, placeId: 1, time: "12:00", menu: "국수", title: "오늘 12시, 국수 같이 드실 분?", meta: "회사에서 도보 5분 · 2명 모집 · 1인 약 10,000원", hosts: "삼성화재 상품기획 · 삼성전자 개발", faces: 2, full: false },
+  { id: 2, placeId: 6, time: "12:30", menu: "한식", title: "백반 조용히 먹고 싶은 분 구해요", meta: "도보 4분 · 3명 모집 · 1인 약 9,000원", hosts: "삼성SDS IT운영 외 1명", faces: 3, full: false },
+  { id: 3, placeId: 5, time: "12:00", menu: "일식", title: "런치 초밥 번개 (그룹사 무관)", meta: "도보 9분 · 4명 모집 · 1인 약 18,000원", hosts: "삼성물산 · 삼성바이오 · 삼성전자", faces: 4, full: true },
+  { id: 4, placeId: 7, time: "13:00", menu: "샐러드", title: "가볍게 샐러드 드실 분", meta: "도보 3분 · 2명 모집 · 1인 약 12,000원", hosts: "삼성생명 디지털기획", faces: 1, full: false },
+  { id: 5, placeId: 9, time: "12:20", menu: "양식", title: "파스타 런치 같이 가실 분", meta: "도보 5분 · 3명 모집 · 1인 약 15,000원", hosts: "삼성카드 마케팅", faces: 2, full: false },
+];
+
+const DISHES = {
+  "한식": [["점심 백반", "제철 반찬 6가지", "9,000원"], ["된장찌개 정식", "직접 담근 장", "10,000원"], ["제육볶음", "2인 이상 추천", "12,000원"]],
+  "고기": [["점심 특선 구이", "된장찌개 포함", "18,000원"], ["삼겹살 200g", "2인 이상", "22,000원"], ["갈비살 정식", "런치 한정", "25,000원"]],
+  "면": [["트러플 국수", "시그니처", "15,000원"], ["온면 정식", "국물 리필 가능", "9,500원"], ["비빔면", "여름 한정", "10,000원"]],
+  "일식": [["오마카세 런치", "10피스 · 예약 권장", "39,000원"], ["모둠 초밥", "12피스", "22,000원"], ["돈부리 세트", "미소장국 포함", "13,000원"]],
+  "양식": [["트러플 크림 파스타", "시그니처", "16,000원"], ["런치 세트", "파스타+수프+빵", "14,000원"], ["스테이크 런치", "150g", "29,000원"]],
+  "중식": [["마라탕", "매운맛 5단계", "11,000원"], ["짜장면", "수제 면", "8,000원"], ["탕수육 소", "2인 이상", "18,000원"]],
+  "건강식": [["제철 채소 보울", "비건 가능", "13,000원"], ["포케 보울", "단백질 추가 가능", "12,000원"], ["샐러드 런치", "수프 포함", "10,500원"]],
+};
+
+const REVIEWS = [
+  ["삼성전자 · UX", "3일 전", "4.8", "점심시간에 회전이 빨라서 12시 반에 가도 금방 앉았어요."],
+  ["삼성SDS · IT운영", "1주 전", "4.5", "혼자 가도 눈치 안 보이고 좌석이 편했습니다."],
+  ["삼성화재 · 상품기획", "2주 전", "4.6", "이웃 부서 동료들과 왔는데 대화하기 좋은 자리였어요."],
+  ["삼성물산 · 영업", "3주 전", "4.4", "가격 대비 양이 넉넉해서 회식 전 점심으로 자주 옵니다."],
+];
+
+const INVITES = [
+  { id: 1, who: "김민준", age: "30대 초반", org: "삼성SDS · IT운영 · ENFP", when: "10분 전", msg: "오늘 12시에 서초 손칼국수 같이 가실래요? MBTI 궁합이 잘 맞다고 나와서 연락드렸어요.", meta: "12:00 · 도보 6분 · 1인 약 9,000원" },
+  { id: 2, who: "박서연", age: "20대 후반", org: "삼성화재 · 상품기획 · INFJ", when: "1시간 전", msg: "돈부리 마루에서 조용히 점심 드실 분 찾고 있어요. 12시 반 괜찮으세요?", meta: "12:30 · 도보 4분 · 1인 약 13,000원" },
+  { id: 3, who: "정우진", age: "40대 중반", org: "삼성물산 · 영업 · ESTP", when: "어제", msg: "다음 주에 그룹사 점심 번개 열려고 하는데 같이 하실래요?", meta: "다음 주 화요일 12:00 · 4명 모집" },
+];
+
+// [세로 위치(px), 왼쪽 레일 index] — 위에서 아래로 순서대로 통과
+const LANES = 8;
+// [세로 위치(px), 왼쪽 레일 index] — 8레인 고정 사다리
+const RUNGS = [
+  [10, 0], [10, 3], [10, 6],
+  [28, 1], [28, 4],
+  [46, 0], [46, 2], [46, 5],
+  [64, 3], [64, 6],
+  [82, 1], [82, 4],
+  [100, 2], [100, 5],
+];
+
+const OFFICES = ["서초사옥", "수원사옥", "화성사옥", "송도사옥", "을지로사옥", "강서사옥", "인천사옥", "판교사옥"];
+
+// 도보권으로 묶이는 인접 사옥
+// 모임 후 함께한 멤버들의 매너 평가 (인덱스 기반 고정값)
+function manner(i) {
+  const score = 78 + ((i * 7) % 22);
+  const votes = 3 + ((i * 5) % 18);
+  const grade = score >= 95 ? "A+" : score >= 90 ? "A" : score >= 85 ? "B+" : "B";
+  const strong = votes >= 10;
+  return {
+    score, votes, grade,
+    bg: strong ? "var(--seed-semantic-color-primary-low)" : "var(--seed-scale-color-gray-100)",
+    fg: strong ? "var(--brand-ink)" : "var(--seed-scale-color-gray-700)",
+  };
+}
+
+const REVIEW_TEXTS = [
+  "처음 뵀는데 어색하지 않게 잘 챙겨주셨어요.",
+  "다른 그룹사 업무 이야기를 들을 수 있어 좋았어요.",
+  "가게가 조용해서 대화하기 편했어요.",
+  "점심시간 안에 여유롭게 다녀왔어요.",
+];
+
+const SEED_POSTS = [
+  { who: "박서연", when: "2시간 전", face: "assets/p-9.jpg", text: "다른 그룹사 동료와 처음 점심을 먹었는데 생각보다 훨씬 편했어요.", meta: "12:30 한식 모임 · ★ 5", mine: false },
+  { who: "정우진", when: "어제", face: "assets/p-5.jpg", text: "회식 장소 후보를 하나 알게 됐습니다. 웨이팅도 짧았어요.", meta: "12:00 고기 모임 · ★ 4", mine: false },
+];
+
+const uniq = (a) => a.filter((v, i) => a.indexOf(v) === i);
+
+const DAYS = ["일", "월", "화", "수", "목", "금", "토"];
+function dateOpts() {
+  const out = [];
+  const now = new Date();
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(now.getTime() + i * 86400000);
+    const label = (d.getMonth() + 1) + "월 " + d.getDate() + "일 (" + DAYS[d.getDay()] + ")";
+    out.push(i === 0 ? label + " 오늘" : label);
+  }
+  return out;
+}
+
+const LF_GROUPS = [
+  { key: "date", label: "날짜", opts: () => dateOpts(), meta: true },
+  { key: "time", label: "시간", opts: () => ["11:00", "11:30", "12:00", "12:30", "13:00", "13:30"], meta: true },
+  { key: "loc", label: "위치 기반", opts: () => ["전체", "같은 사옥", "도보 10분 내", "다른 사옥"] },
+  { key: "age", label: "연령대", opts: () => ["전체", "20대", "30대", "40대", "50대"] },
+  { key: "sex", label: "성별", opts: () => ["전체", "여", "남"] },
+  { key: "office", label: "사옥", opts: () => ["전체"].concat(OFFICES) },
+  { key: "co", label: "계열사", opts: (R) => ["전체"].concat(uniq(R.map((p) => p.org.split(" · ")[0]))) },
+  { key: "mbti", label: "MBTI", opts: (R) => ["전체"].concat(uniq(R.map((p) => p.org.split(" · ")[2] || "INFJ")).sort()) },
+  { key: "menu", label: "선호 메뉴", opts: (R) => ["전체"].concat(uniq(R.map((p) => p.menu))) },
+];
+
+const NEARBY = {
+  "서초사옥": ["강서사옥", "을지로사옥"],
+  "수원사옥": ["화성사옥", "판교사옥"],
+  "화성사옥": ["수원사옥"],
+  "송도사옥": ["인천사옥"],
+  "을지로사옥": ["서초사옥"],
+  "강서사옥": ["서초사옥"],
+  "인천사옥": ["송도사옥"],
+  "판교사옥": ["수원사옥", "서초사옥"],
+};
+
+// 각 임직원의 성별·사옥은 인덱스로 고정 배정 (데이터 일관성 유지)
+function sexOf(i) { return i % 2 === 0 ? "여" : "남"; }
+function officeOf(i) { return OFFICES[(i * 3) % OFFICES.length]; }
+function coOf(p) { return p.org.split(" · ")[0]; }
+function mbtiOf(p) { return p.org.split(" · ")[2] || "INFJ"; }
+function decadeOf(p) { return p.age.slice(0, 3); }
+
+function pickLanes(n) {
+  const out = [];
+  while (out.length < n) {
+    const k = Math.floor(Math.random() * LANES);
+    if (!out.includes(k)) out.push(k);
+  }
+  return out.sort((a, b) => a - b);
+}
+
+function pickSlots(n, poolIdx) {
+  const src = poolIdx && poolIdx.length ? poolIdx : ROULETTE.map((_, i) => i);
+  const out = [];
+  const max = Math.min(n, src.length);
+  while (out.length < max) {
+    const k = src[Math.floor(Math.random() * src.length)];
+    if (!out.includes(k)) out.push(k);
+  }
+  return out;
+}
+
+const HOBBY = ["러닝", "테니스", "등산", "베이킹", "사진", "클라이밍", "요가", "골프", "독서", "보드게임", "캠핑", "수영", "자전거", "드로잉", "농구", "낚시", "커피", "배드민턴", "댄스", "축구", "필라테스"];
+const SKILL = ["맛집 리스트 정리", "숨은 카페 찾기", "빠른 웨이팅 예측", "메뉴 추천", "회식 자리 예약", "간단한 요리", "사진 잘 찍기", "사내 길 안내", "커피 원두 감별", "분위기 띄우기", "약속 시간 지키기", "매운맛 도장깨기", "비건 메뉴 찾기", "가성비 계산", "런치 코스 설계", "혼밥 스팟 발굴", "신규 오픈 정보", "예산 맞추기", "대화 이끌기", "조용한 자리 찾기", "제철 메뉴 파악"];
+
+const MOTTO = [
+  "점심은 거르지 않는다", "오늘 할 일은 오늘 안에", "일단 가보고 판단한다", "기록하면 남는다",
+  "천천히, 그러나 매일", "모르면 물어본다", "속도보다 방향", "작게 시작해서 오래 한다",
+  "잘 먹고 잘 자기", "웃으면 일이 풀린다", "약속은 반드시 지킨다", "새로운 건 일단 먹어본다",
+  "몸이 먼저다", "숫자로 말한다", "남의 시간을 아껴준다", "혼자보다 함께",
+  "궁금한 건 직접 해본다", "덜어내는 게 정리", "매일 한 걸음", "실패도 데이터", "밥은 같이 먹어야 맛있다",
+];
+
+const ROULETTE = [
+  { name: "김민준", org: "삼성SDS · IT운영 · ENFP", age: "30대 초반", menu: "면" },
+  { name: "박서연", org: "삼성화재 · 상품기획 · INFJ", age: "20대 후반", menu: "일식" },
+  { name: "정우진", org: "삼성물산 · 영업 · ESTP", age: "40대 중반", menu: "고기" },
+  { name: "최다은", org: "삼성전자 · UX · INFP", age: "20대 중반", menu: "건강식" },
+  { name: "한지호", org: "삼성카드 · 마케팅 · ENTJ", age: "30대 후반", menu: "양식" },
+  { name: "오세라", org: "삼성생명 · 디지털기획 · ISFJ", age: "30대 중반", menu: "한식" },
+  { name: "윤태경", org: "삼성증권 · 리서치 · INTP", age: "40대 초반", menu: "중식" },
+  { name: "임하늘", org: "삼성바이오 · 연구 · ENFJ", age: "20대 후반", menu: "일식" },
+  { name: "강도윤", org: "삼성전기 · 품질 · ISTJ", age: "40대 후반", menu: "한식" },
+  { name: "서예린", org: "삼성디스플레이 · 공정 · ENFP", age: "30대 초반", menu: "면" },
+  { name: "노준영", org: "삼성중공업 · 설계 · ESTJ", age: "50대 초반", menu: "고기" },
+  { name: "배수현", org: "삼성웰스토리 · 메뉴개발 · ISFP", age: "20대 중반", menu: "건강식" },
+  { name: "문상혁", org: "삼성SDI · 연구 · INTJ", age: "30대 후반", menu: "중식" },
+  { name: "신아름", org: "삼성자산운용 · 운용 · ENTP", age: "30대 중반", menu: "양식" },
+  { name: "조현우", org: "삼성전자 · 개발 · ISTP", age: "20대 후반", menu: "면" },
+  { name: "황미소", org: "삼성생명 · CX · ESFJ", age: "40대 초반", menu: "일식" },
+  { name: "권시윤", org: "삼성물산 · 구매 · INFJ", age: "30대 초반", menu: "건강식" },
+  { name: "류하준", org: "삼성카드 · 데이터 · INTP", age: "40대 중반", menu: "한식" },
+  { name: "송가온", org: "삼성증권 · IB · ESFP", age: "20대 후반", menu: "양식" },
+  { name: "차민서", org: "삼성화재 · 보상 · ISFJ", age: "50대 중반", menu: "고기" },
+  { name: "홍유리", org: "삼성SDS · 클라우드 · ENFP", age: "30대 중반", menu: "중식" },
+];
+
+const faceList = (n, offset) => Array.from({ length: n }, (_, i) => {
+  const k = ((offset || 0) + i) % 10 + 1;
+  return { src: "assets/p-" + k + ".png", alt: "임직원" };
+});
+
+const MBTI = ["INTJ","INTP","ENTJ","ENTP","INFJ","INFP","ENFJ","ENFP","ISTJ","ISFJ","ESTJ","ESFJ","ISTP","ISFP","ESTP","ESFP"];
+
+const MATES = [
+  { id: 1, mbti: "INFJ", time: "12:10", org: "삼성전자 · UX", food: "한식 선호", walk: 7, talk: "깊은 대화", style: "새로운 사람", reason: "새로운 이야기와 깊은 대화가 잘 맞는 조합이에요.", status: "점심 모임 2회 참여" },
+  { id: 2, mbti: "ENFP", time: "12:30", org: "삼성SDS · IT운영", food: "면·분식 선호", walk: 4, talk: "가벼운 수다", style: "새로운 사람", reason: "화제가 빨리 붙고 편하게 웃으며 먹기 좋은 조합이에요.", status: "이번 주 처음 참여" },
+  { id: 3, mbti: "ISTJ", time: "12:00", org: "삼성화재 · 상품기획", food: "백반·건강식 선호", walk: 6, talk: "조용한 식사", style: "조용한 식사", reason: "시간 약속을 정확히 지키고 조용히 먹는 걸 선호하는 조합이에요.", status: "점심 모임 5회 참여" },
+  { id: 4, mbti: "ESTP", time: "12:20", org: "삼성물산 · 영업", food: "고기·중식 선호", walk: 11, talk: "가벼운 수다", style: "업무 밖 네트워킹", reason: "결정이 빠르고 새로운 가게를 함께 뚫어보기 좋은 조합이에요.", status: "그룹사 번개 주최 3회" },
+  { id: 5, mbti: "INFP", time: "12:40", org: "삼성바이오 · 연구", food: "카페·샐러드 선호", walk: 3, talk: "깊은 대화", style: "조용한 식사", reason: "말수가 적어도 어색하지 않고 취향이 비슷한 조합이에요.", status: "점심 모임 1회 참여" },
+];
+
+const FORTUNE = {
+  E: ["말이 앞서가는 날", "사람이 붙는 날"],
+  I: ["혼자 정리가 잘 되는 날", "말수보다 생각이 앞서는 날"],
+  N: ["새로운 게 눈에 들어오는 날", "안 가본 길이 당기는 날"],
+  S: ["익숙한 게 편한 날", "확실한 선택이 맞는 날"],
+  T: ["판단이 빠른 날", "군더더기를 덜어내는 날"],
+  F: ["분위기가 먼저 읽히는 날", "누군가 챙기고 싶은 날"],
+  J: ["계획대로 굴러가는 날", "미리 정해두면 편한 날"],
+  P: ["즉흥이 통하는 날", "정하지 않는 게 나은 날"],
+};
+
+const BODY = {
+  E: "점심 자리에서 먼저 말을 꺼내면 오래 이어질 이야기가 하나 생겨요.",
+  I: "말을 아껴도 손해가 없어요. 조용한 자리 하나가 오후를 살립니다.",
+  N: "처음 보는 가게가 눈에 들어오면 그게 오늘의 정답이에요.",
+  S: "검증된 곳으로 가면 오후에 후회가 남지 않아요.",
+  T: "고민을 오래 끌면 시간만 줄어요. 두 번째로 떠오른 걸 고르세요.",
+  F: "같이 먹는 사람 취향을 한 번 물어보면 자리가 훨씬 편해져요.",
+  J: "12시 전에 자리를 잡으면 하루 리듬이 끝까지 유지돼요.",
+  P: "예약도 계획도 없이 나가는 편이 오늘은 잘 맞아요.",
+};
+
+// MBTI 축 → 메뉴 성향
+const MENU_BY_AXIS = {
+  N: ["일식", "양식"], S: ["한식", "고기"],
+  T: ["면", "건강식"], F: ["한식", "양식"],
+  J: ["건강식", "한식"], P: ["면", "중식"],
+  E: ["고기", "중식"], I: ["양식", "건강식"],
+};
+
+const MENU_NOTE = {
+  "한식": "익숙한 밥심이 오늘 컨디션에 가장 잘 붙어요.",
+  "고기": "결정이 빠른 날엔 확실하게 배부른 선택이 맞아요.",
+  "면": "먹는 시간이 짧아 오후 일정에 여유가 생겨요.",
+  "일식": "차분하게 먹기 좋아 대화 온도를 맞추기 쉬워요.",
+  "중식": "여러 명이 나눠 먹기 좋아 자리가 금방 풀려요.",
+  "건강식": "오후에 무겁지 않아 집중이 길게 갑니다.",
+  "양식": "접시 하나로 끝나 자리가 깔끔하게 정리돼요.",
+};
+
+// 같은 축이 어긋날수록 대화가 새롭고, 판단축이 맞으면 점심 진행이 편하다는 가정
+function fit(a, b) {
+  if (!a || !b) return 70;
+  let s = 56;
+  if (a[0] !== b[0]) s += 10;      // 외향/내향 보완 — 말하는 쪽과 듣는 쪽
+  if (a[1] === b[1]) s += 12;      // 직관/감각 일치 — 화제의 결이 같다
+  if (a[2] !== b[2]) s += 8;       // 사고/감정 보완 — 대화가 한쪽으로 치우치지 않는다
+  if (a[3] !== b[3]) s += 6;       // 계획/즉흥 보완 — 한 명이 자리를 정한다
+  return Math.min(96, s);
+}
+
+class Component extends DCLogic {
+  state = { tab: "home", mood: "혼밥", menu: "전체", cond: [], saved: [3], sheet: null, create: false, joined: [], result: null, onboard: 0, company: "삼성전자", onbOffice: "서초사옥", prefs: ["한식", "면"] };
+
+  componentDidMount() {
+    this.setState({ ladderSlots: pickSlots(5) });
+    const box = this.assetBoxEl;
+    if (!box) return;
+    const map = {};
+    box.querySelectorAll("[data-a]").forEach((el) => { map[el.dataset.a] = el.getAttribute("src"); });
+    this.setState({ assets: map });
+  }
+
+  asset(name, fallback) {
+    const a = this.state.assets || {};
+    return a[name] || fallback;
+  }
+
+  fortuneVals() {
+    const my = this.state.mbti;
+    if (!my) return {};
+    const now = new Date();
+    const dayKey = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+    const seedBase = dayKey + (this.state.reroll || 0) * 37;
+    let h = 0;
+    for (let i = 0; i < my.length; i++) h = h * 31 + my.charCodeAt(i);
+    const seed = (h + seedBase) % 1000;
+    const pick = (arr, k) => arr[(seed + k) % arr.length];
+
+    const axes = my.split("");
+    const headAxis = axes[(seed % 4)];
+    const bodyAxis = axes[(seed + 2) % 4];
+
+    const pool = [];
+    axes.forEach((a) => { (MENU_BY_AXIS[a] || []).forEach((m) => { if (!pool.includes(m)) pool.push(m); }); });
+    const lucky = [pick(pool, 0), pick(pool, 3)].filter((v, i, arr) => arr.indexOf(v) === i);
+    const all = ["한식", "고기", "면", "일식", "양식", "중식", "건강식"];
+    const avoid = all.filter((m) => !lucky.includes(m))[(seed + 1) % Math.max(1, all.filter((m) => !lucky.includes(m)).length)];
+
+    return {
+      myMbti: my,
+      fortuneDate: (now.getMonth() + 1) + "월 " + now.getDate() + "일",
+      luckScore: 62 + (seed % 35),
+      luckBar: (62 + (seed % 35)) + "%",
+      fortuneHeadline: pick(FORTUNE[headAxis], 0),
+      fortuneBody: BODY[bodyAxis],
+      luckyMenus: lucky.join(" · "),
+      avoidMenu: avoid,
+      menuReason: MENU_NOTE[lucky[0]],
+      luckyCta: lucky[0] + " 맛집 보기",
+      goLuckyMenu: () => this.setState({ tab: "list", menu: lucky[0], map: false }),
+      rerollFortune: () => this.setState((s) => ({ reroll: (s.reroll || 0) + 1 })),
+    };
+  }
+
+  mbtiVals() {
+    const my = this.state.mbti;
+    const editing = this.state.mbtiEdit === true;
+    const wanted = this.state.talkStyle ?? "새로운 사람";
+    const invited = this.state.invited || [];
+
+    const mates = MATES
+      .map((m) => {
+        const score = fit(my, m.mbti);
+        const on = invited.includes(m.id);
+        return {
+          ...m,
+          score,
+          bar: score + "%",
+          pair: my + " × " + m.mbti,
+          whoLine: m.time + " / " + m.org,
+          foodLine: m.food,
+          talkLine: "대화 스타일 · " + m.talk,
+          placeLine: this.office() + " 도보 " + m.walk + "분",
+          statusLine: m.status,
+          faces: faceList(1, m.id * 2),
+          variant: on ? "secondary" : "primary",
+          btnLabel: on ? "요청 취소" : "점심 같이 먹기",
+          invite: () => this.setState((s) => {
+            const cur = s.invited || [];
+            return { invited: cur.includes(m.id) ? cur.filter((x) => x !== m.id) : cur.concat(m.id) };
+          }),
+        };
+      })
+      .filter((m) => m.style === wanted || wanted === "아무나 좋아요")
+      .sort((a, b) => b.score - a.score);
+
+    const top = mates[0];
+    const pitch = !top
+      ? "조건에 맞는 동료가 아직 없어요. 대화 스타일을 바꿔볼까요?"
+      : "오늘은 " + (wanted === "새로운 사람" ? "새로운 사람과 이야기하고 싶은 날인가요?" : wanted + "을 원하는 날인가요?") +
+        " MBTI 궁합이 잘 맞고 점심 취향도 비슷한 " + top.org.split(" · ")[0] + "의 동료를 추천해드릴게요.";
+
+    return {
+      mbtiLabel: my ? my : "등록 전",
+      hasMbti: !!my && !editing,
+      mbtiSetup: !my || editing,
+      editMbti: () => this.setState({ mbtiEdit: true }),
+      mbtiOptions: MBTI.map((name) => ({
+        name,
+        selected: my === name,
+        select: () => this.setState({ mbti: name, mbtiEdit: false }),
+      })),
+      styleChips: ["새로운 사람", "조용한 식사", "업무 밖 네트워킹", "아무나 좋아요"].map((label) => ({
+        label,
+        selected: wanted === label,
+        select: () => this.setState({ talkStyle: label }),
+      })),
+      mbtiPitch: pitch,
+      mates,
+    };
+  }
+
+  decorate(r) {
+    const on = this.state.saved.includes(r.id);
+    return {
+      ...r,
+      slot: "sam-photo-" + r.id,
+      photo: r.id === 4
+        ? this.asset("noodle-5", "assets/noodle-5.jpg")
+        : r.id === 24
+        ? this.asset("jp-6", "assets/jp-6.jpg")
+        : r.id === 1
+        ? this.asset("kal-1", "assets/kal-1.jpg")
+        : r.id === 26
+        ? this.asset("naeng-1", "assets/naeng-1.jpg")
+        : r.id === 25
+        ? this.asset("pho-1", "assets/pho-1.jpg")
+        : r.menu === "면"
+        ? this.asset("noodle-" + ((r.id * 3) % 6 + 1), "assets/noodle-" + ((r.id * 3) % 6 + 1) + ".jpg")
+        : r.menu === "건강식"
+        ? this.asset("veg-" + ((r.id * 3) % 4 + 1), "assets/veg-" + ((r.id * 3) % 4 + 1) + ".jpg")
+        : r.menu === "일식"
+        ? this.asset("jp-" + ((r.id * 3) % 7 + 1), "assets/jp-" + ((r.id * 3) % 7 + 1) + ".jpg")
+        : r.id === 11
+        ? this.asset("steak-1", "assets/steak-1.jpg")
+        : r.menu === "양식"
+          ? this.asset("pasta-" + ((r.id - 9) % 3 + 2), "assets/pasta-" + ((r.id - 9) % 3 + 2) + ".jpg")
+          : this.asset("food-" + ((r.id - 1) % 4 + 1), "assets/food-" + ((r.id - 1) % 4 + 1) + ".jpg"),
+      gallery: r.menu === "면"
+        ? [this.asset("noodle-5", "assets/noodle-5.jpg"), this.asset("noodle-6", "assets/noodle-6.jpg"), this.asset("noodle-2", "assets/noodle-2.jpg")]
+        : r.menu === "건강식"
+        ? [this.asset("veg-2", "assets/veg-2.jpg"), this.asset("veg-3", "assets/veg-3.jpg"), this.asset("veg-4", "assets/veg-4.jpg")]
+        : r.menu === "일식"
+        ? [this.asset("jp-5", "assets/jp-5.jpg"), this.asset("jp-6", "assets/jp-6.jpg"), this.asset("jp-7", "assets/jp-7.jpg")]
+        : r.id === 11
+        ? [this.asset("steak-2", "assets/steak-2.jpg"), this.asset("steak-3", "assets/steak-3.jpg"), this.asset("steak-4", "assets/steak-4.jpg")]
+        : null,
+      meta: this.office() + "에서 걸어서 " + r.walk + "분 · " + r.price,
+      gridMeta: "도보 " + r.walk + "분 · " + r.price,
+      waitText: r.wait,
+      openText: r.wait === "웨이팅 15분" ? "웨이팅 많아요" : "영업중",
+      openColor: r.wait === "웨이팅 15분" ? "var(--seed-scale-color-gray-500)" : "var(--seed-scale-color-gray-700)",
+      heartIcon: on ? this.asset("heart_fill", "assets/svg/icon_heart_fill.svg") : this.asset("heart_regular", "assets/svg/icon_heart_regular.svg"),
+      heartColor: on ? "var(--brand-ink)" : "var(--seed-scale-color-gray-500)",
+      heartColorOnPhoto: on ? "var(--brand-ink)" : "var(--seed-static-color-static-white)",
+      toggle: (e) => {
+        if (e && e.stopPropagation) e.stopPropagation();
+        this.setState((s) => ({ saved: s.saved.includes(r.id) ? s.saved.filter((x) => x !== r.id) : s.saved.concat(r.id) }));
+      },
+      open: () => this.go({ sheet: r.id, detail: r.id }),
+    };
+  }
+
+  office() { return this.state.pickedOffice ?? this.props.office ?? "서초사옥"; }
+
+  chips(values, current, key) {
+    return values.map((v) => ({
+      label: v,
+      selected: current === v,
+      select: () => this.setState({ [key]: v, result: null }, () => { if (key === "menu") this.pushMenuToMap(v); }),
+    }));
+  }
+
+  // 8레인 중 n개 레인에 임직원 배치
+  poolIdx() {
+    const f = this.state.lf || {};
+    return ROULETTE.map((_, i) => i).filter((i) => {
+      const p = ROULETTE[i];
+      if (f.loc && f.loc !== "전체") {
+        const same = officeOf(i) === this.office();
+        if (f.loc === "같은 사옥" && !same) return false;
+        if (f.loc === "다른 사옥" && same) return false;
+        if (f.loc === "도보 10분 내" && !same && !NEARBY[this.office()]?.includes(officeOf(i))) return false;
+      }
+      if (f.age && f.age !== "전체" && decadeOf(p) !== f.age) return false;
+      if (f.sex && f.sex !== "전체" && sexOf(i) !== f.sex) return false;
+      if (f.office && f.office !== "전체" && officeOf(i) !== f.office) return false;
+      if (f.co && f.co !== "전체" && coOf(p) !== f.co) return false;
+      if (f.mbti && f.mbti !== "전체" && mbtiOf(p) !== f.mbti) return false;
+      if (f.menu && f.menu !== "전체" && p.menu !== f.menu) return false;
+      return true;
+    });
+  }
+
+  makeOcc(n) {
+    const pool = this.poolIdx();
+    const lanes = pickLanes(Math.min(n, Math.max(1, pool.length)));
+    const people = pickSlots(n, pool);
+    const occ = {};
+    lanes.forEach((lane, i) => { occ[lane] = people[i]; });
+    return occ;
+  }
+
+  // 도착점이 채워진 출발 레인 하나를 고른다
+  endOf(start) {
+    let cur = start;
+    RUNGS.forEach((g) => {
+      if (g[1] === cur) cur = g[1] + 1;
+      else if (g[1] + 1 === cur) cur = g[1];
+    });
+    return cur;
+  }
+
+  startLadder(n) {
+    clearInterval(this._ladderTimer);
+    if (this.poolIdx().length === 0) {
+      this.setState({ ladderArmed: false, ladderSize: n, poolWarn: true });
+      return;
+    }
+    this.setState({ ladderSize: n, ladderPick: null, ladderOcc: this.makeOcc(n), blink: 0, running: true, ladderArmed: true, poolWarn: false });
+    let step = 0;
+    const total = 18 + Math.floor(Math.random() * 6);
+    const tick = () => {
+      step++;
+      this.setState({ blink: step % LANES, step, ladderOcc: this.makeOcc(n) });
+      if (step >= total) {
+        clearInterval(this._ladderTimer);
+        const occ = this.makeOcc(n);
+        const starts = [];
+        for (let i = 0; i < LANES; i++) if (occ[this.endOf(i)] !== undefined) starts.push(i);
+        const pick = starts[Math.floor(Math.random() * starts.length)];
+        this.setState({ running: false, blink: null, ladderOcc: occ, ladderPick: pick });
+        return;
+      }
+      const delay = step > total - 6 ? 70 + (step - (total - 6)) * 55 : 70;
+      clearInterval(this._ladderTimer);
+      this._ladderTimer = setInterval(tick, delay);
+    };
+    this._ladderTimer = setInterval(tick, 70);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._ladderTimer);
+  }
+
+  go(patch) {
+    this.setState((s) => {
+      const hist = (s.hist || [{ tab: s.tab, detail: s.detail ?? null }]).slice(0, (s.hi ?? 0) + 1);
+      const next = { tab: patch.tab ?? s.tab, detail: patch.detail !== undefined ? patch.detail : (s.detail ?? null) };
+      const last = hist[hist.length - 1];
+      if (last && last.tab === next.tab && last.detail === next.detail) return { ...patch };
+      hist.push(next);
+      return { ...patch, hist, hi: hist.length - 1 };
+    });
+  }
+
+  jump(delta) {
+    this.setState((s) => {
+      const hist = s.hist || [{ tab: s.tab, detail: s.detail ?? null }];
+      const i = Math.min(hist.length - 1, Math.max(0, (s.hi ?? 0) + delta));
+      const t = hist[i];
+      return { hi: i, tab: t.tab, detail: t.detail, sheet: t.detail };
+    });
+  }
+
+  pushMenuToMap(menu) {
+    document.querySelectorAll('iframe[data-sam-map]').forEach((f) => {
+      if (f.contentWindow) f.contentWindow.postMessage({ type: "sam-menu", menu }, "*");
+    });
+  }
+
+  renderVals() {
+    const { tab, mood, menu, cond, sheet, create, joined, result } = this.state;
+
+    let list = PLACES.slice();
+    if (menu !== "전체") list = list.filter((p) => p.menu === menu);
+    list = list.sort((a, b) => Number(b.rating) - Number(a.rating));
+
+    let pool = PLACES.slice();
+    if (menu !== "전체") pool = pool.filter((p) => p.menu === menu);
+    if (mood === "혼밥") pool = pool.filter((p) => p.solo);
+    if (mood === "회식") pool = pool.filter((p) => p.price !== "1만원 이하");
+    if (cond.includes("5분 이내")) pool = pool.filter((p) => p.walk <= 5);
+    if (cond.includes("1만원 이하")) pool = pool.filter((p) => p.price === "1만원 이하");
+    if (cond.includes("웨이팅 적은 곳")) pool = pool.filter((p) => p.wait !== "웨이팅 15분");
+    if (mood === "빠르게") pool = pool.sort((a, b) => a.walk - b.walk);
+    else pool = pool.sort((a, b) => Number(b.rating) - Number(a.rating));
+    const results = pool.slice(0, 4).map((r) => this.decorate(r));
+
+    const blink = this.state.blink ?? null;
+    const armed = this.state.ladderArmed === true;
+    const size = this.state.ladderSize ?? 4;
+    const lanes = LANES;
+    const rungs = RUNGS;
+    const occ = this.state.ladderOcc || {};
+    const lPick = (this.state.ladderPick ?? null) !== null && this.state.ladderPick < lanes ? this.state.ladderPick : null;
+    let lEnd = lPick, lPath = [], lLanes = [];
+    if (lPick !== null) {
+      lLanes.push(lPick);
+      rungs.forEach((g, idx) => {
+        if (g[1] === lEnd) { lPath.push(idx); lEnd = g[1] + 1; lLanes.push(lEnd); }
+        else if (g[1] + 1 === lEnd) { lPath.push(idx); lEnd = g[1]; lLanes.push(lEnd); }
+      });
+    }
+    const lMate = lPick === null ? null : (ROULETTE[occ[lEnd]] || null);
+    const reqs = this.state.requests || [];
+    const allPosts = (this.state.posts || []).concat(SEED_POSTS);
+    const myPosts = allPosts.filter((p) => p.mine).length;
+    const myM = this.state.mbti || "ENTP";
+    const bestM = uniq(ROULETTE.map(mbtiOf)).sort((a, b) => fit(myM, b) - fit(myM, a))[0];
+    const aiPick = { mbti: bestM, menu: (this.state.prefs || ["한식"])[0] || "한식" };
+    const poolN = this.poolIdx().length;
+    const lfg = LF_GROUPS.find((g) => g.key === this.state.lfList) || null;
+    const lSent = lMate ? (this.state.requests || []).some((r) => r.mateIdx === occ[lEnd]) : false;
+    const pf = (this.state.profile === null || this.state.profile === undefined) ? null : ROULETTE[this.state.profile];
+    const others = Object.keys(occ).map((k) => Number(k)).filter((k) => k !== lEnd).map((k) => occ[k]).filter((i) => ROULETTE[i]);
+    const lPlace = lPick === null ? null : PLACES.filter((p) => p.menu === lMate.menu)[lEnd % Math.max(1, PLACES.filter((p) => p.menu === lMate.menu).length)];
+    const cur = PLACES.find((p) => p.id === sheet);
+    const mp = PLACES.find((p) => p.id === this.state.meetPlace);
+    const curD = cur ? this.decorate(cur) : null;
+    const curPhotos = curD
+      ? (curD.gallery || [curD.photo, this.asset("food-3", "assets/food-3.jpg"), this.asset("food-4", "assets/food-4.jpg")])
+      : ["", "", ""];
+    const navItems = [
+      { key: "home", label: "홈", icon: "home" },
+      { key: "list", label: "맛집", icon: "location" },
+      { key: "mapt", label: "지도검색", icon: "map", flat: true },
+      { key: "meet", label: "같이먹어요", icon: "chatting" },
+      { key: "my", label: "MY", icon: "profile" },
+    ];
+
+    const { onboard, company, onbOffice, prefs } = this.state;
+    const onbOn = (this.props.showOnboarding ?? true) && onboard !== null;
+
+    return {
+      onbActive: onbOn,
+      onbStep0: onbOn && onboard === 0,
+      onbStep1: onbOn && onboard === 1,
+      onbStep2: onbOn && onboard === 2,
+      onbNext: () => this.setState((s) => ({ onboard: s.onboard + 1 })),
+      onbSkip: () => this.setState({ onboard: null }),
+      goOnboarding: () => this.setState({ onboard: 0 }),
+      assetBox: (el) => { this.assetBoxEl = el; },
+      email: this.state.email ?? "",
+      setEmail: (e) => this.setState({ email: e.target.value }),
+      companyChips: ["삼성전자", "삼성SDS", "삼성화재", "삼성생명", "삼성물산", "삼성바이오", "삼성증권", "삼성SDI", "삼성중공업", "삼성카드", "삼성전기", "삼성자산운용", "삼성웰스토리", "삼성디스플레이"].map((c) => ({
+        label: c, selected: company === c, select: () => this.setState({ company: c }),
+      })),
+      officeChips: ["서초사옥", "수원사옥", "화성사옥", "송도사옥", "을지로사옥", "강서사옥", "인천사옥", "판교사옥"].map((c) => ({
+        label: c, selected: onbOffice === c, select: () => this.setState({ onbOffice: c, pickedOffice: c }),
+      })),
+      prefChips: ["한식", "중식", "일식", "양식", "면", "고기", "건강식", "샐러드", "도시락", "디저트", "커피/차", "회/해물", "구이", "돈까스", "분식", "베지테리언"].map((c) => ({
+        label: c,
+        selected: prefs.includes(c),
+        select: () => this.setState((s) => ({ prefs: s.prefs.includes(c) ? s.prefs.filter((x) => x !== c) : s.prefs.concat(c) })),
+      })),
+      ...this.mbtiVals(),
+      ...this.fortuneVals(),
+      office: this.office(),
+      officeOpen: this.state.officeOpen === true,
+      officeArrow: this.state.officeOpen ? "rotate(180deg)" : "none",
+      toggleOffice: () => this.setState((s) => ({ officeOpen: !s.officeOpen })),
+      closeOffice: () => this.setState({ officeOpen: false }),
+      officeOptions: ["서초사옥", "수원사옥", "화성사옥", "송도사옥", "을지로사옥", "강서사옥", "인천사옥", "판교사옥"].map((name) => {
+        const sel = name === this.office();
+        return {
+          name,
+          selected: sel,
+          color: sel ? "var(--brand-ink)" : "var(--seed-scale-color-gray-900)",
+          bg: sel ? "var(--seed-semantic-color-primary-low)" : "transparent",
+          select: () => this.setState({ pickedOffice: name, officeOpen: false }),
+        };
+      }),
+      isHome: tab === "home",
+      isList: tab === "list",
+      showMap: this.state.map === true,
+      showGrid: this.state.map !== true,
+      mapChipLabel: this.state.map ? "목록" : "지도",
+      mapChipIcon: this.state.map ? "list" : "map",
+      toggleMap: () => this.setState((s) => ({ map: !s.map })),
+      isMeet: tab === "meet",
+      isAI: tab === "ai",
+      isMapTab: tab === "mapt",
+      isMy: tab === "my",
+      myFace: "assets/p-3.jpg",
+      myName: "이지현",
+      myOrg: (this.state.company || "삼성전자") + " · 서비스기획",
+      myAge: this.state.ageBand ?? "30대 중반",
+      myOffice: this.office() + " 근무",
+      mySavedCount: this.state.saved.length,
+      myJoinedCount: (this.state.joined || []).length,
+      myReviewCount: 7,
+      mySaved: PLACES.filter((p) => this.state.saved.includes(p.id)).map((p) => this.decorate(p)),
+      mySavedEmpty: this.state.saved.length === 0,
+      goAI: () => this.setState({ tab: "ai" }),
+      goHome: () => this.setState({ tab: "home" }),
+      aiTeaser: this.state.mbti ? "오늘의 운세 · MBTI 점심 메이트 추천" : "MBTI 등록하고 오늘의 운세·메이트 받기",
+      inviteBadge: (() => {
+        const a = this.state.inviteState || {};
+        const n = INVITES.filter((v) => !a[v.id]).length;
+        return n ? "새 초대 " + n + "건" : "확인 완료";
+      })(),
+      invites: INVITES.map((v, i) => {
+        const st = (this.state.inviteState || {})[v.id];
+        return {
+          ...v,
+          face: "assets/p-" + ((v.id * 4) % 10 + 1) + ".jpg",
+          line: v.org + " · " + v.age,
+          pending: !st,
+          stateText: st === "ok" ? "수락함" : st === "no" ? "거절함" : "대기 중",
+          stateBg: st === "ok" ? "var(--seed-semantic-color-primary-low)" : "var(--seed-scale-color-gray-100)",
+          stateFg: st === "ok" ? "var(--brand-ink)" : "var(--seed-scale-color-gray-600)",
+          accept: () => this.setState((s) => ({ inviteState: { ...(s.inviteState || {}), [v.id]: "ok" } })),
+          decline: () => this.setState((s) => ({ inviteState: { ...(s.inviteState || {}), [v.id]: "no" } })),
+        };
+      }),
+      myMenuRows: [
+        { label: "내가 쓴 후기", value: "7개" },
+        { label: "나이대", value: this.state.ageBand ?? "30대 중반" },
+        { label: "점심 취향 설정", value: (this.state.prefs || []).length + "개 선택" },
+        { label: "근무 사옥", value: this.office() },
+        { label: "알림 설정", value: "켜짐" },
+        { label: "임직원 인증 정보", value: "인증 완료" },
+      ],
+      mapReady: (e) => {
+        const w = e.target.contentWindow;
+        if (w) w.postMessage({ type: "sam-menu", menu: this.state.menu || "전체" }, "*");
+      },
+      nav: navItems.map((n) => ({
+        label: n.label,
+        icon: (() => {
+          const w = n.flat ? "regular" : n.key === tab ? "fill" : "regular";
+          return this.asset(n.icon + "_" + w, "assets/svg/icon_" + n.icon + "_" + w + ".svg");
+        })(),
+        color: n.key === tab ? "var(--brand-ink)" : "var(--seed-scale-color-gray-500)",
+        go: () => {
+          if (n.key === "meet") {
+            clearInterval(this._ladderTimer);
+            this.go({ tab: n.key, detail: null, sheet: null, ladderArmed: false, ladderPick: null, running: false, blink: null });
+          } else {
+            this.go({ tab: n.key, detail: null, sheet: null });
+          }
+        },
+      })),
+      moodChips: this.chips(["혼밥", "동료와", "회식", "빠르게"], mood, "mood"),
+      menuChips: this.chips(["전체", "한식", "중식", "일식", "양식", "면", "고기", "건강식"], menu, "menu"),
+      condChips: ["5분 이내", "1만원 이하", "웨이팅 적은 곳"].map((v) => ({
+        label: v,
+        selected: cond.includes(v),
+        select: () => this.setState((s) => ({ cond: s.cond.includes(v) ? s.cond.filter((x) => x !== v) : s.cond.concat(v), result: null })),
+      })),
+      recommend: () => this.setState({ result: Date.now() }),
+      recommendLabel: result ? "조건으로 다시 추천받기" : "오늘의 점심 추천받기",
+      hasResult: !!result,
+      resultTitle: results.length ? mood + " · 지금 가기 좋은 " + results.length + "곳" : "조건에 맞는 곳이 없어요",
+      results,
+      list: list.map((r) => this.decorate(r)),
+      aiPicks: PLACES.filter((p) => p.walk <= 5).map((r) => this.decorate(r)),
+      meetups: (mp ? MEETUPS.filter((m) => m.placeId === mp.id) : MEETUPS).map((m) => {
+        const on = joined.includes(m.id);
+        return {
+          ...m,
+          faces: faceList(m.faces, m.id * 3),
+          stateText: m.full ? "모집 완료" : "모집 중",
+          stateColor: m.full ? "var(--seed-scale-color-gray-500)" : "var(--brand-ink)",
+          btnLabel: m.full ? "대기" : on ? "참여 취소" : "참여하기",
+          variant: m.full || on ? "secondary" : "primary",
+          join: () => this.setState((s) => ({ joined: s.joined.includes(m.id) ? s.joined.filter((x) => x !== m.id) : s.joined.concat(m.id) })),
+        };
+      }),
+      ladderHint: this.state.running ? "추첨 중..." : !armed ? (poolN === 0 ? "조건을 완화해주세요" : "인원수를 골라주세요") : "후보 " + poolN + "명 중 " + size + "자리",
+      filterOpen: this.state.filterOpen === true,
+      poolWarn: this.state.poolWarn === true && poolN === 0,
+      filterArrow: this.state.filterOpen ? "rotate(180deg)" : "none",
+      toggleFilter: () => this.setState((s) => ({ filterOpen: !s.filterOpen })),
+      filterSummary: (() => {
+        const f = this.state.lf || {};
+        const when = (f.date ? f.date.replace(" 오늘", "") : "오늘") + " " + (f.time || "11:00");
+        const on = ["loc", "age", "sex", "office", "co", "mbti", "menu"].map((k) => f[k]).filter((v) => v && v !== "전체");
+        return when + (on.length ? " · " + on.join(" · ") : " · 임직원 " + ROULETTE.length + "명");
+      })(),
+      filterGroups: LF_GROUPS.map((g) => {
+        const cur = (this.state.lf || {})[g.key] || (g.key === "date" ? dateOpts()[0] : g.key === "time" ? "11:00" : "전체");
+        return {
+          label: g.label,
+          value: cur,
+          valueColor: cur === "전체" || g.meta ? "rgba(255,255,255,.75)" : "var(--seed-semantic-color-primary)",
+          open: (e) => {
+            const el = e.currentTarget;
+            const host = el.closest("[data-screen-label]");
+            const top = host ? el.getBoundingClientRect().bottom - host.getBoundingClientRect().top + 4 : 200;
+            this.setState({ lfList: g.key, lfTop: Math.min(top, 520) + "px" });
+          },
+        };
+      }),
+      lfListOpen: !!lfg,
+      lfTop: this.state.lfTop ?? "200px",
+      lfListTitle: lfg ? lfg.label + " 선택" : "",
+      lfListOptions: lfg
+        ? lfg.opts(ROULETTE).map((o) => {
+            const cur = (this.state.lf || {})[lfg.key] || (lfg.key === "date" ? dateOpts()[0] : lfg.key === "time" ? "11:00" : "전체");
+            return {
+              label: o,
+              selected: cur === o,
+              bg: cur === o ? "var(--seed-semantic-color-primary-low)" : "transparent",
+              fg: cur === o ? "var(--brand-ink)" : "var(--seed-scale-color-gray-900)",
+              select: () => this.setState((s) => ({ lf: { ...(s.lf || {}), [lfg.key]: o }, lfList: null, ladderArmed: lfg.meta ? s.ladderArmed : false, ladderPick: lfg.meta ? s.ladderPick : null })),
+            };
+          })
+        : [],
+      closeLfList: () => this.setState({ lfList: null }),
+      poolText: poolN === 0 ? "조건에 맞는 임직원이 없어요. 조건을 완화해주세요." : "조건에 맞는 임직원 " + poolN + "명",
+      poolColor: poolN === 0 ? "var(--seed-semantic-color-primary)" : "rgba(255,255,255,.6)",
+      aiPickNote: aiPick
+        ? (this.state.aiApplied
+            ? "적용됨 · 도보권 · " + aiPick.mbti + " · " + aiPick.menu
+            : "내 MBTI·사옥·취향으로 조건을 채워드려요")
+        : "MBTI를 등록하면 더 정확해져요",
+      aiPickCta: this.state.aiApplied ? "해제" : "적용",
+      applyAiPick: () => this.setState((s) => (s.aiApplied
+        ? { lf: {}, aiApplied: false, ladderArmed: false, ladderPick: null }
+        : { lf: { loc: "도보 10분 내", mbti: aiPick.mbti, menu: aiPick.menu }, aiApplied: true, ladderArmed: false, ladderPick: null })),
+      resetFilter: () => this.setState({ lf: {}, aiApplied: false, ladderArmed: false, ladderPick: null }),
+      saveFilter: () => this.setState({ filterOpen: false }),
+      sizeChips: [1, 2, 3, 4, 5, 6].map((n) => ({
+        label: n + "명",
+        bg: (armed || this.state.running) && size === n ? "var(--seed-semantic-color-primary)" : "rgba(255,255,255,.16)",
+        fg: (armed || this.state.running) && size === n ? "var(--seed-semantic-color-on-primary)" : "var(--seed-static-color-static-white)",
+        select: () => this.startLadder(n),
+      })),
+      ladderTops: Array.from({ length: lanes }, (_, i) => ({
+        label: "",
+        pick: () => { if (armed && !this.state.running) this.setState({ ladderPick: i }); },
+        bg: armed && (blink === i || lPick === i) ? "var(--seed-semantic-color-primary)" : "rgba(255,255,255,.16)",
+        fg: armed && (blink === i || lPick === i) ? "var(--seed-semantic-color-on-primary)" : "var(--seed-static-color-static-white)",
+        opacity: armed ? 1 : 0.45,
+      })),
+      ladderRails: Array.from({ length: lanes }, (_, i) => ({
+        left: "calc(" + ((i + 0.5) * (100 / lanes)) + "% - 1px)",
+        color: this.state.running
+          ? (blink === i ? "var(--seed-semantic-color-primary)" : "rgba(255,255,255,.22)")
+          : armed && lLanes.includes(i) ? "var(--seed-semantic-color-primary)" : "rgba(255,255,255,.22)",
+      })),
+      ladderRungs: rungs.map((g, idx) => ({
+        top: g[0] + "px",
+        left: "calc(" + ((g[1] + 0.5) * (100 / lanes)) + "%)",
+        width: (100 / lanes) + "%",
+        color: this.state.running
+          ? (idx === (this.state.step || 0) % rungs.length ? "var(--seed-semantic-color-primary)" : "rgba(255,255,255,.22)")
+          : armed && lPath.includes(idx) ? "var(--seed-semantic-color-primary)" : "rgba(255,255,255,.22)",
+      })),
+      ladderBottoms: Array.from({ length: lanes }, (_, i) => {
+        const p = ROULETTE[occ[i]];
+        return {
+          name: armed && p ? p.name : "?",
+          face: armed && p ? "assets/p-" + (occ[i] % 10 + 1) + ".jpg" : "",
+          color: armed && p ? "var(--seed-semantic-color-primary)" : "var(--seed-static-color-static-white)",
+          opacity: !armed ? 0.3 : !p ? 0.22 : this.state.running ? (blink === i ? 1 : 0.7) : 1,
+          ring: armed && p ? "0 0 0 3px var(--seed-semantic-color-primary)" : "none",
+          cursor: armed && p ? "pointer" : "default",
+          open: () => { if (armed && p && !this.state.running) this.setState({ profile: occ[i] }); },
+        };
+      }),
+      hasLadderResult: armed && lPick !== null && !this.state.running,
+      lName: lMate ? lMate.name : "",
+      lOrg: lMate ? lMate.org + " · " + lMate.age : "",
+      lFace: lMate ? "assets/p-" + (occ[lEnd] % 10 + 1) + ".jpg" : "",
+      lFit: lMate ? fit(this.state.mbti, lMate.org.split(" · ")[2] || "INFJ") : 0,
+      lPlaceName: lPlace ? lPlace.name : "",
+      lPlacePhoto: lPlace ? this.decorate(lPlace).photo : "",
+      lPlaceMeta: lPlace ? "★ " + lPlace.rating + " · 도보 " + lPlace.walk + "분 · " + lPlace.price : "",
+      lVariant: lSent ? "secondary" : "primary",
+      lCta: lSent ? "신청 완료 · 마이페이지에서 확인" : "이 조합으로 제안하기",
+      ladderInvite: () => {
+        if (lSent) { this.setState({ tab: "my" }); return; }
+        if (!lMate) return;
+        const id = Date.now();
+        this.setState((s) => ({
+          requests: [{
+            id,
+            mateIdx: occ[lEnd],
+            placeId: lPlace ? lPlace.id : null,
+            size,
+            status: "pending",
+            booked: false,
+          }].concat(s.requests || []),
+        }));
+        setTimeout(() => this.setState((s) => ({
+          requests: (s.requests || []).map((r) => (r.id === id ? { ...r, status: "accepted" } : r)),
+        })), 2400);
+      },
+      ladderReset: () => this.startLadder(size),
+      myReqs: reqs.map((r) => {
+        const p = ROULETTE[r.mateIdx];
+        const pl = PLACES.find((x) => x.id === r.placeId);
+        const ok = r.status === "accepted";
+        return {
+          who: p ? p.name : "",
+          org: p ? p.org : "",
+          face: "assets/p-" + (r.mateIdx % 10 + 1) + ".jpg",
+          placeName: pl ? pl.name : "식당 미정",
+          meta: (pl ? "★ " + pl.rating + " · 도보 " + pl.walk + "분 · " : "") + r.size + "명",
+          badge: ok ? "수락됨" : "수락 대기 중",
+          badgeBg: ok ? "var(--seed-semantic-color-primary-low)" : "var(--seed-scale-color-gray-100)",
+          badgeFg: ok ? "var(--brand-ink)" : "var(--seed-scale-color-gray-600)",
+          accepted: ok,
+          bookLabel: r.booked ? "예약 완료 · 12:00" : "식당 예약하기",
+          bookVariant: r.booked ? "secondary" : "primary",
+          book: () => this.setState((s) => ({
+            requests: (s.requests || []).map((x) => (x.id === r.id ? { ...x, booked: !x.booked } : x)),
+          })),
+        };
+      }),
+      myReqEmpty: reqs.length === 0,
+      myReqCount: reqs.length ? reqs.length + "건" : "",
+      profileOpen: !!pf,
+      pFace: pf ? "assets/p-" + (this.state.profile % 10 + 1) + ".jpg" : "",
+      pMannerScore: pf ? manner(this.state.profile).score : 0,
+      pMannerGrade: pf ? manner(this.state.profile).grade : "",
+      pMannerBg: pf ? manner(this.state.profile).bg : "transparent",
+      pMannerFg: pf ? manner(this.state.profile).fg : "transparent",
+      pMannerVotes: pf ? manner(this.state.profile).votes : 0,
+      pMannerNote: pf ? "함께 점심한 동료들이 준 칭찬 " + manner(this.state.profile).votes + "표" : "",
+      pName: pf ? pf.name : "",
+      pOrg: pf ? pf.org : "",
+      pAge: pf ? pf.age : "",
+      pMenu: pf ? pf.menu : "",
+      pHobbySkill: pf ? HOBBY[this.state.profile % HOBBY.length] + " / " + SKILL[this.state.profile % SKILL.length] : "",
+      pMotto: pf ? MOTTO[this.state.profile % MOTTO.length] : "",
+      pFit: pf ? fit(this.state.mbti, pf.org.split(" · ")[2] || "INFJ") : 0,
+      closeProfile: () => this.setState({ profile: null }),
+      lGroupText: lMate ? (size > 1 ? "함께 갈 동료 " + others.length + "명 · " + others.map((k) => ROULETTE[k].name).join(", ") : "1:1 점심") : "",
+      lGroupFaces: lMate ? others.map((k) => ({ src: "assets/p-" + (k % 10 + 1) + ".jpg", alt: "동료" })) : [],
+      lHasGroup: !!lMate && others.length > 0,
+      ladderPool: ROULETTE.length,
+      supportCount: myPosts + " / 4건",
+      supportBar: Math.min(100, myPosts * 25) + "%",
+      supportLabel: "이번 달 지원 " + (myPosts * 5000).toLocaleString() + "원",
+      reviewCta: myPosts >= 4 ? "이번 달 지원 한도를 채웠어요" : "후기 올리고 5,000원 지원받기",
+      openReview: () => { if (myPosts < 4) this.setState({ reviewOpen: true }); },
+      closeReview: () => this.setState({ reviewOpen: false }),
+      reviewOpen: this.state.reviewOpen === true,
+      reviewMeetups: MEETUPS.slice(0, 3).map((m) => ({
+        label: m.time + " " + m.menu,
+        selected: (this.state.rvMeet ?? 0) === m.id,
+        select: () => this.setState({ rvMeet: m.id }),
+      })),
+      reviewStars: [1, 2, 3, 4, 5].map((n) => ({
+        color: n <= (this.state.rvStar ?? 5) ? "var(--seed-semantic-color-primary)" : "var(--seed-scale-color-gray-300)",
+        select: () => this.setState({ rvStar: n }),
+      })),
+      reviewTexts: REVIEW_TEXTS.map((t, i) => ({
+        label: t,
+        selected: (this.state.rvText ?? 0) === i,
+        select: () => this.setState({ rvText: i }),
+      })),
+      submitLabel: "후기 등록하고 지원받기",
+      submitReview: () => this.setState((s) => {
+        const m = MEETUPS.find((x) => x.id === (s.rvMeet ?? 1)) || MEETUPS[0];
+        const post = {
+          who: "이지현",
+          when: "방금",
+          face: "assets/p-3.jpg",
+          text: REVIEW_TEXTS[s.rvText ?? 0],
+          meta: m.time + " " + m.menu + " 모임 · ★ " + (s.rvStar ?? 5),
+          mine: true,
+        };
+        return { posts: [post].concat(s.posts || []), reviewOpen: false };
+      }),
+      posts: allPosts.map((p) => ({
+        ...p,
+        badge: p.mine ? "지원 5,000원 확정" : "지원 완료",
+        badgeBg: p.mine ? "var(--seed-semantic-color-primary-low)" : "var(--seed-scale-color-gray-100)",
+        badgeFg: p.mine ? "var(--brand-ink)" : "var(--seed-scale-color-gray-600)",
+      })),
+      openCreate: () => this.setState({ create: true }),
+      closeCreate: () => this.setState({ create: false }),
+      createOpen: create,
+      findMates: () => this.setState({ sheet: null, tab: "meet", meetPlace: cur ? cur.id : null }),
+      hasMeetPlace: !!mp,
+      meetPlaceName: mp ? mp.name : "",
+      meetPlaceMeta: mp ? "★ " + mp.rating + " · " + this.office() + " 도보 " + mp.walk + "분 · " + mp.price + " · " + mp.wait : "",
+      meetPlaceEmpty: !!mp && !MEETUPS.some((m) => m.placeId === mp.id),
+      meetPlaceCta: mp ? mp.name + "에서 번개 만들기" : "번개 만들기",
+      clearMeetPlace: () => this.setState({ meetPlace: null }),
+      sheetOpen: !!cur,
+      sheetTitle: cur ? cur.name : "",
+      sheetDesc: cur ? "★ " + cur.rating + " · 후기 " + cur.reviews + " · 도보 " + cur.walk + "분 · " + cur.wait : "",
+      sheetNote: cur ? cur.note : "",
+      sheetFaces: cur ? faceList(cur.faces, cur.id * 2) : [],
+      sheetPhoto1: curPhotos[0],
+      sheetPhoto2: curPhotos[1],
+      sheetPhoto3: curPhotos[2],
+      detailOpen: !!curD,
+      dPhoto: curD ? curD.photo : "",
+      dPhotoCount: curD ? "사진 " + (curD.reviews % 20 + 6) + "장" : "",
+      dName: cur ? cur.name : "",
+      dMenu: cur ? cur.menu : "",
+      dRating: cur ? cur.rating : "",
+      dReviews: cur ? cur.reviews : "",
+      dOpenText: curD ? curD.openText : "",
+      dOpenColor: curD ? curD.openColor : "",
+      dWalkLine: cur ? this.office() + "에서 걸어서 " + cur.walk + "분" : "",
+      dPrice: cur ? cur.price : "",
+      dWait: cur ? cur.wait : "",
+      dSolo: cur ? (cur.solo ? "혼밥 좋아요" : "2인 이상 추천") : "",
+      dNote: cur ? cur.note : "",
+      dFaces: cur ? faceList(cur.faces, cur.id * 2) : [],
+      dHeartIcon: curD ? curD.heartIcon : "",
+      dHeartColor: curD ? (this.state.saved.includes(cur.id) ? "var(--seed-semantic-color-primary)" : "var(--seed-static-color-static-white)") : "",
+      dToggle: curD ? curD.toggle : () => {},
+      dDishes: cur
+        ? (DISHES[cur.menu] || DISHES["한식"]).map((d, i) => ({
+            name: d[0], desc: d[1], price: d[2],
+            photo: curD.gallery ? curD.gallery[i % 3] : curPhotos[i % 3],
+          }))
+        : [],
+      dReviewList: cur
+        ? REVIEWS.slice(0, 3).map((v, i) => ({
+            who: v[0], when: v[1], score: v[2], text: v[3],
+            face: "assets/p-" + ((cur.id * 3 + i) % 10 + 1) + ".jpg",
+          }))
+        : [],
+      closeDetail: () => this.go({ sheet: null, detail: null }),
+      canBack: (this.state.hi ?? 0) > 0,
+      canFwd: (this.state.hi ?? 0) < ((this.state.hist || []).length - 1),
+      backColor: (this.state.hi ?? 0) > 0 ? "var(--seed-scale-color-gray-900)" : "var(--seed-scale-color-gray-400)",
+      fwdColor: (this.state.hi ?? 0) < ((this.state.hist || []).length - 1) ? "var(--seed-scale-color-gray-900)" : "var(--seed-scale-color-gray-400)",
+      goBack: () => this.jump(-1),
+      goFwd: () => this.jump(1),
+      closeSheet: () => this.setState({ sheet: null }),
+    };
+  }
+}
+</script>
+</body>
+</html>
